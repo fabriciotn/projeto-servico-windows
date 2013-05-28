@@ -6,3 +6,5 @@ C:\Users\Fabricio\Desktop\Meu Servico\Meu Servico\obj\x86\Debug\GenerateResource
 C:\Users\Fabricio\Desktop\Meu Servico\Meu Servico\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Fabricio\Desktop\Meu Servico\Meu Servico\obj\x86\Debug\Meu Servico.exe
 C:\Users\Fabricio\Desktop\Meu Servico\Meu Servico\obj\x86\Debug\Meu Servico.pdb
+C:\Users\Fabricio\Desktop\Fabricio\Meu Servico\obj\x86\Debug\Meu Servico.exe
+C:\Users\Fabricio\Desktop\Fabricio\Meu Servico\obj\x86\Debug\Meu Servico.pdb
