@@ -1,0 +1,38 @@
+@ECHO OFF
+
+//delete o mapeamento I:
+net use i: /delete /y
+
+//Mapeia o I: com a pasta da unidade dentro do servidor do HBH
+net use i: \\10.14.124.11\jfo$ /persistent:yes
+CLS
+:INICIO
+I:
+
+//verifica quais arquivos não existem na pasta G:\HMAE\INT_SOR\ENV\ não existindo ele copia para lá
+for %%a in (*.env) do if not exist
+	G:\HMAE\INT_SOR\ENV\%%a copy %%a G:\HMAE\INT_SOR\ENV
+
+//Sempre atualiza estes arquivos na pasta exp
+copy G:\hmae\is_exp1*.* i:\exp
+copy G:\hmae\is_exp4*.* i:\exp
+copy G:\hmae\is_exp5*.* i:\exp
+
+//deleta o mapeamento
+net use n: /delete /y
+
+//mapeia a pasta da unidade para o NAT
+net use n: \\10.14.124.11\jfonat /persistent:yes
+n:
+
+//verifica quais arquivos não existem na pasta G:\HMAE\INT_nat\ENV\ não existindo ele copia para lá
+for %%a in (*.env) do if not exist G:\HMAE\INT_nat\ENV\%%a copy %%a G:\HMAE\INT_nat\ENV
+
+C:
+CD\
+CLS
+
+
+TIMEOUT /t 600 /nobreak
+c:\is_copia.bat
+IF ERRORLEVEL 1 GOTO INICIO
