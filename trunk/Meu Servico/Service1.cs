@@ -27,19 +27,164 @@ namespace Meu_Servico
 
         protected override void OnStop()
         {
-            StreamWriter vWriter = new StreamWriter(@"C:\testeServico.txt", true);
-
-            vWriter.WriteLine("Servico Parado: " + DateTime.Now.ToString());
-            vWriter.Flush();
-            vWriter.Close();
+            GravaLog("Servico Parado em " + DateTime.Now.ToString());
         }
 
         private void timer1_Tick(object sender)
         {
+            /*
             StreamWriter vWriter = new StreamWriter(@"c:\testeServico.txt", true);
             vWriter.WriteLine("Servico Rodando: " + DateTime.Now.ToString());
             vWriter.Flush();
             vWriter.Close();
+             */
+            InterfaceSorologia();
         }
+
+        #region InterfaceSorologia
+        /// <summary>
+        /// Classe que faz a cópia dos arquivos da SOROLOGIA
+        /// </summary>
+        public void InterfaceSorologia()
+        {
+            //Exclui o mapeamento I: se existir
+            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
+
+            //mapeia a unidade
+            System.Diagnostics.Process.Start("CMD", @"/C net use I: \\10.14.124.11\jfo$ /persistent:yes").WaitForExit();
+
+            //Guardo o nome do arquivo
+            string nomeDoArquivo = "";
+
+            //Caminho de origem
+            string caminhoDeOrigem = @"I:";
+
+            //Caminho de destino
+            //mapeia a unidade
+            System.Diagnostics.Process.Start("CMD", @"/C net use k: \\10.12.175.208\hmae /persistent:yes").WaitForExit();
+            string caminhoDeDestino = @"K:\INT_SOR\ENV\";
+
+            // Use Path class to manipulate file and directory paths.
+            string arquivoDeOrigem = System.IO.Path.Combine(caminhoDeOrigem, nomeDoArquivo);
+            string arquivoDeDestino = System.IO.Path.Combine(caminhoDeDestino, nomeDoArquivo);
+
+
+            //Prepara a cópia dos arquivos de interfaceamento
+            if (System.IO.Directory.Exists(caminhoDeOrigem))
+            {
+                string[] listaDeArquivos = System.IO.Directory.GetFiles(caminhoDeOrigem);
+
+                //Verificar arquivo por arquivo para copiar
+                foreach (string s in listaDeArquivos)
+                {
+                    //Verifica se a extensão do arquivo é .ENV
+                    if (System.IO.Path.GetExtension(s).Equals(".ENV"))
+                    {
+                        nomeDoArquivo = System.IO.Path.GetFileName(s);
+                        arquivoDeDestino = System.IO.Path.Combine(caminhoDeDestino, nomeDoArquivo);
+                        try
+                        {
+                            //Executa a cópia | parâmetro false para não substituir
+                            System.IO.File.Copy(s, arquivoDeDestino, false);
+                        }
+                        catch (Exception e)
+                        {
+                            //Grava o log em caso de erro
+                            GravaLog(e.Message);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                //Grava o log em caso de erro
+                GravaLog("Pasta " + caminhoDeOrigem + " não existe!");
+            }
+
+            //Exclui o mapeamento I: se existir
+            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
+        }
+        #endregion
+
+
+        #region InterfaceNAT
+        /*
+        /// <summary>
+        /// Classe que faz a cópia dos arquivos da SOROLOGIA
+        /// </summary>
+        private static void InterfaceSorologia()
+        {
+            //Exclui o mapeamento I: se existir
+            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
+
+            //mapeia a unidade
+            System.Diagnostics.Process.Start("CMD", @"/C net use I: \\10.14.124.11\jfo$ /persistent:yes").WaitForExit();
+
+            //Guardo o nome do arquivo
+            string nomeDoArquivo = "";
+
+            //Caminho de origem
+            string caminhoDeOrigem = @"I:";
+
+            //Caminho de destino
+            string caminhoDeDestino = @"K:\INT_SOR\ENV";
+
+            // Use Path class to manipulate file and directory paths.
+            string arquivoDeOrigem = System.IO.Path.Combine(caminhoDeOrigem, nomeDoArquivo);
+            string arquivoDeDestino = System.IO.Path.Combine(caminhoDeDestino, nomeDoArquivo);
+
+
+            //Prepara a cópia dos arquivos de interfaceamento
+            if (System.IO.Directory.Exists(caminhoDeOrigem))
+            {
+                string[] listaDeArquivos = System.IO.Directory.GetFiles(caminhoDeOrigem);
+
+                //Verificar arquivo por arquivo para copiar
+                foreach (string s in listaDeArquivos)
+                {
+                    //Verifica se a extensão do arquivo é .ENV
+                    if (System.IO.Path.GetExtension(s).Equals(".ENV"))
+                    {
+                        nomeDoArquivo = System.IO.Path.GetFileName(s);
+                        arquivoDeDestino = System.IO.Path.Combine(caminhoDeDestino, nomeDoArquivo);
+                        try
+                        {
+                            //Executa a cópia | parâmetro false para não substituir
+                            System.IO.File.Copy(s, arquivoDeDestino, false);
+                        }
+                        catch (Exception e)
+                        {
+                            //Grava o log em caso de erro
+                            GravaLog(e.Message);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                //Grava o log em caso de erro
+                GravaLog("Pasta " + caminhoDeOrigem + " não existe!");
+            }
+
+            //Exclui o mapeamento I: se existir
+            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
+        }
+        */
+        #endregion
+
+
+        #region GravaLog
+        /// <summary>
+        /// Classe que Grava o erro no arquivo de log.
+        /// </summary>
+        /// <param name="mensagem">Deve receber um parâmetro com a mensagem.</param>
+        private void GravaLog(String mensagem)
+        {
+            StreamWriter vWriter = new StreamWriter(@"c:\LogInterface.txt", true);
+            vWriter.WriteLine(DateTime.Now.ToString() + " - " + mensagem);
+            vWriter.Flush();
+            vWriter.Close();
+        }
+        #endregion
     }
 }
