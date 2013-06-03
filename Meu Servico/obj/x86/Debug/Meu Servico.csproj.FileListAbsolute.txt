@@ -16,3 +16,12 @@ C:\Users\12546446\Desktop\Interfaceamento\Meu Servico\obj\x86\Debug\GenerateReso
 C:\Users\12546446\Desktop\Interfaceamento\Meu Servico\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\12546446\Desktop\Interfaceamento\Meu Servico\obj\x86\Debug\Meu Servico.exe
 C:\Users\12546446\Desktop\Interfaceamento\Meu Servico\obj\x86\Debug\Meu Servico.pdb
+C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\Meu Servico.exe
+C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\Meu Servico.pdb
+C:\Fabricio\Interface\Meu Servico\bin\Debug\Meu Servico.exe
+C:\Fabricio\Interface\Meu Servico\bin\Debug\Meu Servico.pdb
+C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\Meu_Servico.ProjectInstaller.resources
+C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\Meu_Servico.Properties.Resources.resources
+C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\GenerateResource.write.1.tlog

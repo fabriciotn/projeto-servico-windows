@@ -38,20 +38,28 @@ namespace Meu_Servico
             vWriter.Flush();
             vWriter.Close();
              */
-            InterfaceSorologia();
+
+            //Teste JFO
+            String CaminhoOrigem = Properties.Resources.CaminhoOrigem;
+            String SiglaUnidade = Properties.Resources.SiglaJFO;
+            String ServidorUnidade = Properties.Resources.ServidorJFO;
+            String CaminhoDestinoSor = Properties.Resources.CaminhoDestinoSor;
+
+
+            InterfaceSorologia(CaminhoOrigem, SiglaUnidade, ServidorUnidade, CaminhoDestinoSor);
         }
 
         #region InterfaceSorologia
         /// <summary>
         /// Classe que faz a cópia dos arquivos da SOROLOGIA
         /// </summary>
-        public void InterfaceSorologia()
+        public void InterfaceSorologia(String CaminhoOrigem, String SiglaUnidade, String ServidorUnidade, String CaminhoDestinoSor)
         {
             //Exclui o mapeamento I: se existir
             System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
 
-            //mapeia a unidade
-            System.Diagnostics.Process.Start("CMD", @"/C net use I: \\10.14.124.11\jfo$ /persistent:yes").WaitForExit();
+            //mapeia a unidade de origem
+            System.Diagnostics.Process.Start("CMD", @"/C NET USE I: " + CaminhoOrigem + SiglaUnidade +"$ /PERSISTENT:YES");
 
             //Guardo o nome do arquivo
             string nomeDoArquivo = "";
@@ -61,8 +69,10 @@ namespace Meu_Servico
 
             //Caminho de destino
             //mapeia a unidade
-            System.Diagnostics.Process.Start("CMD", @"/C net use k: \\10.12.175.208\hmae /persistent:yes").WaitForExit();
-            string caminhoDeDestino = @"K:\INT_SOR\ENV\";
+            //System.Diagnostics.Process.Start("CMD", @"/C net use k: \\10.12.175.208\hmae /persistent:yes").WaitForExit();
+            System.Diagnostics.Process.Start("CMD", @"/C NET USE K: " + ServidorUnidade + CaminhoDestinoSor + " /PERSISTENT:YES").WaitForExit();
+
+            string caminhoDeDestino = @"K:\";
 
             // Use Path class to manipulate file and directory paths.
             string arquivoDeOrigem = System.IO.Path.Combine(caminhoDeOrigem, nomeDoArquivo);
@@ -103,6 +113,7 @@ namespace Meu_Servico
 
             //Exclui o mapeamento I: se existir
             System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
+            System.Diagnostics.Process.Start("CMD", @"/C net use K: /delete /y").WaitForExit();
         }
         #endregion
 
