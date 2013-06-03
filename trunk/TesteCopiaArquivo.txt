@@ -1,4 +1,4 @@
-// Simple synchronous file copy operations with no user interface.
+   // Simple synchronous file copy operations with no user interface.
 // To run this sample, first create the following directories and files:
 // C:\Users\Public\TestFolder
 // C:\Users\Public\TestFolder\test.txt
