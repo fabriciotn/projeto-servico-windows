@@ -25,3 +25,5 @@ C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\Meu_Servico.ProjectInstaller.res
 C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\Meu_Servico.Properties.Resources.resources
 C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Fabricio\Interface\Meu Servico\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Fabricio\Interface\Servico\Meu Servico\obj\x86\Debug\Meu Servico.exe
+C:\Fabricio\Interface\Servico\Meu Servico\obj\x86\Debug\Meu Servico.pdb

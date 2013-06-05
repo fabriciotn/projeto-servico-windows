@@ -61,7 +61,7 @@ namespace Meu_Servico.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \P\HMAE\INT_NAT\ENV.
+        ///   Looks up a localized string similar to P\HMAE\INT_NAT\ENV.
         /// </summary>
         internal static string CaminhoDestinoNat {
             get {
@@ -70,7 +70,7 @@ namespace Meu_Servico.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \P\HMAE\INT_SOR\ENV.
+        ///   Looks up a localized string similar to P\HMAE\INT_SOR\ENV.
         /// </summary>
         internal static string CaminhoDestinoSor {
             get {

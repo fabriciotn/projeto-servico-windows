@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CaminhoDestinoNat" xml:space="preserve">
-    <value>\P\HMAE\INT_NAT\ENV</value>
+    <value>P\HMAE\INT_NAT\ENV</value>
     <comment>Caminho de destino para todas as unidades (NAT)</comment>
   </data>
   <data name="CaminhoDestinoSor" xml:space="preserve">
-    <value>\P\HMAE\INT_SOR\ENV</value>
+    <value>P\HMAE\INT_SOR\ENV</value>
     <comment>Caminho de destino para todas as unidades (Sorologia)</comment>
   </data>
   <data name="CaminhoOrigem" xml:space="preserve">
