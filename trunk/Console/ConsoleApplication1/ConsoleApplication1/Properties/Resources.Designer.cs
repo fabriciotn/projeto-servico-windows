@@ -259,7 +259,7 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ALP.
+        ///   Looks up a localized string similar to ALP$.
         /// </summary>
         internal static string SiglaALP {
             get {
@@ -268,7 +268,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to BET.
+        ///   Looks up a localized string similar to ALPNAT.
+        /// </summary>
+        internal static string SiglaALP_NAT {
+            get {
+                return ResourceManager.GetString("SiglaALP_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BET$.
         /// </summary>
         internal static string SiglaBET {
             get {
@@ -277,7 +286,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DIA.
+        ///   Looks up a localized string similar to BETNAT.
+        /// </summary>
+        internal static string SiglaBET_NAT {
+            get {
+                return ResourceManager.GetString("SiglaBET_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DIA$.
         /// </summary>
         internal static string SiglaDIA {
             get {
@@ -286,7 +304,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DIV.
+        ///   Looks up a localized string similar to DIANAT.
+        /// </summary>
+        internal static string SiglaDIA_NAT {
+            get {
+                return ResourceManager.GetString("SiglaDIA_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DIV$.
         /// </summary>
         internal static string SiglaDIV {
             get {
@@ -295,7 +322,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GOV.
+        ///   Looks up a localized string similar to DIVNAT.
+        /// </summary>
+        internal static string SiglaDIV_NAT {
+            get {
+                return ResourceManager.GetString("SiglaDIV_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GOV$.
         /// </summary>
         internal static string SiglaGOV {
             get {
@@ -304,7 +340,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HJK.
+        ///   Looks up a localized string similar to GOVNAT.
+        /// </summary>
+        internal static string SiglaGOV_NAT {
+            get {
+                return ResourceManager.GetString("SiglaGOV_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HJK$.
         /// </summary>
         internal static string SiglaHJK {
             get {
@@ -313,7 +358,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ITU.
+        ///   Looks up a localized string similar to HJKNAT.
+        /// </summary>
+        internal static string SiglaHJK_NAT {
+            get {
+                return ResourceManager.GetString("SiglaHJK_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ITU$.
         /// </summary>
         internal static string SiglaITU {
             get {
@@ -322,7 +376,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to JFO.
+        ///   Looks up a localized string similar to ITUNAT.
+        /// </summary>
+        internal static string SiglaITU_NAT {
+            get {
+                return ResourceManager.GetString("SiglaITU_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JFO$.
         /// </summary>
         internal static string SiglaJFO {
             get {
@@ -331,7 +394,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MCU.
+        ///   Looks up a localized string similar to JFONAT.
+        /// </summary>
+        internal static string SiglaJFO_NAT {
+            get {
+                return ResourceManager.GetString("SiglaJFO_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MCU$.
         /// </summary>
         internal static string SiglaMCU {
             get {
@@ -340,7 +412,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MOC.
+        ///   Looks up a localized string similar to MCUNAT.
+        /// </summary>
+        internal static string SiglaMCU_NAT {
+            get {
+                return ResourceManager.GetString("SiglaMCU_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MOC$.
         /// </summary>
         internal static string SiglaMOC {
             get {
@@ -349,7 +430,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PAL.
+        ///   Looks up a localized string similar to MOCNAT.
+        /// </summary>
+        internal static string SiglaMOC_NAT {
+            get {
+                return ResourceManager.GetString("SiglaMOC_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PAL$.
         /// </summary>
         internal static string SiglaPAL {
             get {
@@ -358,7 +448,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PAS.
+        ///   Looks up a localized string similar to PALNAT.
+        /// </summary>
+        internal static string SiglaPAL_NAT {
+            get {
+                return ResourceManager.GetString("SiglaPAL_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PAS$.
         /// </summary>
         internal static string SiglaPAS {
             get {
@@ -367,7 +466,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PMI.
+        ///   Looks up a localized string similar to PASNAT.
+        /// </summary>
+        internal static string SiglaPAS_NAT {
+            get {
+                return ResourceManager.GetString("SiglaPAS_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PMI$.
         /// </summary>
         internal static string SiglaPMI {
             get {
@@ -376,7 +484,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PNO.
+        ///   Looks up a localized string similar to PMINAT.
+        /// </summary>
+        internal static string SiglaPMI_NAT {
+            get {
+                return ResourceManager.GetString("SiglaPMI_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PNO$.
         /// </summary>
         internal static string SiglaPNO {
             get {
@@ -385,7 +502,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to POC.
+        ///   Looks up a localized string similar to PNONAT.
+        /// </summary>
+        internal static string SiglaPNO_NAT {
+            get {
+                return ResourceManager.GetString("SiglaPNO_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to POC$.
         /// </summary>
         internal static string SiglaPOC {
             get {
@@ -394,7 +520,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SJR.
+        ///   Looks up a localized string similar to POCNAT.
+        /// </summary>
+        internal static string SiglaPOC_NAT {
+            get {
+                return ResourceManager.GetString("SiglaPOC_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SJR$.
         /// </summary>
         internal static string SiglaSJR {
             get {
@@ -403,7 +538,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SLA.
+        ///   Looks up a localized string similar to SJRNAT.
+        /// </summary>
+        internal static string SiglaSJR_NAT {
+            get {
+                return ResourceManager.GetString("SiglaSJR_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SLA$.
         /// </summary>
         internal static string SiglaSLA {
             get {
@@ -412,7 +556,16 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UDI.
+        ///   Looks up a localized string similar to SLANAT.
+        /// </summary>
+        internal static string SiglaSLA_NAT {
+            get {
+                return ResourceManager.GetString("SiglaSLA_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UDI$.
         /// </summary>
         internal static string SiglaUDI {
             get {
@@ -421,11 +574,29 @@ namespace ConsoleApplication1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to URA.
+        ///   Looks up a localized string similar to UDINAT.
+        /// </summary>
+        internal static string SiglaUDI_NAT {
+            get {
+                return ResourceManager.GetString("SiglaUDI_NAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URA$.
         /// </summary>
         internal static string SiglaURA {
             get {
                 return ResourceManager.GetString("SiglaURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URANAT.
+        /// </summary>
+        internal static string SiglaURA_NAT {
+            get {
+                return ResourceManager.GetString("SiglaURA_NAT", resourceCulture);
             }
         }
     }

@@ -206,60 +206,117 @@
     <comment>Caminho do servidor da unidade de Uberaba</comment>
   </data>
   <data name="SiglaALP" xml:space="preserve">
-    <value>ALP</value>
+    <value>ALP$</value>
+  </data>
+  <data name="SiglaALP_NAT" xml:space="preserve">
+    <value>ALPNAT</value>
   </data>
   <data name="SiglaBET" xml:space="preserve">
-    <value>BET</value>
+    <value>BET$</value>
+  </data>
+  <data name="SiglaBET_NAT" xml:space="preserve">
+    <value>BETNAT</value>
   </data>
   <data name="SiglaDIA" xml:space="preserve">
-    <value>DIA</value>
+    <value>DIA$</value>
+  </data>
+  <data name="SiglaDIA_NAT" xml:space="preserve">
+    <value>DIANAT</value>
   </data>
   <data name="SiglaDIV" xml:space="preserve">
-    <value>DIV</value>
+    <value>DIV$</value>
+  </data>
+  <data name="SiglaDIV_NAT" xml:space="preserve">
+    <value>DIVNAT</value>
   </data>
   <data name="SiglaGOV" xml:space="preserve">
-    <value>GOV</value>
+    <value>GOV$</value>
+  </data>
+  <data name="SiglaGOV_NAT" xml:space="preserve">
+    <value>GOVNAT</value>
   </data>
   <data name="SiglaHJK" xml:space="preserve">
-    <value>HJK</value>
+    <value>HJK$</value>
+  </data>
+  <data name="SiglaHJK_NAT" xml:space="preserve">
+    <value>HJKNAT</value>
   </data>
   <data name="SiglaITU" xml:space="preserve">
-    <value>ITU</value>
+    <value>ITU$</value>
+  </data>
+  <data name="SiglaITU_NAT" xml:space="preserve">
+    <value>ITUNAT</value>
   </data>
   <data name="SiglaJFO" xml:space="preserve">
-    <value>JFO</value>
+    <value>JFO$</value>
+  </data>
+  <data name="SiglaJFO_NAT" xml:space="preserve">
+    <value>JFONAT</value>
   </data>
   <data name="SiglaMCU" xml:space="preserve">
-    <value>MCU</value>
+    <value>MCU$</value>
+  </data>
+  <data name="SiglaMCU_NAT" xml:space="preserve">
+    <value>MCUNAT</value>
   </data>
   <data name="SiglaMOC" xml:space="preserve">
-    <value>MOC</value>
+    <value>MOC$</value>
+  </data>
+  <data name="SiglaMOC_NAT" xml:space="preserve">
+    <value>MOCNAT</value>
   </data>
   <data name="SiglaPAL" xml:space="preserve">
-    <value>PAL</value>
+    <value>PAL$</value>
+  </data>
+  <data name="SiglaPAL_NAT" xml:space="preserve">
+    <value>PALNAT</value>
   </data>
   <data name="SiglaPAS" xml:space="preserve">
-    <value>PAS</value>
+    <value>PAS$</value>
+  </data>
+  <data name="SiglaPAS_NAT" xml:space="preserve">
+    <value>PASNAT</value>
   </data>
   <data name="SiglaPMI" xml:space="preserve">
-    <value>PMI</value>
+    <value>PMI$</value>
+  </data>
+  <data name="SiglaPMI_NAT" xml:space="preserve">
+    <value>PMINAT</value>
   </data>
   <data name="SiglaPNO" xml:space="preserve">
-    <value>PNO</value>
+    <value>PNO$</value>
+  </data>
+  <data name="SiglaPNO_NAT" xml:space="preserve">
+    <value>PNONAT</value>
   </data>
   <data name="SiglaPOC" xml:space="preserve">
-    <value>POC</value>
+    <value>POC$</value>
+  </data>
+  <data name="SiglaPOC_NAT" xml:space="preserve">
+    <value>POCNAT</value>
   </data>
   <data name="SiglaSJR" xml:space="preserve">
-    <value>SJR</value>
+    <value>SJR$</value>
+  </data>
+  <data name="SiglaSJR_NAT" xml:space="preserve">
+    <value>SJRNAT</value>
   </data>
   <data name="SiglaSLA" xml:space="preserve">
-    <value>SLA</value>
+    <value>SLA$</value>
+  </data>
+  <data name="SiglaSLA_NAT" xml:space="preserve">
+    <value>SLANAT</value>
   </data>
   <data name="SiglaUDI" xml:space="preserve">
-    <value>UDI</value>
+    <value>UDI$</value>
+  </data>
+  <data name="SiglaUDI_NAT" xml:space="preserve">
+    <value>UDINAT</value>
   </data>
   <data name="SiglaURA" xml:space="preserve">
-    <value>URA</value>
+    <value>URA$</value>
+  </data>
+  <data name="SiglaURA_NAT" xml:space="preserve">
+    <value>URANAT</value>
   </data>
 </root>
