@@ -15,25 +15,36 @@ namespace ConsoleApplication1
             String SiglaUnidade = Properties.Resources.SiglaJFO;
             String ServidorUnidade = Properties.Resources.ServidorJFO;
             String CaminhoDestinoSor = Properties.Resources.CaminhoDestinoSor;
+            String CaminhoDestinoNat = Properties.Resources.CaminhoDestinoNat;
 
 
             InterfaceSorologia(CaminhoOrigem, SiglaUnidade, ServidorUnidade, CaminhoDestinoSor);
         }
 
-        #region InterfaceSorologia
+
+
+        /*
+         * VERIFICAR AS CONDIÇÕES DE CHAMADA TANTO DO NAT QUANTO DA SOROLOGIA
+         * SIGLAS DAS UNIDADES
+         * 
+         */
+
+        #region InterfaceSorologia e NAT
         /// <summary>
-        /// Classe que faz a cópia dos arquivos da SOROLOGIA
+        /// Classe que faz a cópia dos arquivos da SOROLOGIA E DO NAT
+        /// ATENÇÃO: DEPENDE DO CAMINHO PASSADO. CHAMAR COM CaminhoDestino
         /// </summary>
         public static void InterfaceSorologia(String CaminhoOrigem, String SiglaUnidade, String ServidorUnidade, String CaminhoDestinoSor)
         {
-            //Exclui o mapeamento I: se existir
+            //Exclui o mapeamento I e K: se existir
             System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
-            Console.WriteLine("Exclui o mapeamento I: se existir");
+            System.Diagnostics.Process.Start("CMD", @"/C net use K: /delete /y").WaitForExit();
+            Console.WriteLine("Exclui os mapeamentos I e K: se existir");
             Console.ReadKey();
 
             //mapeia a unidade de origem
-            System.Diagnostics.Process.Start("CMD", @"/C NET USE I: " + CaminhoOrigem + SiglaUnidade + "$ /PERSISTENT:YES");
-            Console.WriteLine("mapeia a unidade de origem --- NET USE I: " + CaminhoOrigem + SiglaUnidade + "$ /PERSISTENT:YES");
+            System.Diagnostics.Process.Start("CMD", @"/C NET USE I: " + CaminhoOrigem + SiglaUnidade + " /PERSISTENT:YES");
+            Console.WriteLine("mapeia a unidade de origem --- NET USE I: " + CaminhoOrigem + SiglaUnidade + " /PERSISTENT:YES");
             Console.ReadKey();
 
             //Guardo o nome do arquivo
@@ -103,73 +114,6 @@ namespace ConsoleApplication1
             Console.ReadKey();
         }
         #endregion
-
-        
-        #region InterfaceNAT
-        /*
-        /// <summary>
-        /// Classe que faz a cópia dos arquivos da SOROLOGIA
-        /// </summary>
-        private static void InterfaceSorologia()
-        {
-            //Exclui o mapeamento I: se existir
-            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
-
-            //mapeia a unidade
-            System.Diagnostics.Process.Start("CMD", @"/C net use I: \\10.14.124.11\jfo$ /persistent:yes").WaitForExit();
-
-            //Guardo o nome do arquivo
-            string nomeDoArquivo = "";
-
-            //Caminho de origem
-            string caminhoDeOrigem = @"I:";
-
-            //Caminho de destino
-            string caminhoDeDestino = @"K:\INT_SOR\ENV";
-
-            // Use Path class to manipulate file and directory paths.
-            string arquivoDeOrigem = System.IO.Path.Combine(caminhoDeOrigem, nomeDoArquivo);
-            string arquivoDeDestino = System.IO.Path.Combine(caminhoDeDestino, nomeDoArquivo);
-
-
-            //Prepara a cópia dos arquivos de interfaceamento
-            if (System.IO.Directory.Exists(caminhoDeOrigem))
-            {
-                string[] listaDeArquivos = System.IO.Directory.GetFiles(caminhoDeOrigem);
-
-                //Verificar arquivo por arquivo para copiar
-                foreach (string s in listaDeArquivos)
-                {
-                    //Verifica se a extensão do arquivo é .ENV
-                    if (System.IO.Path.GetExtension(s).Equals(".ENV"))
-                    {
-                        nomeDoArquivo = System.IO.Path.GetFileName(s);
-                        arquivoDeDestino = System.IO.Path.Combine(caminhoDeDestino, nomeDoArquivo);
-                        try
-                        {
-                            //Executa a cópia | parâmetro false para não substituir
-                            System.IO.File.Copy(s, arquivoDeDestino, false);
-                        }
-                        catch (Exception e)
-                        {
-                            //Grava o log em caso de erro
-                            GravaLog(e.Message);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                //Grava o log em caso de erro
-                GravaLog("Pasta " + caminhoDeOrigem + " não existe!");
-            }
-
-            //Exclui o mapeamento I: se existir
-            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
-        }
-        */
-        #endregion
-        
 
         #region GravaLog
         /// <summary>
