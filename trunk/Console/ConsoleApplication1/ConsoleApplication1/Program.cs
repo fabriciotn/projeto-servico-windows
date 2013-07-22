@@ -11,14 +11,15 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             //Teste JFO
-            String CaminhoOrigem = Properties.Resources.CaminhoOrigem;
             String SiglaUnidade = Properties.Resources.SiglaJFO;
             String ServidorUnidade = Properties.Resources.ServidorJFO;
+
+            String CaminhoOrigem = Properties.Resources.CaminhoOrigem;
             String CaminhoDestinoSor = Properties.Resources.CaminhoDestinoSor;
             String CaminhoDestinoNat = Properties.Resources.CaminhoDestinoNat;
 
 
-            InterfaceSorologia(CaminhoOrigem, SiglaUnidade, ServidorUnidade, CaminhoDestinoSor);
+            Interface(CaminhoOrigem, SiglaUnidade, ServidorUnidade, CaminhoDestinoSor);
         }
 
 
@@ -29,12 +30,12 @@ namespace ConsoleApplication1
          * 
          */
 
-        #region InterfaceSorologia e NAT
+        #region Interface e NAT
         /// <summary>
         /// Classe que faz a cópia dos arquivos da SOROLOGIA E DO NAT
         /// ATENÇÃO: DEPENDE DO CAMINHO PASSADO. CHAMAR COM CaminhoDestino
         /// </summary>
-        public static void InterfaceSorologia(String CaminhoOrigem, String SiglaUnidade, String ServidorUnidade, String CaminhoDestinoSor)
+        public static void Interface(String CaminhoOrigem, String SiglaUnidade, String ServidorUnidade, String CaminhoDestinoSor)
         {
             //Exclui o mapeamento I e K: se existir
             System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
