@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace ConsoleApplication1
+namespace Interfaceamento
 {
     public class Interface
     {
 
-        #region Interface e NAT
+        #region Interface Sorologia e NAT
         /// <summary>
         /// Classe que faz a cópia dos arquivos da SOROLOGIA E DO NAT
         /// </summary>
@@ -17,7 +17,7 @@ namespace ConsoleApplication1
         /// <param name="SiglaUnidade">Sigla da unidade</param>
         /// <param name="ServidorUnidade">Servidor da unidade</param>
         /// <param name="CaminhoDestino">Caminho de destino</param>
-        public void Interfaceamento(String CaminhoOrigem, String SiglaUnidade, String ServidorUnidade, String CaminhoDestino)
+        public void executaInterface(String CaminhoOrigem, String SiglaUnidade, String ServidorUnidade, String CaminhoDestino)
         {
             //Exclui o mapeamento I e K: se existir
             System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
@@ -121,14 +121,14 @@ namespace ConsoleApplication1
         /// <param name="hora">Hora</param>
         /// <param name="minuto">Minuto</param>
         /// <param name="segundos">Segundo</param>
-        private void GravaLog(String mensagem, String dia, String mes, String ano, String hora, String minuto, String segundos)
+        public void GravaLog(String mensagem, String dia, String mes, String ano, String hora, String minuto, String segundos)
         {
             //Cria a pasta LogInterface se ela não existir
             System.IO.Directory.CreateDirectory(@"c:\LogInterface\");
 
             //cria o arquivo com os dados passados
             StreamWriter vWriter = new StreamWriter(@"c:\LogInterface\LogInterface_" + dia + "_" + mes + "_" + ano + " - " + hora + "_" + minuto + "_" + segundos + ".txt", true);
-            vWriter.WriteLine(DateTime.Now.ToString() + " - " + mensagem);
+            vWriter.WriteLine(mensagem + " - " + DateTime.Now.ToString());
             vWriter.Flush();
             vWriter.Close();
         }
