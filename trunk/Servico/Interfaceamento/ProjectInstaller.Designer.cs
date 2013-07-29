@@ -42,6 +42,7 @@
             this.serviceInstaller1.Description = "Interfaceamento dos arquivos da Sorologia e NAT do HEMOMINAS";
             this.serviceInstaller1.DisplayName = "Interfaceamento Hemominas";
             this.serviceInstaller1.ServiceName = "Service1";
+            this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
             // 
