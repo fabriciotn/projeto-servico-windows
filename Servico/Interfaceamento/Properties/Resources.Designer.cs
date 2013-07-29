@@ -79,11 +79,20 @@ namespace Interfaceamento.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to P\HMAE.
+        /// </summary>
+        internal static string CaminhoOrigemEXP {
+            get {
+                return ResourceManager.GetString("CaminhoOrigemEXP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to \\10.14.124.11\.
         /// </summary>
-        internal static string CaminhoOrigem {
+        internal static string ServidorHBH {
             get {
-                return ResourceManager.GetString("CaminhoOrigem", resourceCulture);
+                return ResourceManager.GetString("ServidorHBH", resourceCulture);
             }
         }
     }

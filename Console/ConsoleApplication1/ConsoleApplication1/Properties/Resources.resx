@@ -125,7 +125,10 @@
     <value>P\HMAE\INT_SOR\ENV</value>
     <comment>Caminho de destino para todas as unidades (Sorologia)</comment>
   </data>
-  <data name="CaminhoOrigem" xml:space="preserve">
+  <data name="CaminhoOrigemEXP" xml:space="preserve">
+    <value>P\HMAE</value>
+  </data>
+  <data name="ServidorHBH" xml:space="preserve">
     <value>\\10.14.124.11\</value>
     <comment>Servidor HBH</comment>
   </data>

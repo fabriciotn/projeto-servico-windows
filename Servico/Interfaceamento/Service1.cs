@@ -25,7 +25,8 @@ namespace Interfaceamento
 
         protected override void OnStart(string[] args)
         {
-            timer1 = new Timer(new TimerCallback(timer1_Tick), null, 15000, 60000);
+            //Timer(função de callback, null, atraso de inicio, tempo entre execuções)
+            timer1 = new Timer(new TimerCallback(timer1_Tick), null, 0, 300000); //300000 Milesegundos = 5 minutos
         }
 
         protected override void OnStop()
@@ -50,10 +51,6 @@ namespace Interfaceamento
             //tamanhoArray /= 2;
             tamanhoArray = 1;
 
-            String CaminhoOrigem = Properties.Resources.CaminhoOrigem;
-            String CaminhoDestinoSor = Properties.Resources.CaminhoDestinoSor;
-            String CaminhoDestinoNat = Properties.Resources.CaminhoDestinoNat;
-
             //Chama o método de interfaceamento passando como parâmetros os dados da Sorologia
             for (int i = 0; i < tamanhoArray; i++)
             {
@@ -67,8 +64,10 @@ namespace Interfaceamento
 
                 interfaceObj.GravaLog("Executando ", dia, mes, ano, hora, minuto, segundos);
                 */
-                interfaceObj.executaInterface(CaminhoOrigem, unidades[i, 0] + "$", unidades[i, 1], CaminhoDestinoSor);
-                interfaceObj.executaInterface(CaminhoOrigem, unidades[i, 0] + "NAT", unidades[i, 1], CaminhoDestinoNat);
+                
+                interfaceObj.executaInterface(Properties.Resources.ServidorHBH, unidades[i, 0] + "$", unidades[i, 1], Properties.Resources.CaminhoDestinoSor);
+                interfaceObj.executaInterface(Properties.Resources.ServidorHBH, unidades[i, 0] + "NAT", unidades[i, 1], Properties.Resources.CaminhoDestinoNat);
+                interfaceObj.copiaExp(Properties.Resources.ServidorHBH, unidades[i, 0] + "$\\EXP", unidades[i, 1], Properties.Resources.CaminhoOrigemEXP);
             }
         }
     }
