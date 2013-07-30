@@ -19,25 +19,14 @@ namespace ConsoleApplication1
         /// <param name="ServidorHBH">Caminho de destino</param>
         public void executaInterface(String ServidorHBH, String SiglaUnidade, String ServidorUnidade, String CaminhoDestino)
         {
-            //Exclui o mapeamento I e K: se existir
-            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
-            System.Diagnostics.Process.Start("CMD", @"/C net use K: /delete /y").WaitForExit();
-
-            //mapeia a unidade de origem
-            System.Diagnostics.Process.Start("CMD", @"/C NET USE I: " + ServidorHBH + SiglaUnidade + " /PERSISTENT:YES");
-
             //Guardo o nome do arquivo
             string nomeDoArquivo = "";
 
             //Caminho de origem
-            string caminhoDeOrigem = @"I:";
+            string caminhoDeOrigem = ServidorHBH + SiglaUnidade;
 
             //Caminho de destino
-            //mapeia a unidade
-            System.Diagnostics.Process.Start("CMD", @"/C NET USE K: " + ServidorUnidade + CaminhoDestino + " /PERSISTENT:YES").WaitForExit();
-            System.Diagnostics.Process.Start("CMD", @"/C NET USE").WaitForExit();
-
-            string caminhoDeDestino = @"K:\";
+            string caminhoDeDestino = ServidorUnidade + CaminhoDestino;
 
             // Use Path class to manipulate file and directory paths.
             string arquivoDeOrigem = System.IO.Path.Combine(caminhoDeOrigem, nomeDoArquivo);
@@ -94,6 +83,8 @@ namespace ConsoleApplication1
                             //Grava o log em caso de erro de arquivos com extensão não suportada
                             GravaLog(e.Message, dia, mes, ano, hora, minuto, segundos);
                         }
+                        catch (PathTooLongException) { }
+                        catch (IOException) { }
                     }
                 }
             }
@@ -102,10 +93,6 @@ namespace ConsoleApplication1
                 //Grava o log em caso de erro
                 GravaLog("Pasta " + caminhoDeOrigem + " não existe!", dia, mes, ano, hora, minuto, segundos);
             }
-
-            //Exclui o mapeamentos I: e K: se existir
-            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
-            System.Diagnostics.Process.Start("CMD", @"/C net use K: /delete /y").WaitForExit();
         }
         #endregion
 
@@ -120,27 +107,14 @@ namespace ConsoleApplication1
         /// <param name="ServidorHBH">Servidor do HBH</param>
         public void copiaExp(String ServidorHBH, String SiglaUnidade, String ServidorUnidade, String CaminhoOrigem)
         {
-            //Exclui o mapeamento I e K: se existir
-            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
-            System.Diagnostics.Process.Start("CMD", @"/C net use K: /delete /y").WaitForExit();
-
-            //mapeia a unidade de Destino - HBH
-            System.Diagnostics.Process.Start("CMD", @"/C NET USE I: " + ServidorHBH + SiglaUnidade + " /PERSISTENT:YES");
-            Console.WriteLine("NET USE I: " + ServidorHBH + SiglaUnidade + " /PERSISTENT:YES");
-
             //Guardo o nome do arquivo
             string nomeDoArquivo = "";
 
             //Caminho de destino = HBH
-            string caminhoDeDestino = @"I:";
+            string caminhoDeDestino = ServidorHBH + SiglaUnidade;
 
-            //Caminho de Origem - UNIDADES
-            //mapeia a unidade
-            System.Diagnostics.Process.Start("CMD", @"/C NET USE K: " + ServidorUnidade + CaminhoOrigem + " /PERSISTENT:YES").WaitForExit();
-            Console.WriteLine("NET USE K: " + ServidorUnidade + CaminhoOrigem + " /PERSISTENT:YES");
-            System.Diagnostics.Process.Start("CMD", @"/C NET USE").WaitForExit();
-
-            string caminhoDeOrigem = @"K:\";
+            //Caminho de origem = unidades
+            string caminhoDeOrigem = ServidorUnidade + CaminhoOrigem;
 
             // Use Path class to manipulate file and directory paths.
             string arquivoDeOrigem = System.IO.Path.Combine(caminhoDeOrigem, nomeDoArquivo);
@@ -199,8 +173,8 @@ namespace ConsoleApplication1
                             //Grava o log em caso de erro de arquivos com extensão não suportada
                             GravaLog(e.Message, dia, mes, ano, hora, minuto, segundos);
                         }
-                        catch (PathTooLongException e) { }
-                        catch (IOException e) { }
+                        catch (PathTooLongException) { }
+                        catch (IOException) { }
                     }
                 }
             }
@@ -209,10 +183,6 @@ namespace ConsoleApplication1
                 //Grava o log em caso de erro
                 GravaLog("Pasta " + caminhoDeOrigem + " não existe!", dia, mes, ano, hora, minuto, segundos);
             }
-
-            //Exclui o mapeamentos I: e K: se existir
-            System.Diagnostics.Process.Start("CMD", @"/C net use I: /delete /y").WaitForExit();
-            System.Diagnostics.Process.Start("CMD", @"/C net use K: /delete /y").WaitForExit();
         }
         #endregion
 
