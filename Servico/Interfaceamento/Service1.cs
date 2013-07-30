@@ -53,18 +53,7 @@ namespace Interfaceamento
 
             //Chama o método de interfaceamento passando como parâmetros os dados da Sorologia
             for (int i = 0; i < tamanhoArray; i++)
-            {
-                /*
-                String dia = DateTime.Now.Day.ToString();
-                String mes = DateTime.Now.Month.ToString();
-                String ano = DateTime.Now.Year.ToString();
-                String hora = DateTime.Now.Hour.ToString();
-                String minuto = DateTime.Now.Minute.ToString();
-                String segundos = DateTime.Now.Second.ToString();
-
-                interfaceObj.GravaLog("Executando ", dia, mes, ano, hora, minuto, segundos);
-                */
-                
+            {             
                 interfaceObj.executaInterface(Properties.Resources.ServidorHBH, unidades[i, 0] + "$", unidades[i, 1], Properties.Resources.CaminhoDestinoSor);
                 interfaceObj.executaInterface(Properties.Resources.ServidorHBH, unidades[i, 0] + "NAT", unidades[i, 1], Properties.Resources.CaminhoDestinoNat);
                 interfaceObj.copiaExp(Properties.Resources.ServidorHBH, unidades[i, 0] + "$\\EXP", unidades[i, 1], Properties.Resources.CaminhoOrigemEXP);
