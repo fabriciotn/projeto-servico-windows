@@ -1,4 +1,6 @@
-@ECHO OFF
+﻿@ECHO OFF
+
+teste
 
 //delete o mapeamento I:
 net use i: /delete /y
