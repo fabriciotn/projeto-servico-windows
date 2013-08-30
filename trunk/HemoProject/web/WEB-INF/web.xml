@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>ServletPesquisa</servlet-name>
+        <servlet-class>Servlets.ServletPesquisa</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletPesquisa</servlet-name>
+        <url-pattern>/ServletPesquisa</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HemoProject</servlet-name>
+        <servlet-class>Servlets.HemoProject</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HemoProject</servlet-name>
+        <url-pattern>/HemoProject</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
