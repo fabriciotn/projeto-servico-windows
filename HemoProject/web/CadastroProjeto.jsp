@@ -5,14 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="ValidaSessao.jsp" %>
 
-<%
-    //Recebe o valor da variável de sessão e valida se a sessão está ativa
-    String masp = (String) session.getAttribute("user");
-    if (masp == null) {
-        response.sendRedirect("Configuracoes/sair.jsp");
-    }
-%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,7 +18,7 @@
     <body>
         <div id="tudo">
             <div id="frame">
-                <iframe src="banner.jsp" height="100px" width="100%" frameborder="0" scrolling="no"></iframe>
+                <iframe src="banner.jsp" height="130px" width="100%" frameborder="0" scrolling="no"></iframe>
             </div>
             <div>
                 <a href="sair.jsp">Logoff</a>
@@ -43,16 +37,22 @@
             <!Página de Login!>
             <div id="conteudo">
                 <form method="post" action="ServletProjetos">
-                    <div id="#">
-                    Código do Projeto<br>
-                    <input type="text" name="CodigoProjeto">
+                    <div style="float: left">
+                        <label for="CodigoProjeto">Cód Projeto</label><br>
+                        <input type="text" name="CodigoProjeto" size="5">
+                        <input type="button" name="BuscaProjeto" value="...">
                     </div>
                     
-                    <div id="#">
-                    Nome do Projeto<br>
-                    <input type="text" name="NomeProjeto">
-                    <br>
+                    <div style="float: left">
+                        <label for="NomeProjeto">Nome do Projeto</label><br>
+                        <input type="text" name="NomeProjeto" size="45">
                     </div>
+                    
+                    <div style="float: next">
+                        teste<br>
+                        <input type="text" name="asdf" size="5">
+                    </div>
+                    
                 </form>
             </div>
         </div>

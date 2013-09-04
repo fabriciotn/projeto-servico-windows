@@ -17,7 +17,7 @@
     </head>
     <body>
         <center>
-            <img border="0" src="Configuracoes/Imagens/banner.jpg">
+            <img border="0" src="Configuracoes/Imagens/banner.jpg" width="100%">
         </center>
     </body>
 </html>

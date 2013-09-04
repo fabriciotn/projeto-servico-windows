@@ -5,15 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<%
-    //Recebe o valor da variável de sessão e valida se a sessão está ativa
-    String masp = (String) session.getAttribute("user");
-    if (masp == null) {
-        response.sendRedirect("sair.jsp");
-    }
-%>
-
+<%@include file="ValidaSessao.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +18,7 @@
     <body onload="foco()">
         <div id="tudo">
             <div id="frame">
-                <iframe src="banner.jsp" height="100px" width="100%" frameborder="0" scrolling="no"></iframe>
+                <iframe src="banner.jsp" height="130px" width="100%" frameborder="0" scrolling="no"></iframe>
             </div>
             <div>
                 <a href="sair.jsp">Logoff</a>
