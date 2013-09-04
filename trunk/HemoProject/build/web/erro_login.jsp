@@ -12,7 +12,7 @@
     <body>
         <div id="tudo">
             <div id="frame">
-                <iframe src="banner.jsp" height="100px" width="100%" frameborder="0" scrolling="no"></iframe>
+                <iframe src="banner.jsp" height="130px" width="100%" frameborder="0" scrolling="no"></iframe>
             </div>
 
             <div id="conteudo">

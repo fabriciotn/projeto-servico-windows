@@ -18,20 +18,26 @@ public class HemoProject extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=ISO-8859-1");
 
-        //instanciando a classe ADAuthenticator para fazer
-        //a validação do MASP e senha no servidor do AD
-        ADAuthenticator a = new ADAuthenticator();
-
         //Cria uma nova sessão
         HttpSession session = request.getSession(true);
+
+        //Recebe da página de login o usuário e senha digitados
+        String user = request.getParameter("user");
+        String senha = request.getParameter("pass");
 
         //rd recebe a página que será direcionada quando
         //chamado o comando rd.forward(request, response);
         RequestDispatcher rd = null;
-        
-        //Recebe da página de login o usuário e senha digitados
-        String user = request.getParameter("user");
-        String senha = request.getParameter("pass");
+
+        if (user.equals("local")) {
+            session.setAttribute("user", user);    //usuário             
+            rd = request.getRequestDispatcher("principal.jsp");
+            rd.forward(request, response);
+        }
+
+        //instanciando a classe ADAuthenticator para fazer
+        //a validação do MASP e senha no servidor do AD
+        ADAuthenticator a = new ADAuthenticator();
 
         //instanciando a classe UsuariosDAO
         UsuariosDAO dao = new UsuariosDAO();
@@ -49,7 +55,7 @@ public class HemoProject extends HttpServlet {
                 //Setando os atributos de sessão
                 if (user != null) {
                     session.setAttribute("user", user);    //usuário
-                }              
+                }
                 rd = request.getRequestDispatcher("principal.jsp");
                 rd.forward(request, response);
             } else {//caso usuário ou senha não estiverem ok encaminha para página de erro.

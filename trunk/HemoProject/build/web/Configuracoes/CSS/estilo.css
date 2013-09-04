@@ -7,7 +7,7 @@ body{
 
 #tudo{
     background-color:white;
-    width:750px;
+    width:1000px;
     height:100%;
     margin:0 auto;
     border-style:solid;
@@ -19,7 +19,7 @@ body{
 
 #tudo1{
     background-color:white;
-    width:750px;
+    width:1000px;
     height:90%;
     margin:0 auto;
     border-style:solid;
@@ -43,7 +43,7 @@ body{
     font-family:verdana, tahoma, arial;
     font-size:xx-small;
     text-align:center;
-    width:700px;
+    width:950px;
     margin:0 auto;
 }
 
