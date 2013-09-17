@@ -1,7 +1,7 @@
 <%-- 
-    Document   : relatorio
-    Created on : 04/01/2013, 15:06:50
-    Author     : 12546446
+    Document   : ResumoProjeto
+    Created on : 16/09/2013, 11:45:08
+    Author     : Fabricio
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,11 +12,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="Configuracoes/CSS/estilo.css">
         <script type="text/javascript" src="Configuracoes/JavaScript/script.js"></script>
-        <script type="text/javascript" language="javascript" src="Configuracoes/JQuery/jquery.js"></script>
-        <title>HemoProject</title>
+        <title>HemoProject - Resumo de Projetos</title>
     </head>
-
-    <body onload="foco()">
+    <body>
         <div id="tudo">
             <div id="frame">
                 <iframe src="banner.jsp" height="130px" width="100%" frameborder="0" scrolling="no"></iframe>
@@ -24,7 +22,7 @@
             <div>
                 <a href="sair.jsp">Logoff</a>
             </div>
-            
+
             <div id="menu">
                 <ul>
                     <li><a href="principal.jsp">Inicio</a></li>
@@ -34,10 +32,10 @@
                 </ul>
                 <br/>
             </div>
-            
-            <!Página de Login!>
+
+            <!Página !>
             <div id="conteudo">
-                Painel principal
+                
             </div>
         </div>
     </body>
