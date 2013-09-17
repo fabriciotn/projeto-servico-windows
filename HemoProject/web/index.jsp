@@ -13,6 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="Configuracoes/CSS/estilo.css">
         <script type="text/javascript" src="Configuracoes/JavaScript/script.js"></script>
+        <script type="text/javascript" language="javascript" src="Configuracoes/JQuery/jquery.js"></script>
         <title>HemoProject</title>
     </head>
     <body onload="foco()">
