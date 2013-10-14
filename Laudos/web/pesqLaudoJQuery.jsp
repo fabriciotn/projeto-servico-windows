@@ -23,7 +23,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="estilocss.css">
         <link rel="stylesheet" href="css/table_jui.css" />
         <link rel="stylesheet" href="css/jquery-ui-1.8.4.custom.css" />
         <script type="text/javascript" src="JQuery/jquery.mim.js"></script>

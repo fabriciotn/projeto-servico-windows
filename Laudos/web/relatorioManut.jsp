@@ -24,7 +24,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="estilocss.css">
         <script type="text/javascript" src="script.js"></script>
         <title>Laudo Técnico</title>
     </head>

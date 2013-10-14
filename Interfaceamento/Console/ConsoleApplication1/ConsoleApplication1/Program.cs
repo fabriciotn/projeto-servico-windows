@@ -24,9 +24,18 @@ namespace ConsoleApplication1
             //Chama o método de interfaceamento passando como parâmetros os dados da Sorologia
             for (int i = 0; i < tamanhoArray; i++)
             {
+                Console.WriteLine("Inicio Sor Unidade: " + unidades[i, 0]);
                 interfaceObj.executaInterface(Properties.Resources.ServidorHBH, unidades[i, 0] + "$", unidades[i, 1], Properties.Resources.CaminhoDestinoSor);
+                Console.WriteLine("Fim Sor Unidade: " + unidades[i, 0]);
+                Console.WriteLine("-----------");
+                Console.WriteLine("Inicio NAT Unidade: " + unidades[i, 0]);
                 interfaceObj.executaInterface(Properties.Resources.ServidorHBH, unidades[i, 0] + "NAT", unidades[i, 1], Properties.Resources.CaminhoDestinoNat);
+                Console.WriteLine("Fim NAT Unidade: " + unidades[i, 0]);
+                Console.WriteLine("-----------");
+                Console.WriteLine("Inicio EXP Unidade: " + unidades[i, 0]);
                 interfaceObj.copiaExp(Properties.Resources.ServidorHBH, unidades[i, 0] + "$\\EXP", unidades[i, 1], Properties.Resources.CaminhoOrigemEXP);
+                Console.WriteLine("Fim EXP Unidade: " + unidades[i, 0]);
+                Console.WriteLine("-----------");
             }
             Console.ReadKey();
         }
