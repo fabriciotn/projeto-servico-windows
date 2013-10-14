@@ -27,7 +27,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="estilocss.css">
         <script type="text/javascript" src="script.js"></script>
         <title>Laudo Técnico</title>
     </head>
@@ -69,6 +69,7 @@
             String fornecedor = "";
             String data_forne = "";
             String num_laud_forne = "";
+            String caminhoAssinatura = "";
 
             for (Laudo laud : laudos) {
 
@@ -119,6 +120,8 @@
                 data = sdf.format(laud.getDt_laudo().getTimeInMillis());
                 data_forne = sdf1.format(laud.getDt_forne().getTimeInMillis());
                 num_laud_forne = laud.getNum_laud_forne();
+                
+                caminhoAssinatura = "img/assinaturas/" + masp + ".png";
             }
         %>
         <div id="tudo1">
@@ -178,8 +181,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td id="linha" align="center" colspan="3">
-                        <div id="ass">
+                    <td id="linha" align="center" colspan="3"> 
+                        <div id="ass"> 
+                            <img src="<%out.println(caminhoAssinatura);%>" height="70px"><br/>
                         __________________________________<br/>
                         <b>Responsável pelo laudo</b><br/>
                         <%out.println(responsavel);%><br/>
@@ -187,6 +191,7 @@
                         </div>
 
                         <div id="ass">
+                            <img src="img/assinaturas/13027792.png" height="70px"><br/>
                         __________________________________<br/>
                         <b>Chefia imediata</b><br/>
                         &nbsp;<br/>

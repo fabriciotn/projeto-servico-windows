@@ -6,7 +6,7 @@
     <head>
         <title>Erro</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="estilocss.css">
         <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
@@ -21,7 +21,7 @@
 
             <div id="conteudo">
                 <img alt="erro" src="img/erro.jpg" border="0" align="absmiddle"/>
-                <h2>Ocorreu um erro inesperado!</h2>
+                <h2>Ocorreu um erro inesperado!</h2> 
                 <a class="voltar" href="index.jsp">
                     <img alt="voltar" src="img/voltar.png" border="0" align="absmiddle">Voltar e tentar novamente
                 </a>

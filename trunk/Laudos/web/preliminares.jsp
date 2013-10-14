@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; ISO-8859-1">
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="estilocss.css">
         <script type="text/javascript" src="script.js"></script>
 
         <%
