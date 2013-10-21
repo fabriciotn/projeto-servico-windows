@@ -26,11 +26,22 @@ public class Login extends HttpServlet {
         //rd recebe a página que será direcionada quando
         //chamado o comando rd.forward(request, response);
         RequestDispatcher rd = null;
-        
+
         //Recebe da página de login o usuário e senha digitados
         String user = request.getParameter("user");
         String senha = request.getParameter("pass");
+
         
+        //FAZENDO OS TESTES AQUI)***************************
+        if (user.equals("")) {
+            session.setAttribute("user", "Fabricio");
+            
+            
+            response.sendRedirect("inicio.jsp");
+            //rd = request.getRequestDispatcher("inicio.jsp");
+            //rd.forward(request, response);
+        }
+        //****************************************************
 
         //instanciando a classe UsuariosDAO
         //UsuariosDAO dao = new UsuariosDAO();
@@ -41,19 +52,19 @@ public class Login extends HttpServlet {
 
         //Interação para validar o usuário
         //if (usuarios.isEmpty()) {//verifica se o usuário está vazio.
-            //redirecionando para a página erro.jsp
-            //response.sendRedirect("erro_login.jsp");
+        //redirecionando para a página erro.jsp
+        //response.sendRedirect("erro_login.jsp");
         //} else {
-            if (a.authenticate(user, senha)) {//valida no AD se usuário e senha estão corretos
-                //Setando os atributos de sessão
-                if (user != null) {
-                    session.setAttribute("user", user);    //usuário
-                }
-                
+        if (a.authenticate(user, senha)) {//valida no AD se usuário e senha estão corretos
+            //Setando os atributos de sessão
+            if (user != null) {
+                session.setAttribute("user", user);    //usuário
+            }
+
 //                for (Usuarios u : usuarios) {
 //                    session.setAttribute("setor", u.getId_setor());
 //                }
-              
+
 //                String sistema = "";
 //                for (Usuarios u : usuarios) {
 //                    sistema = u.getSistema();
@@ -76,15 +87,14 @@ public class Login extends HttpServlet {
 //                    //redirecionando para a página inicio_ambos.jsp (direciona para a tela de seleção)
 //                    rd = request.getRequestDispatcher("inicio_ambos.jsp");
 //                }
-                
-                //seta o atributo SISTEMA
-//                session.setAttribute("sistema", sistema);
-                rd = request.getRequestDispatcher("inicio.jsp");
-                rd.forward(request, response);
-            } else {//caso usuário ou senha não estiverem ok encaminha para página de erro.
-                //redirecionando para a página erro.jsp
-                response.sendRedirect("erro_login.jsp");
-            }
-    }
 
+            //seta o atributo SISTEMA
+//                session.setAttribute("sistema", sistema);
+            rd = request.getRequestDispatcher("inicio.jsp");
+            rd.forward(request, response);
+        } else {//caso usuário ou senha não estiverem ok encaminha para página de erro.
+            //redirecionando para a página erro.jsp
+            response.sendRedirect("erro_login.jsp");
+        }
+    }
 }

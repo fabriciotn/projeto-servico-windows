@@ -22,8 +22,10 @@
             </div>
             <!Página de Login!>
             <div id="conteudo">
+                <h1>Sistema de Rastreabilidade</h1>
+                <br>
                 <form method="post" action="Login" name="form">
-                    <h2>Entre com usuário e senha</h2>
+                    <h3>Entre com usuário e senha</h3>
                     <label for="nome">Usuário:</label><input type="text" name="user" value=""><br/>
                     <label for="nome">Senha:</label><input type="password" name="pass" value=""><br/>
                     <input type="submit" value="Logar" id="submitbutton"><input type="reset" value="Limpar" id="resetbutton">

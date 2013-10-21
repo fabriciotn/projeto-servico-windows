@@ -1,5 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.List"%>
 <%@include file="ValidaSessao.jsp" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -14,11 +13,6 @@
         <title>Sistema de Rastreabilidade - Fundação Hemominas</title>
     </head>
     <body>
-
-        <span id="MsgAguarde" style="display:none; font-size:11px;">
-            Aguarde...
-        </span>
-
         <div id="tudo">
             <div id="frame">
                 <iframe src="banner.jsp" height="100px" width="100%" frameborder="0" scrolling="no"></iframe>
@@ -35,11 +29,10 @@
                     <li><a href="relatorios.jsp">Relatórios</a></li>
                 </ul>
                 <br/>
-            </div>
-
+            </div>            
             <div id="conteudo">
                 <h2>Sistema de rastreabilidade.</h2>
-                Bem vindo <%out.println("<b>" + masp + "</b>!");%><br/>
+                Bem vindo <%out.println("<b>" + session.getAttribute("user") + "</b>!");%><br/>
                 <ul>
                     <li>Selecione o menu desejado para realizar os procedimentos:</li>
                 </ul>
