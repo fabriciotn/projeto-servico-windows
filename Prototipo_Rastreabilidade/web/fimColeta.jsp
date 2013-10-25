@@ -24,16 +24,16 @@
                 tubo5 = document.f1.tuboImuno.value;
 
                 if ((amostra == tubo2) && (amostra == tubo3) && (amostra == tubo4) && (amostra == tubo5)) {
-                   
+
                 } else {
                     alert("Tubos não conferem!");
                     return false;
                 }
-                
-                peso  = document.f1.peso.value;
+
+                peso = document.f1.peso.value;
                 tempo = document.f1.tempoColeta.value;
-                
-                if((peso == "") || (tempo == "")){
+
+                if ((peso == "") || (tempo == "")) {
                     alert("Campos obrigatórios não preenchidos!");
                     return false;
                 }
@@ -86,12 +86,12 @@
                         <label for="tuboImuno"><b>Imuno</b></label>
                         <input type="text" name="tuboImuno" id="tuboImuno" size="20px"><br><br>
                     </div>
-                    
+
                     <div>
                         <label for="peso"><b>Peso Hemocomp.</b></label>
                         <input type="text" name="peso" id="peso" size="10px"><br><br>
                     </div>
-                    
+
                     <div>
                         <label for="tempoColeta"><b>Tempo Coleta</b></label>
                         <input type="text" name="tempoColeta" id="tempoColeta" size="10px"><br><br>
@@ -102,6 +102,7 @@
                     </div>
                 </form>
             </div>
+            <iframe src="rodape.jsp" width="180px" height="20px" frameborder="0" scrolling="no"></iframe>
         </div>
     </body>
 </html>

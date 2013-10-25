@@ -8,6 +8,10 @@
 <%@page import="java.util.List"%>
 <%@include file="ValidaSessao.jsp" %>
 
+<%
+    //String amostra = session.getAttribute("").toString();
+%>
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -29,7 +33,7 @@
                     return false;
                 }
 
-                if ((observacao == "") || (pa1 == "") || (pa2 == "") || (pulso == "")){
+                if ((observacao == "") || (pa1 == "") || (pa2 == "") || (pulso == "")) {
                     alert("Campos obrigatórios!");
                     return false;
                 }
@@ -90,7 +94,7 @@
                     </div>
                     <div>
                         <label for="prescricao"><b>Prescrição</b></label><br>
-                        <textarea name="prescricao" rows="5" cols="40"></textarea>
+                        <textarea name="prescricao" rows="2" cols="40"></textarea>
                         <br><br>
                     </div>
                     <div>
@@ -104,7 +108,27 @@
                         <input type="reset" value="Limpar">
                     </div>
                 </form>
+
+                <br><br>
+                <h3>Histórico de reações</h3>
+                <table border="1" width="600px">
+                    <thead>
+                        <tr>
+                            <th>Amostra</th>
+                            <th>Reação</th>
+                            <th>Observações</th>
+                            <th>PA</th>
+                            <th>Pulso</th>
+                            <th>Prescrição</th>
+                            <th>Lote</th>
+                        </tr>
+                        <tr>
+                            
+                        </tr>
+                    </thead>
+                </table>
             </div>
+            <iframe src="rodape.jsp" width="180px" height="20px" frameborder="0" scrolling="no"></iframe>
         </div>
     </body>
 </html>

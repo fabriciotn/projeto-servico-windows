@@ -31,17 +31,6 @@ public class Login extends HttpServlet {
         String user = request.getParameter("user");
         String senha = request.getParameter("pass");
 
-        
-        //FAZENDO OS TESTES AQUI)***************************
-        if (user.equals("")) {
-            session.setAttribute("user", "Fabricio");
-            
-            
-            response.sendRedirect("inicio.jsp");
-            //rd = request.getRequestDispatcher("inicio.jsp");
-            //rd.forward(request, response);
-        }
-        //****************************************************
 
         //instanciando a classe UsuariosDAO
         //UsuariosDAO dao = new UsuariosDAO();
@@ -90,8 +79,11 @@ public class Login extends HttpServlet {
 
             //seta o atributo SISTEMA
 //                session.setAttribute("sistema", sistema);
-            rd = request.getRequestDispatcher("inicio.jsp");
-            rd.forward(request, response);
+            
+            
+            //rd = request.getRequestDispatcher("inicio.jsp");
+            //rd.forward(request, response);
+            response.sendRedirect("inicio.jsp");
         } else {//caso usuário ou senha não estiverem ok encaminha para página de erro.
             //redirecionando para a página erro.jsp
             response.sendRedirect("erro_login.jsp");

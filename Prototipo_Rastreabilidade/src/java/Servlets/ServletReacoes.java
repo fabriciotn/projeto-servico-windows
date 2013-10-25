@@ -55,14 +55,16 @@ public class ServletReacoes extends HttpServlet {
         reacoesObj.setOpeReacao((String) session.getAttribute("user"));
         reacoesObj.setDtHrReacao(Calendar.getInstance());
         
-        RequestDispatcher rd = null;
+        String msg = "";
         
         if(dao.adiciona(reacoesObj)){
-            rd = request.getRequestDispatcher("inicio.jsp");
+            msg = "Reação cadastrada com sucesso!";
         }else{
-            rd = request.getRequestDispatcher("erro.jsp");
+            msg = "Ocorreu algum erro!<br>Volte e tente novamente.";
         }
         
-        rd.forward(request, response);
+        session.setAttribute("pagina", "reacoes.jsp");
+        session.setAttribute("msg", msg);
+        response.sendRedirect("mensagem.jsp");
     }
 }

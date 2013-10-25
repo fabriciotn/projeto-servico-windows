@@ -37,6 +37,7 @@
                     <li>Selecione o menu desejado para realizar os procedimentos:</li>
                 </ul>
             </div>
+            <iframe src="rodape.jsp" width="180px" height="20px" frameborder="0" scrolling="no"></iframe>
         </div>
     </body>
 </html>

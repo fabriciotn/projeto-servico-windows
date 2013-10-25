@@ -24,7 +24,7 @@
         for (Coleta c : amostras) {
             if ((c.getOpeFimColeta() == null) || (c.getOpeFimColeta().isEmpty())) {
                 request.getRequestDispatcher("fimColeta.jsp").forward(request, response);
-            }else {
+            } else {
                 request.getRequestDispatcher("msgColeta.jsp").forward(request, response);
             }
         }
@@ -37,17 +37,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estilocss.css">
         <script type="text/javascript" src="script.js"></script>
-        
+
         <script>
-            function validarCampos() {               
-                tipoBolsa  = document.f1.tipoBolsa.value;
-                loteBolsa  = document.f1.loteBolsa.value;
-                
-                if((tipoBolsa == "") || (loteBolsa == "")){
+            function validarCampos() {
+                tipoBolsa = document.f1.tipoBolsa.value;
+                loteBolsa = document.f1.loteBolsa.value;
+
+                if ((tipoBolsa == "") || (loteBolsa == "")) {
                     alert("Campos obrigatórios não preenchidos!");
                     return false;
                 }
-                
+
                 return true;
             }
         </script>
@@ -97,6 +97,7 @@
                     </div>
                 </form>
             </div>
+            <iframe src="rodape.jsp" width="180px" height="20px" frameborder="0" scrolling="no"></iframe>
         </div>
     </body>
 </html>
