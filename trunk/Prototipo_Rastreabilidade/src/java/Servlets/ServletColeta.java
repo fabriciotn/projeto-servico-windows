@@ -3,9 +3,9 @@ package Servlets;
 import DAO.ColetaDAO;
 import POJO.Coleta;
 import java.util.Calendar;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +19,8 @@ public class ServletColeta extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        PrintWriter out = response.getWriter();
 
         HttpSession session = request.getSession(true);
 
@@ -52,28 +54,25 @@ public class ServletColeta extends HttpServlet {
         coletaObj.setDtHrFimColeta(Calendar.getInstance());
         coletaObj.setOpeFimColeta((String) session.getAttribute("user"));
 
-        RequestDispatcher rd = null;
-
+        String msg = "";
+        
         if ((peso == 0) || (tempoColeta == 0)) {
             if (dao.adiciona(coletaObj)) {
-                //Mudar o direcioanmento da página
-                rd = request.getRequestDispatcher("coleta.jsp");
-                rd.forward(request, response);
+                msg = "Amostra " + amostra + " registrada com sucesso!";
             } else {
                 //mudar o direcionamento da pagina
-                rd = request.getRequestDispatcher("erro.jsp");
-                rd.forward(request, response);
+                msg = "Ocorreu algum erro!<br>Volte e tente novamente.";
             }
         } else {
             if (dao.edita(coletaObj, amostra)) {
-                //Mudar o direcioanmento da página
-                rd = request.getRequestDispatcher("coleta.jsp");
-                rd.forward(request, response);
+                msg = "Amostra " + amostra + " registrada com sucesso!";
             } else {
-                //mudar o direcionamento da pagina
-                rd = request.getRequestDispatcher("erro.jsp");
-                rd.forward(request, response);
+                msg = "Ocorreu algum erro!<br>Volte e tente novamente.";
             }
         }
+        
+        session.setAttribute("pagina", "coleta.jsp");
+        session.setAttribute("msg", msg);
+        response.sendRedirect("mensagem.jsp");
     }
 }

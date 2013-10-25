@@ -12,6 +12,10 @@
         <servlet-name>ServletReacoes</servlet-name>
         <servlet-class>Servlets.ServletReacoes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletControleEntrega</servlet-name>
+        <servlet-class>Servlets.ServletControleEntrega</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>ServletReacoes</servlet-name>
         <url-pattern>/ServletReacoes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletControleEntrega</servlet-name>
+        <url-pattern>/ServletControleEntrega</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

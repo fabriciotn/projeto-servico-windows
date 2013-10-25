@@ -15,14 +15,13 @@
         <link rel="stylesheet" href="estilocss.css">
         <script type="text/javascript" src="script.js"></script>
         <script>
-            function validarCampos() {               
-                amostra  = document.f1.amostra.value;
-                
-                if((amostra == "")){
+            function validarCampos() {
+                amostra = document.f1.amostra.value;
+
+                if ((amostra == "")) {
                     alert("Amostra não preenchida!");
                     return false;
                 }
-                
                 return true;
             }
         </script>
@@ -61,6 +60,7 @@
                     </div>
                 </form>
             </div>
+            <iframe src="rodape.jsp" width="180px" height="20px" frameborder="0" scrolling="no"></iframe>
         </div>
     </body>
 </html>

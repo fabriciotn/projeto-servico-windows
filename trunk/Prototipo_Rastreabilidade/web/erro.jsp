@@ -26,7 +26,7 @@
                     <img alt="voltar" src="img/voltar.png" border="0" align="absmiddle">Voltar e tentar novamente
                 </a>
             </div>
+            <iframe src="rodape.jsp" width="180px" height="20px" frameborder="0" scrolling="no"></iframe>
         </div>
-
     </body>
 </html>

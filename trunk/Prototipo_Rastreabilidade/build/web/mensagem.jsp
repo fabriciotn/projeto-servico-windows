@@ -1,6 +1,6 @@
 <%-- 
-    Document   : triagemClinica
-    Created on : 15/10/2013, 10:05:35
+    Document   : newModeloFabricio
+    Created on : 22/10/2013, 11:38:41
     Author     : 12546446
 --%>
 
@@ -14,19 +14,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estilocss.css">
         <script type="text/javascript" src="script.js"></script>
-        <script>
-            function validarCampos() {
-                amostra = document.f1.amostra.value;
 
-                if ((amostra == "")) {
-                    alert("Amostra não preenchida!");
-                    return false;
-                }
-                return true;
-            }
-        </script>
-
-        <title>Sistema de Rastreabilidade - Coleta - Fundação Hemominas</title>
+        <title></title>
     </head>
     <body>
         <div id="tudo">
@@ -49,19 +38,15 @@
             </div>
 
             <div id="conteudo">
-                <h2>Coleta</h2>
-                <form method="post" action="inicioColeta.jsp" name="f1" onsubmit="return validarCampos(this)">
-                    <div>
-                        <label for="amostra"><b>Amostra</b></label><br>
-                        <input type="text" name="amostra" id="amostra" size="20px" Value="${amostra}"><br><br>
-                    </div>
-                    <div id="botao">
-                        <input type="submit" value="Próximo">
-                    </div>
-                </form>
+                <div id="mensagem">
+                    ${msg}
+                </div>
+                <div id="botao">
+                    <a href=${pagina}>Voltar</a>
+                </div>
+                <br>&nbsp;
             </div>
             <iframe src="rodape.jsp" width="180px" height="20px" frameborder="0" scrolling="no"></iframe>
         </div>
     </body>
 </html>
-

@@ -182,6 +182,14 @@ input, textarea{
     text-align:center;
 }
 
+#mensagem{
+    font-size:18px;
+    padding:20px;
+    text-align:center;
+    color:darkslategrey;
+    background-color:#E8E8E8;
+}
+
 #tab{
     margin-left:30px;
 }

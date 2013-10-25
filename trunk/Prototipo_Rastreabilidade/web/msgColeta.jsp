@@ -47,6 +47,7 @@
                     </div>
                 </form>
             </div>
+            <iframe src="rodape.jsp" width="180px" height="20px" frameborder="0" scrolling="no"></iframe>
         </div>
     </body>
 </html>
