@@ -9,3 +9,5 @@ C:\Users\12546446\Desktop\Interface\Servico\Interfaceamento\obj\x86\Debug\Interf
 C:\Users\12546446\Desktop\Interface\Servico\Interfaceamento\obj\x86\Debug\Interfaceamento.pdb
 C:\Users\12546446\Desktop\Interface\Interfaceamento\Servico\Interfaceamento\obj\x86\Debug\Interfaceamento.exe
 C:\Users\12546446\Desktop\Interface\Interfaceamento\Servico\Interfaceamento\obj\x86\Debug\Interfaceamento.pdb
+C:\Users\12546446\Desktop\ProjetosSVN\Interfaceamento\Servico\Interfaceamento\obj\x86\Debug\Interfaceamento.exe
+C:\Users\12546446\Desktop\ProjetosSVN\Interfaceamento\Servico\Interfaceamento\obj\x86\Debug\Interfaceamento.pdb
