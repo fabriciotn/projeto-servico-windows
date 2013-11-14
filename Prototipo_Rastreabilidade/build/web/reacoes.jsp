@@ -69,7 +69,10 @@
                 <form method="post" action="ServletReacoes" name="f1" onsubmit="return validarCampos(this)">
                     <div>
                         <label for="amostra"><b>Amostra</b></label><br>
-                        <input type="text" name="amostra" id="amostra" size="20px"><br><br>
+                        <input type="text" name="amostra" id="amostra" size="20px">
+                        <input type="button" name="pesquisa" id="pesquisa" value=">>">
+                        <input type="button" name="limpa" id="limpa" value="X">
+                        <br><br>
                     </div>
                     <div>
                         <label for="reacao"><b>Reação</b></label><br>
