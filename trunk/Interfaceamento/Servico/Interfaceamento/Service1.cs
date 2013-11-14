@@ -43,21 +43,7 @@ namespace Interfaceamento
 
         private void timer1_Tick(object sender)
         {
-            ENUM array = new ENUM();
-            String[,] unidades = array.getUnidades();
-
-            //Pega aquantidade de linhas do array.
-            int tamanhoArray = unidades.Length;
-            //tamanhoArray /= 2;
-            tamanhoArray = 1;
-
-            //Chama o método de interfaceamento passando como parâmetros os dados da Sorologia
-            for (int i = 0; i < tamanhoArray; i++)
-            {             
-                interfaceObj.executaInterface(Properties.Resources.ServidorHBH, unidades[i, 0] + "$", unidades[i, 1], Properties.Resources.CaminhoDestinoSor);
-                interfaceObj.executaInterface(Properties.Resources.ServidorHBH, unidades[i, 0] + "NAT", unidades[i, 1], Properties.Resources.CaminhoDestinoNat);
-                interfaceObj.copiaExp(Properties.Resources.ServidorHBH, unidades[i, 0] + "$\\EXP", unidades[i, 1], Properties.Resources.CaminhoOrigemEXP);
-            }
+            
         }
     }
 }
