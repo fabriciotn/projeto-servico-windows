@@ -69,35 +69,44 @@ public class ReacoesDAO {
     /*
      * Busca os dados de uma amostra
      */
-    public List<Reacoes> getAmostra(String amostra) {
+    public List<Reacoes> getReacoes(String amostra) {
         List<Reacoes> coletas = new ArrayList<Reacoes>();
-        String sql = "SELECT * FROM REACOES WHERE AMOSTRA = ? ";
+        String sql = "SELECT * FROM REACOES WHERE AMOSTRA = ? ORDER BY DTHR_PRESCRICAO";
 
         try {
             PreparedStatement ps = this.connection.prepareStatement(sql);
             ps.setString(1, amostra);
             ResultSet rs = ps.executeQuery();
 
-            Calendar dtHrReacao = Calendar.getInstance();
-
             while (rs.next()) {
+                Calendar dtHrReacao = Calendar.getInstance();
                 Reacoes reacao = new Reacoes();
                 reacao.setAmostra(rs.getString("AMOSTRA"));
-                reacao.setReacao(rs.getString("REACAO"));
-                reacao.setObservacao(rs.getString("OBSERVACAO"));
-                reacao.setPa1(rs.getInt("PAI1"));
-                reacao.setPa2(rs.getInt("PAI2"));
+                reacao.setReacao(rs.getString("REACAO")); 
+                reacao.setPa1(rs.getInt("PA1"));
+                reacao.setPa2(rs.getInt("PA2"));
                 reacao.setPulso(rs.getInt("PULSO"));
-                reacao.setPrescricao(rs.getString("PRESCRICAO"));
                 reacao.setLote(rs.getString("LOTE"));
-                dtHrReacao.setTime(rs.getTimestamp("DTHR_PRESCRICAO"));
-                reacao.setDtHrReacao(dtHrReacao);
                 reacao.setOpeReacao(rs.getString("OPERADOR"));
-
+                
+                //Conversão do tipo Clob para String
+                Clob observacaoClob = rs.getClob("OBSERVACAO");
+                String observacaoStr = observacaoClob.getSubString(new Long(1).longValue(), new Long(observacaoClob.length()).intValue());
+                reacao.setObservacao(observacaoStr);
+                
+                //Conversão do tipo Clob para String
+                Clob prescricaoClob = rs.getClob("PRESCRICAO");
+                String prescricaoStr = prescricaoClob.getSubString(new Long(1).longValue(), new Long(prescricaoClob.length()).intValue());
+                reacao.setPrescricao(prescricaoStr);
+                
+                //dtHrReacao.setTime(rs.getTimestamp("DTHR_PRESCRICAO"));
+                //reacao.setDtHrReacao(dtHrReacao);
+                
                 if (rs.getTimestamp("DTHR_PRESCRICAO") != null) {
                     dtHrReacao.setTime(rs.getTimestamp("DTHR_PRESCRICAO"));
-                    reacao.setDtHrReacao(dtHrReacao);
                 }
+                
+                reacao.setDtHrReacao(dtHrReacao);
 
                 coletas.add(reacao);
             }

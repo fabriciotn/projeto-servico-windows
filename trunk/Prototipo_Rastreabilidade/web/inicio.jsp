@@ -35,7 +35,6 @@
                 Bem vindo <%out.println("<b>" + session.getAttribute("user") + "</b>!");%><br/>
                 <ul>
                     <li>Selecione o menu desejado para realizar os procedimentos:</li>
-                    <a href="report">report</a>
                 </ul>
             </div>
             <iframe src="rodape.jsp" width="180px" height="20px" frameborder="0" scrolling="no"></iframe>

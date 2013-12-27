@@ -14,7 +14,7 @@
     </head>
     <body>
         <div id="tudo1">
-            Versão: V-1.0/10-2013
+            Versão: V-1.0/12-2013
         </div>
     </body>
 </html>
