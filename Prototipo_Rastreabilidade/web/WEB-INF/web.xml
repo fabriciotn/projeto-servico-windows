@@ -17,12 +17,8 @@
         <servlet-class>Servlets.ServletControleEntrega</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>report</servlet-name>
-        <servlet-class>Servlets.report</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>testerep</servlet-name>
-        <servlet-class>Servlets.testerep</servlet-class>
+        <servlet-name>Relatorios</servlet-name>
+        <servlet-class>Servlets.Relatorios</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -41,12 +37,8 @@
         <url-pattern>/ServletControleEntrega</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>report</servlet-name>
-        <url-pattern>/report</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>testerep</servlet-name>
-        <url-pattern>/testerep</url-pattern>
+        <servlet-name>Relatorios</servlet-name>
+        <url-pattern>/Relatorios</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,7 +1,6 @@
 package Conecta;
 
 import java.sql.*;
-import javax.swing.JOptionPane;
 
 public class ConectaOracle {
     static final String USER = "clipper";
@@ -20,7 +19,7 @@ public class ConectaOracle {
             System.out.println("Conexão estabelecida - Banco " + DB_URL);
             //connection.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Falha ao se conectar!\n"+e.toString());
+            System.out.println("Falha ao se conectar!\n"+e.toString());
             e.printStackTrace();
         }
         return connection;
