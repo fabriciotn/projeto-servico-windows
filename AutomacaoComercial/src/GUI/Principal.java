@@ -13,13 +13,6 @@ import Auxiliar.Constantes;
 import Auxiliar.ThreadHora;
 import Controller.ExitController;
 import GUI.Resources.PrincipalResources;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import java.awt.GridBagLayout;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import javax.swing.*;
 import org.jdesktop.swingx.JXHyperlink;
 
@@ -105,10 +98,10 @@ public class Principal extends javax.swing.JFrame {
         PainelMenu.setBackground(new java.awt.Color(153, 180, 209));
         PainelMenu.setLayout(new org.jdesktop.swingx.VerticalLayout());
 
-        TaskPaneCadastro.setToolTipText("Cadastro");
+        TaskPaneCadastro.setToolTipText("Cadastros");
         TaskPaneCadastro.setName(""); // NOI18N
         TaskPaneCadastro.setSpecial(true);
-        TaskPaneCadastro.setTitle("Cadastro");
+        TaskPaneCadastro.setTitle("Cadastros");
         PainelMenu.add(TaskPaneCadastro);
 
         TaskPaneEmissao.setToolTipText("Cadastro");
@@ -131,6 +124,7 @@ public class Principal extends javax.swing.JFrame {
         MenuDoador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
         MenuDoador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/male_users.png"))); // NOI18N
         MenuDoador.setText(PrincipalResources.NomeTelaCadProdutos);
+        MenuDoador.setToolTipText("asdfsd");
         MenuDoador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenuDoadorActionPerformed(evt);
@@ -420,9 +414,11 @@ public class Principal extends javax.swing.JFrame {
 
             public void run() {
                 try {
-                    //Altera o LookAndFeel para o Nimbus
-                    //UIManager.setLookAndFeel(PrincipalResources.LookAndFeel_Nimbus);
+                    //Os outros LookAndFeel desconfiguram a tela. 
+                    //Deixar sempre o LookAndFeel_Windows
+                    
                     UIManager.setLookAndFeel(PrincipalResources.LookAndFeel_Windows);
+                    //UIManager.setLookAndFeel(PrincipalResources.LookAndFeel_Nimbus);
                     //UIManager.setLookAndFeel(PrincipalResources.LookAndFeel_GTL);
                     //UIManager.setLookAndFeel(PrincipalResources.LookAndFeel_Mac);
                     //UIManager.setLookAndFeel(PrincipalResources.LookAndFeel_Metal);
