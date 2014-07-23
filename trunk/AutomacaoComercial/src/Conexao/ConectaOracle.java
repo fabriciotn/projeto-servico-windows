@@ -18,9 +18,13 @@ public class ConectaOracle {
             //estabelece conexão com o BD
             connection = DriverManager.getConnection(DB_URL,USER,PASS);
             System.out.println("Conexão estabelecida - Banco " + DB_URL);
-            //connection.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Falha ao se conectar!\n"+e.toString());
+            try {
+                connection.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
             e.printStackTrace();
         }
         return connection;
