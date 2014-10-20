@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AlunoOperationService WSDL service -->
+
+  <service name="AlunoOperation" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://classes.operations"/>
+      <parameter name="wsdlServiceElement" value="AlunoOperationService"/>
+      <parameter name="schemaQualified" value="http://entity,http://classes.operations"/>
+      <parameter name="wsdlServicePort" value="AlunoOperation"/>
+      <parameter name="className" value="operations.classes.AlunoOperation"/>
+      <parameter name="wsdlPortType" value="AlunoOperation"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://classes.operations" xmlns:retNS="http://classes.operations" xmlns:rtns="http://entity" name="modifyAlunoGrade" qname="operNS:modifyAlunoGrade" returnQName="retNS:modifyAlunoGradeReturn" returnType="rtns:Aluno" soapAction="">
+        <parameter xmlns:pns="http://classes.operations" xmlns:tns="http://entity" qname="pns:aluno" type="tns:Aluno"/>
+        <parameter xmlns:pns="http://classes.operations" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:grade" type="tns:float"/>
+      </operation>
+      <operation xmlns:operNS="http://classes.operations" xmlns:retNS="http://classes.operations" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="saveAluno" qname="operNS:saveAluno" returnQName="retNS:saveAlunoReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://classes.operations" xmlns:tns="http://entity" qname="pns:aluno" type="tns:Aluno"/>
+      </operation>
+      <parameter name="allowedMethods" value="saveAluno modifyAlunoGrade"/>
+
+      <typeMapping xmlns:ns="http://entity" qname="ns:Aluno" type="java:entity.Aluno" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:58554/PingService.svc?wsdl" uri="xml-resources/web-service-references/PingService_1/wsdl/localhost_58554/PingService.svc.wsdl"/>
+    <system systemId="http://localhost:58554/PingService.svc?xsd=xsd0" uri="xml-resources/web-service-references/PingService_1/wsdl/localhost_58554/PingService.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:58554/PingService.svc?xsd=xsd1" uri="xml-resources/web-service-references/PingService_1/wsdl/localhost_58554/PingService.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://localhost:58554/ContaLetrasService.svc?wsdl" uri="xml-resources/web-service-references/ContaLetrasService/wsdl/localhost_58554/ContaLetrasService.svc.wsdl"/>
+    <system systemId="http://localhost:58554/ContaLetrasService.svc?xsd=xsd0" uri="xml-resources/web-service-references/ContaLetrasService/wsdl/localhost_58554/ContaLetrasService.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:58554/ContaLetrasService.svc?xsd=xsd1" uri="xml-resources/web-service-references/ContaLetrasService/wsdl/localhost_58554/ContaLetrasService.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://localhost:27850/ContaLetras.asmx?WSDL" uri="xml-resources/web-service-references/ContaLetras/wsdl/localhost_27850/ContaLetras.asmx.wsdl"/>
+</catalog>
