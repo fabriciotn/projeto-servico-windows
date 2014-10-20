@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/entity/Aluno.java=UTF-8
+encoding//src/operations/classes/AlunoOperation.java=UTF-8
+encoding//src/operations/classes/AlunoOperationService.java=UTF-8
+encoding//src/operations/classes/AlunoOperationServiceLocator.java=UTF-8
+encoding//src/operations/classes/AlunoOperationSoapBindingStub.java=UTF-8
