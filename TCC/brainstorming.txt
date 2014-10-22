@@ -1,3 +1,8 @@
+Titulo: SISTEMA INTEGRADOR DOS DADOS TRANSFUSIONAIS PARA MELHOR EFICIÊNCIA DO CONTROLE TRANSFUSIONAL DE HEMOCOMPONENTES PRODUZIDOS E DISTRIBUIDOS PELA FUNDAÇÃO HEMOMINAS
+
+Orientador: Zenilton Kleber Gonçalves do Patrocínio Júnior
+
+
 1) O que fazer? 
 Webservice para disponibilizar para os hospitais conveniados realizarem a integração com o sistema do ciclo do sangue informando os dados dos pacientes que realizaram transfusões fechando completamente o fluxo dos hemocomponentes distribuidos.
 
