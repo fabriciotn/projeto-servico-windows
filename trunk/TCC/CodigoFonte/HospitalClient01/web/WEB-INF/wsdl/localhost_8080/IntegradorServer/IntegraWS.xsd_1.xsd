@@ -1,8 +1,61 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://Integrador.gov.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Integrador.gov.br/">
 
+<xs:element name="GravaPaciente" type="tns:GravaPaciente"/>
+
+<xs:element name="GravaPacienteResponse" type="tns:GravaPacienteResponse"/>
+
 <xs:element name="RecebeDados" type="tns:RecebeDados"/>
 
+<xs:element name="RecebeDadosPaciente" type="tns:RecebeDadosPaciente"/>
+
+<xs:element name="RecebeDadosPacienteResponse" type="tns:RecebeDadosPacienteResponse"/>
+
 <xs:element name="RecebeDadosResponse" type="tns:RecebeDadosResponse"/>
+
+<xs:complexType name="RecebeDadosPaciente">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RecebeDadosPacienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:paciente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="paciente">
+<xs:sequence>
+<xs:element name="abo" type="xs:string" minOccurs="0"/>
+<xs:element name="cpf" type="xs:string" minOccurs="0"/>
+<xs:element name="endereco" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="nomeDaMae" type="xs:string" minOccurs="0"/>
+<xs:element name="nomeDoPai" type="xs:string" minOccurs="0"/>
+<xs:element name="rg" type="xs:string" minOccurs="0"/>
+<xs:element name="rh" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GravaPaciente">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="cpf" type="xs:string" minOccurs="0"/>
+<xs:element name="rg" type="xs:string" minOccurs="0"/>
+<xs:element name="pai" type="xs:string" minOccurs="0"/>
+<xs:element name="mae" type="xs:string" minOccurs="0"/>
+<xs:element name="aboPac" type="xs:string" minOccurs="0"/>
+<xs:element name="rhPac" type="xs:string" minOccurs="0"/>
+<xs:element name="enderco" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GravaPacienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="RecebeDados">
 <xs:sequence>

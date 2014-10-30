@@ -28,12 +28,13 @@
             <div id="conteudo">
                 <h1>Hospital Madre Tereza</h1>
                 <p>Protótipo do sistema para integração com o Hemominas</p>
-                <br/><br/>
-                
-                <form method="post" action="registraOperacao.jsp" name="form1">
-                    Hemocomponente: <input type="text" name="bolsa" id="bolsa">
-                    <input type="submit" value="ok">
-                </form>
+                <br/>                
+                <div>
+                    <ul>
+                        <li><a href="paciente.jsp">Cadastrar paciente</a></li><br>
+                        <li><a href="procedimento.jsp">Registra procedimentos</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </body>

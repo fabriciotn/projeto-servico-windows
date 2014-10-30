@@ -10,15 +10,53 @@
 <message name="RecebeDadosResponse">
 <part name="parameters" element="tns:RecebeDadosResponse"/>
 </message>
+<message name="RecebeDadosPaciente">
+<part name="parameters" element="tns:RecebeDadosPaciente"/>
+</message>
+<message name="RecebeDadosPacienteResponse">
+<part name="parameters" element="tns:RecebeDadosPacienteResponse"/>
+</message>
+<message name="GravaPaciente">
+<part name="parameters" element="tns:GravaPaciente"/>
+</message>
+<message name="GravaPacienteResponse">
+<part name="parameters" element="tns:GravaPacienteResponse"/>
+</message>
 <portType name="IntegraWS">
 <operation name="RecebeDados">
 <input wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosRequest" message="tns:RecebeDados"/>
 <output wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosResponse" message="tns:RecebeDadosResponse"/>
 </operation>
+<operation name="RecebeDadosPaciente">
+<input wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteRequest" message="tns:RecebeDadosPaciente"/>
+<output wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteResponse" message="tns:RecebeDadosPacienteResponse"/>
+</operation>
+<operation name="GravaPaciente">
+<input wsam:Action="http://Integrador.gov.br/IntegraWS/GravaPacienteRequest" message="tns:GravaPaciente"/>
+<output wsam:Action="http://Integrador.gov.br/IntegraWS/GravaPacienteResponse" message="tns:GravaPacienteResponse"/>
+</operation>
 </portType>
 <binding name="IntegraWSPortBinding" type="tns:IntegraWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="RecebeDados">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="RecebeDadosPaciente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GravaPaciente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
