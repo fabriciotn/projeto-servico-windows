@@ -7,8 +7,11 @@ package br.gov.Integrador;
 
 import DAO.HemocomponenteDAO;
 import DAO.PacienteDAO;
+import DAO.UtilizacaoDAO;
 import POJO.Hemocomponente;
 import POJO.Paciente;
+import POJO.Utilizacao;
+import java.util.Calendar;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -74,6 +77,36 @@ public class IntegraWS {
         paciente.setEndereco(endereco);
 
         boolean retorno = pacienteDao.insert(paciente);
+
+        return retorno;
+    }
+    
+    
+    /**
+     * Método que grava os dados referente a utilização do hemocomponente
+     */
+    @WebMethod(operationName = "GravaUtilizacao")
+    public boolean insertUtilizacao(
+            @WebParam(name = "codPaciente") int codPaciente,
+            @WebParam(name = "codHemocomponente") String codHemocomponente,
+            @WebParam(name = "data") String data,
+            @WebParam(name = "motivo") String motivo,
+            @WebParam(name = "responsavel") String responsavel,
+            @WebParam(name = "obs") String obs,
+            @WebParam(name = "codInstituicao") int codInstituicao) {
+        
+        UtilizacaoDAO procedimentoDao = new UtilizacaoDAO();
+        Utilizacao procedimento = new Utilizacao();
+        
+        procedimento.setCodPaciente(codPaciente);
+        procedimento.setCodHemocomponente(codHemocomponente);
+        procedimento.setData(data);
+        procedimento.setMotivo(motivo);
+        procedimento.setResponsavel(responsavel);
+        procedimento.setObs(obs);
+        procedimento.setCodInstituicao(codInstituicao);
+
+        boolean retorno = procedimentoDao.insert(procedimento);
 
         return retorno;
     }

@@ -41,6 +41,39 @@ public interface IntegraWS {
 
     /**
      * 
+     * @param obs
+     * @param motivo
+     * @param codInstituicao
+     * @param data
+     * @param responsavel
+     * @param codHemocomponente
+     * @param codPaciente
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(operationName = "GravaUtilizacao")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GravaUtilizacao", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravaUtilizacao")
+    @ResponseWrapper(localName = "GravaUtilizacaoResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravaUtilizacaoResponse")
+    @Action(input = "http://Integrador.gov.br/IntegraWS/GravaUtilizacaoRequest", output = "http://Integrador.gov.br/IntegraWS/GravaUtilizacaoResponse")
+    public boolean gravaUtilizacao(
+        @WebParam(name = "codPaciente", targetNamespace = "")
+        int codPaciente,
+        @WebParam(name = "codHemocomponente", targetNamespace = "")
+        String codHemocomponente,
+        @WebParam(name = "data", targetNamespace = "")
+        String data,
+        @WebParam(name = "motivo", targetNamespace = "")
+        String motivo,
+        @WebParam(name = "responsavel", targetNamespace = "")
+        String responsavel,
+        @WebParam(name = "obs", targetNamespace = "")
+        String obs,
+        @WebParam(name = "codInstituicao", targetNamespace = "")
+        int codInstituicao);
+
+    /**
+     * 
      * @param id
      * @return
      *     returns br.gov.client1.Paciente

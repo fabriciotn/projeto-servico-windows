@@ -24,11 +24,13 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GravaUtilizacaoResponse_QNAME = new QName("http://Integrador.gov.br/", "GravaUtilizacaoResponse");
     private final static QName _RecebeDadosPacienteResponse_QNAME = new QName("http://Integrador.gov.br/", "RecebeDadosPacienteResponse");
     private final static QName _GravaPaciente_QNAME = new QName("http://Integrador.gov.br/", "GravaPaciente");
     private final static QName _GravaPacienteResponse_QNAME = new QName("http://Integrador.gov.br/", "GravaPacienteResponse");
     private final static QName _RecebeDados_QNAME = new QName("http://Integrador.gov.br/", "RecebeDados");
     private final static QName _RecebeDadosPaciente_QNAME = new QName("http://Integrador.gov.br/", "RecebeDadosPaciente");
+    private final static QName _GravaUtilizacao_QNAME = new QName("http://Integrador.gov.br/", "GravaUtilizacao");
     private final static QName _RecebeDadosResponse_QNAME = new QName("http://Integrador.gov.br/", "RecebeDadosResponse");
 
     /**
@@ -44,6 +46,14 @@ public class ObjectFactory {
      */
     public RecebeDadosResponse createRecebeDadosResponse() {
         return new RecebeDadosResponse();
+    }
+
+    /**
+     * Create an instance of {@link GravaUtilizacao }
+     * 
+     */
+    public GravaUtilizacao createGravaUtilizacao() {
+        return new GravaUtilizacao();
     }
 
     /**
@@ -87,6 +97,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GravaUtilizacaoResponse }
+     * 
+     */
+    public GravaUtilizacaoResponse createGravaUtilizacaoResponse() {
+        return new GravaUtilizacaoResponse();
+    }
+
+    /**
      * Create an instance of {@link Paciente }
      * 
      */
@@ -100,6 +118,15 @@ public class ObjectFactory {
      */
     public Hemocomponente createHemocomponente() {
         return new Hemocomponente();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GravaUtilizacaoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "GravaUtilizacaoResponse")
+    public JAXBElement<GravaUtilizacaoResponse> createGravaUtilizacaoResponse(GravaUtilizacaoResponse value) {
+        return new JAXBElement<GravaUtilizacaoResponse>(_GravaUtilizacaoResponse_QNAME, GravaUtilizacaoResponse.class, null, value);
     }
 
     /**
@@ -145,6 +172,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "RecebeDadosPaciente")
     public JAXBElement<RecebeDadosPaciente> createRecebeDadosPaciente(RecebeDadosPaciente value) {
         return new JAXBElement<RecebeDadosPaciente>(_RecebeDadosPaciente_QNAME, RecebeDadosPaciente.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GravaUtilizacao }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "GravaUtilizacao")
+    public JAXBElement<GravaUtilizacao> createGravaUtilizacao(GravaUtilizacao value) {
+        return new JAXBElement<GravaUtilizacao>(_GravaUtilizacao_QNAME, GravaUtilizacao.class, null, value);
     }
 
     /**

@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `integrador` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `integrador`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: integrador
 -- ------------------------------------------------------
@@ -26,6 +26,7 @@ DROP TABLE IF EXISTS `login`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `login` (
   `LOGIN` varchar(50) NOT NULL DEFAULT '' COMMENT 'LOGIN',
+  `NOME` varchar(150) NOT NULL,
   `PASS` varchar(50) NOT NULL DEFAULT '' COMMENT 'SENHA',
   `COD_INSTITUICAO` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'CODIGO DA INSTITUIÇAO',
   `EMAIL` varchar(50) DEFAULT NULL COMMENT 'E-MAIL',
@@ -41,6 +42,7 @@ CREATE TABLE `login` (
 
 LOCK TABLES `login` WRITE;
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` VALUES ('fabricio','FABRICIO NASCIMENTO','123',2,'fabriciotn@yahoo.com.br');
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-28 12:57:00
+-- Dump completed on 2014-10-30 20:09:39

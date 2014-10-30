@@ -15,8 +15,8 @@ import java.util.Calendar;
 public class Utilizacao {
     private int id;
     private int codPaciente;
-    private int codHemocomponente;
-    private Calendar data;
+    private String codHemocomponente;
+    private String data;
     private String motivo;
     private String responsavel;
     private String obs;
@@ -38,19 +38,19 @@ public class Utilizacao {
         this.codPaciente = codPaciente;
     }
 
-    public int getCodHemocomponente() {
+    public String getCodHemocomponente() {
         return codHemocomponente;
     }
 
-    public void setCodHemocomponente(int codHemocomponente) {
+    public void setCodHemocomponente(String codHemocomponente) {
         this.codHemocomponente = codHemocomponente;
     }
 
-    public Calendar getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Calendar data) {
+    public void setData(String data) {
         this.data = data;
     }
 

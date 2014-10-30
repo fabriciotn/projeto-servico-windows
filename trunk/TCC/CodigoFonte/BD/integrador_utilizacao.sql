@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `integrador` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `integrador`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: integrador
 -- ------------------------------------------------------
@@ -40,7 +40,7 @@ CREATE TABLE `utilizacao` (
   CONSTRAINT `FK_utilizacao_1` FOREIGN KEY (`COD_PACIENTE`) REFERENCES `paciente` (`ID`),
   CONSTRAINT `FK_utilizacao_2` FOREIGN KEY (`COD_HEMOCOMPONENTE`) REFERENCES `hemocomponente` (`CODIGO`),
   CONSTRAINT `FK_utilizacao_3` FOREIGN KEY (`COD_INSTITUICAO`) REFERENCES `instituicao` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='TABELA DE REGISTRO DE UTILIZAÇÃO DOS HEMOCOMPONENTES';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='TABELA DE REGISTRO DE UTILIZAÇÃO DOS HEMOCOMPONENTES';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,6 +49,7 @@ CREATE TABLE `utilizacao` (
 
 LOCK TABLES `utilizacao` WRITE;
 /*!40000 ALTER TABLE `utilizacao` DISABLE KEYS */;
+INSERT INTO `utilizacao` VALUES (1,1,'12014002005','2014-12-01','TESTE MOTIVO','TESTE RESPONSAVEL','OBSERVAÇÃO',2),(2,2,'12014002005','2014-00-30','LKLKJ','TESTE','asdfsadf',5),(3,1,'12014002011','2014-10-30','LKLKJ','sadfsd','sadfasdf',5);
 /*!40000 ALTER TABLE `utilizacao` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -61,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-28 12:57:00
+-- Dump completed on 2014-10-30 20:09:39
