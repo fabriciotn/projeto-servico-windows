@@ -41,6 +41,8 @@
             session.setAttribute("rhPaciente", result.getRh());
             session.setAttribute("enderecoPaciente", result.getEndereco());
             
+            session.setAttribute("codInstituicao", "5");
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -57,7 +59,7 @@
                 <p>Protótipo do sistema para integração com o Hemominas</p>
                 <br/><br/>
 
-                <form method="post" action="#" name="form1">
+                <form method="post" action="ServletProcedimento" name="form1">
                     <%
                         out.println("<h3>Hemocomponente: " + session.getAttribute("numeroBolsa") + "</h3>");
                         out.println("<b>Descrição: </b>" + session.getAttribute("descricaoBolsa") + "<br>");

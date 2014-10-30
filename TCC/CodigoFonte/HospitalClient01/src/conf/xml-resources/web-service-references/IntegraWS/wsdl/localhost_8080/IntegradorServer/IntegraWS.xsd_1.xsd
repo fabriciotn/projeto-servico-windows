@@ -4,6 +4,10 @@
 
 <xs:element name="GravaPacienteResponse" type="tns:GravaPacienteResponse"/>
 
+<xs:element name="GravaUtilizacao" type="tns:GravaUtilizacao"/>
+
+<xs:element name="GravaUtilizacaoResponse" type="tns:GravaUtilizacaoResponse"/>
+
 <xs:element name="RecebeDados" type="tns:RecebeDados"/>
 
 <xs:element name="RecebeDadosPaciente" type="tns:RecebeDadosPaciente"/>
@@ -35,6 +39,24 @@
 <xs:element name="nomeDoPai" type="xs:string" minOccurs="0"/>
 <xs:element name="rg" type="xs:string" minOccurs="0"/>
 <xs:element name="rh" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GravaUtilizacao">
+<xs:sequence>
+<xs:element name="codPaciente" type="xs:int"/>
+<xs:element name="codHemocomponente" type="xs:string" minOccurs="0"/>
+<xs:element name="data" type="xs:string" minOccurs="0"/>
+<xs:element name="motivo" type="xs:string" minOccurs="0"/>
+<xs:element name="responsavel" type="xs:string" minOccurs="0"/>
+<xs:element name="obs" type="xs:string" minOccurs="0"/>
+<xs:element name="codInstituicao" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GravaUtilizacaoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
 </xs:sequence>
 </xs:complexType>
 

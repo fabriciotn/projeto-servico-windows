@@ -10,6 +10,12 @@
 <message name="RecebeDadosResponse">
 <part name="parameters" element="tns:RecebeDadosResponse"/>
 </message>
+<message name="GravaUtilizacao">
+<part name="parameters" element="tns:GravaUtilizacao"/>
+</message>
+<message name="GravaUtilizacaoResponse">
+<part name="parameters" element="tns:GravaUtilizacaoResponse"/>
+</message>
 <message name="RecebeDadosPaciente">
 <part name="parameters" element="tns:RecebeDadosPaciente"/>
 </message>
@@ -27,6 +33,10 @@
 <input wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosRequest" message="tns:RecebeDados"/>
 <output wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosResponse" message="tns:RecebeDadosResponse"/>
 </operation>
+<operation name="GravaUtilizacao">
+<input wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoRequest" message="tns:GravaUtilizacao"/>
+<output wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoResponse" message="tns:GravaUtilizacaoResponse"/>
+</operation>
 <operation name="RecebeDadosPaciente">
 <input wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteRequest" message="tns:RecebeDadosPaciente"/>
 <output wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteResponse" message="tns:RecebeDadosPacienteResponse"/>
@@ -39,6 +49,15 @@
 <binding name="IntegraWSPortBinding" type="tns:IntegraWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="RecebeDados">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GravaUtilizacao">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
