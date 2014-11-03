@@ -1,0 +1,94 @@
+ul.menubar{
+	margin: auto;
+	padding: 0px;
+	font-size: 100%;
+}
+
+
+ul.menubar .submenu{
+	width:130px;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	float:left;
+	text-align:center;
+	*text-align:center;
+	font-size:12px;
+
+}
+
+ul.menubar ul.menu{
+	display: none;
+	position: absolute;
+	margin: 0px;
+}
+
+ul.menubar a{
+	padding: 8px;
+	display:block;
+	text-decoration: none;
+	color:#990000;
+	font-weight:bold;
+}
+
+ul.menubar a:hover{
+	background-color: #00F;
+}
+
+
+ul.menu, ul.menu ul{
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+	width:200px; /* Width of Menu Items */
+	background-color: #FFFFFF; /* IE6 Bug */
+}
+
+ul.menu li{
+	position: relative;
+	list-style: none;
+	border: 0px;
+	width:200px;
+}
+
+ul.menu li a{
+	display: block;
+	text-decoration: none;
+	border-bottom: 0px;
+	color: #777;
+	padding: 5px 10px 5px 5px;
+	background-color:#CED9F8;
+	border-bottom:1px dotted #CCC;
+}
+
+ul.menu li sup{
+	font-weight:bold;
+	font-size:7px;
+	color: red;
+}
+
+
+ul.menu ul{
+	position: absolute;
+	display: none;
+	left: 2px; /* Set 1px less than menu width */
+	top: 0px;
+}
+
+/* Fix IE. Hide from IE Mac \*/
+* html ul.menu li { float: left; height: 1px; }
+* html ul.menu li a { height: 1px; }
+/* End */
+
+
+ul.menu li.submenu ul { display: none; } /* Hide sub-menus initially */
+
+ul.menu li a:hover {
+	
+	color: #333;
+	background-color:#CED9F8;}
+
+#fix_ie {
+float:left;
+*margin-left:177px;	
+}

@@ -1,0 +1,152 @@
+#cep{
+	width:10px
+}
+body{
+font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+margin:0
+}
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+/* ----------- My Form ----------- */
+.myform{
+	margin:0 auto;
+	width:450px;/*850*/
+	padding:14px;
+/*	height:620px;*/
+}
+
+/* ----------- stylized ----------- */
+#stylized, #stylized1{
+	border:solid 2px #900;
+	background:#f8f8f8;
+	/*background-image:url(IMGS/rodape.jpg); background-position:bottom right; background-repeat:no-repeat; */
+}
+#stylized h1, #stylized1 h1 {
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom:8px;
+}
+#stylized p, #stylized1 p{
+	font-size:11px;
+	color:#777777;
+	margin-bottom:20px;
+	border-bottom:solid 1px #CCCCCC;
+	padding-bottom:10px;
+}
+#stylized label, #stylized1 label{
+	display:block;
+	font-weight:bold;
+	text-align:right;
+	width:140px;
+	float:left;
+	font-size:10px;
+	clear:both
+}
+#stylized .small, #stylized1 .small{
+	color:#777777;
+	display:block;
+	font-size:9px;
+	font-weight:normal;
+	text-align:right;
+	width:140px;
+}
+
+#stylized .labelSexo, #stylized1 .labelSexo{
+	color:#777777;
+	float:left;
+	display:block;
+	font-size:9px;
+	font-weight:normal;
+	text-align:left;
+	width:70px;
+}
+
+#stylized .labelPerfil, #stylized1 .labelPerfil{
+	color:#777777;
+	display:block;
+	font-size:9px;
+	font-weight:normal;
+	text-align:left;
+	width:110px;
+	line-height:20px;
+}
+
+#stylized fieldset label, #stylized1 fieldset label, #stylized fieldset .small, #stylized1 fieldset .small{
+	width:100px;
+}
+
+#stylized input[type=text], select, #stylized1 input[type=text], select{
+	float:left;
+	font-size:10px;
+	padding:3px 2px;
+	border:solid 1px #CCCCCC;
+	width:200px;
+	margin:2px 0 3px 5px;
+	text-transform:uppercase;
+}
+.cinza{
+color:#999;	
+}
+.invisivel{
+display:none;	
+}
+
+.informacoes{
+	margin-left:110px;
+	font-size:10px;
+}
+
+#stylized input[type=radio], #stylized1 input[type=radio],#stylized input[type=checkbox], #stylized1 input[type=checkbox]{
+	float:left;
+}
+
+#stylized button, #stylized1 button{
+	clear:both;
+	width:125px;
+	height:31px;
+	background:#900;
+	text-align:center;
+	line-height:31px;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:bold;
+	margin:0 auto;
+	margin-top:10px
+}
+
+#stylized fieldset, #stylized1 fieldset{
+	clear:both;
+	border:solid 1px #CCCCCC;
+	margin-top:10px
+}
+#stylized legend, #stylized1 legend{
+	font-size:11px;
+	color:#777777;
+	padding-bottom:10px;
+}
+
+.padrao{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+}
+
+.padrao .sub td{
+	font-weight:bold;
+	text-align:center;
+	background-color:#E0E0E0;
+}
+.coluna{
+	margin-left:25px;
+	float:left;
+}
+.coluna_opcoes{
+	width:140px;
+}
+.linha{
+	margin-left:25px;
+	clear:both;	
+}
+.loading{
+	display:none;
+}
