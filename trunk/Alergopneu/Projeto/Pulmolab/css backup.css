@@ -1,0 +1,911 @@
+﻿*{
+	margin:0;
+	padding:0;
+	}
+body{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#666;
+	text-align:justify;
+	font-size:12px;
+	background-color:#FBFBFB;
+	scrollbar-arrow-color:#C0BDAC;
+    scrollbar-3dlight-color:#EBEBEB;
+    scrollbar-highlight-color:#EBEBEB;
+    scrollbar-face-color:#D2DBDF;
+    scrollbar-shadow-color:#EBEBEB;
+    scrollbar-darkshadow-color:#FFFFFF ;
+    scrollbar-track-color:#F2F2F2;
+	
+	}
+#geral{
+	width:989px;
+	margin:auto;
+	}	
+	
+	/*ESPECIFICAÇÃO TOPO*/
+	
+#engloba_topo{
+	width:100%;
+	float:left;
+	background:url(img/fundo_topo.jpg) repeat-x;
+	}		
+#topo{
+	width:989px;
+	height:150px;
+	margin:auto;
+	}
+
+	/*ESPECIFICAÇÃO MENU*/
+		
+#engloba_menu{
+	width:100%;
+	float:left;
+	background:url(img/fundo_menu.jpg) repeat-x;
+	}		
+#menu{
+	width:989px;
+	height:42px;
+	margin:auto;
+	position: relative;
+	z-index:4000;	
+	}
+	/*ESPECIFICAÇÃO PARTE SUPERIOR  */
+		
+#engloba_superior{
+	width:100%;
+	float:left;
+	background:url(img/fundo_superior.jpg) repeat-x;
+	position:relative;
+	z-index:999;
+	}		
+#superior{
+	width:989px;
+	height:270px;
+	margin:auto;
+	}
+	
+
+	/*ESPECIFICAÇÃO BANNER*/	
+	
+#banner{
+	width:539px;
+	float:left;
+	margin-top:10px;
+	margin-left:25px;
+	}
+	
+
+	/*ESPECIFICAÇÃO SEJA BEM VINDO*/	
+	
+#apresentacao{
+	width:360px;
+	height:240px;
+	float:right;
+	margin-top:10px;
+	margin-right:25px;
+	}	
+#titulo_apresentacao{
+	width:360px;
+	height:auto;
+	float:left;
+	font-size:14px;
+	font-weight:800;
+	}
+#texto_apresentacao{
+	width:360px;
+	height:87px;
+	float:left;
+	margin-top:10px;
+	}	
+#leia_mais {
+	width:360px;
+	color:#F00;
+	float: right;
+	text-align:right;
+	margin-top:2px;
+	color:#F00;
+	}
+
+	/*ESPECIFICAÇÃO FORUM*/
+		
+#duvidas_forum{
+	width:360px;
+	height:95px;
+	float:left;
+	margin-top:10px;
+	}
+#fundo_forum{
+	width:541px;
+	height:244px;
+	float:left;
+	padding:30px;
+	margin-top:25px;
+	margin-left:20px;
+	background-image:url(img/fundo_forum.jpg);
+	}	
+#titulo_forum_nao_cadastrado{
+	width:253px;
+	color:#003366;
+	font-size:17px;
+	float:left;
+    }
+#titulo_forum_cadastrado{
+	width:253px;
+	color:#003366;
+	font-size:17px;
+	float: right;
+    }
+#engloba_forum{
+	width:253px;
+	float:left;
+	margin-top:20px;
+	}
+#engloba_forum2{
+	width:253px;
+	float: right;
+	margin-top:20px;
+	}		
+#fundo_forum_cadastro{
+	width:253px;
+	height:155px;
+	float:left;
+	margin-top:20px;
+	background-image:url(img/fundo_forum_cadastro.jpg);
+	}
+#fundo_forum_cadastro2{
+	width:253px;
+	height:155px;
+	float: left;
+	margin-top:20px;
+	background-image:url(img/fundo_forum_cadastro.jpg);
+	}
+#nome_forum{
+	width:238px;
+	float:left;
+	font-size:15px;
+	padding-left:15px;
+	margin-top:25px;
+	}	
+#email_forum{
+	width:238px;
+	float:left;
+	font-size:15px;
+	padding-left:15px;
+	margin-top:10px;
+	}	
+#ok_forum{
+	width:32px;
+	height:20px;	
+	float:right;
+	text-align:center;
+	background:#EBEFF1;
+	margin-top:10px;
+	margin-right:10px;
+	}	
+#senha_nova{
+	width:243px;
+	float:left;
+	text-align:right;
+	margin-top:10px;
+	color:#003366;
+	font-size:12px;
+	padding-right:10px;
+	}								
+	
+	/*ESPECIFICAÇÃO CENTRO*/	
+	
+#centro{
+	width:989px;
+	float:left;
+	min-height:500px;
+	padding-bottom:20px;
+	}
+	
+
+	/*ESPECIFICAÇÃO ESQUERDA*/	
+	
+#esquerda{
+	width:465px;
+	float:left;
+	margin-left:25px;
+	margin-top:30px;
+	}
+#engloba_blocos{
+	width:1000px;
+	height:275px;
+	float:left;
+	}
+#bloco{
+	width:300px;
+	height:auto;
+	float:left;
+	margin-top:20px;
+	padding: 10px;	
+	}
+#titulo_bloco{
+	width:300px;
+	height:25px;
+	float:left;
+	margin-bottom:20px;
+	padding-left:5px;
+	}
+#fundo1{
+	width:300px;
+	height:197px;
+	border:2px solid #CCC;
+	float:left;
+	background-image:url(img/bloco1.png)
+	
+	}	
+#fundo2{
+	width:326px;
+	height:197px;
+	border:1px solid #CCC;
+	float:left;
+	background-image:url(img/bloco2.png)
+	}	
+				
+#fundo3{
+	width:326px;
+	height:197px;
+	border:2px solid #CCC;
+	float:left;
+	background-image:url(img/bloco3.png)
+	}	
+	
+#tira_duvida{
+	width:326px;
+	height:175px;
+	float:left;
+	}
+#titulo_duvida{
+	width:326px;
+	height:28px;
+	float:left;
+	text-align:center;
+	margin-top:20px;
+	}
+#texto_duvida{
+	width:326px;
+	float:left;
+	text-align:center;
+	margin-top:30px;
+	margin-bottom:30px;
+	}
+#linha_inferior{
+	width:1px;
+	height:175px;
+	float:left;
+	text-align:center;
+	}	
+#foto_historia{
+	width:41px;
+	height:65px;
+	float:left;
+	margin-top:25px;
+	margin-left:30px;
+	
+	}
+#texto_historia{
+	width:159px;
+	height:39px;
+	float:left;
+	margin-top:30px;
+	margin-left:15px;
+	margin-bottom:25px;		
+	}		
+		
+	/*ESPECIFICAÇÃO CORPO CLINICO*/	
+	
+#fundo_corpoclinico{
+	width:465px;
+	height:167px;
+	float:left;
+	background-image:url(img/fundo_corpoclinico.jpg);
+	}	
+#titulo_corpoclinico{
+	width:450px;
+	height:auto;
+	float:left;
+	padding-left:10px;
+	margin-top:15px;
+	}
+#fundo_fotocorpoclinico{
+	width:59px;
+	height:78px;
+	float:left;
+	text-align:center;
+	margin-top:40px;
+	margin-left:8px;
+	background-image:url(img/fundo_fotocorpoclinico.png);
+	}	
+#englobatexto_corpoclinico{
+	width:200px;
+	height:105px;
+	float:left;
+	margin-top:30px;
+	margin-left:30px;	
+	}
+#titulo_corpoclinico_1{
+	width:245px;
+	height:auto;
+	float:left;
+	color:#D10000;
+	font-size:14px;
+	margin-top:5px;
+	}
+#texto_corpoclinico_1{
+	width:200px;
+	height:66px;
+	float:left;
+	color: #333;
+	font-size:11px;
+	margin-top:10px;	
+	}
+#mais_corpoclinico{
+	width:100px;
+	height:17px;
+	float: right;
+	text-align:right;
+	margin-right:5px;
+	}
+	
+
+	/*ESPECIFICAÇÃO PROTOCOLO*/	
+	
+#pesquisa_protocolo{
+	width:450px;
+	height:51px;
+	float:left;
+	margin-top:30px;
+	}	
+	
+
+	/*ESPECIFICAÇÃO NOTICIAS*/				
+				
+#engloba_noticia{
+	width:465px;
+	height:165px;
+	float:left;
+	margin-top:20px;
+	}	
+#titulo_noticia{
+	width:450px;
+	height:auto;
+	float:left;
+	padding-left:10px;
+	margin-top:15px;
+	}
+#titulo_noticia1{
+	width:450px;
+	height:auto;
+	color:#D10000;
+	float:left;
+	padding-left:10px;
+	margin-top:10px;
+	}
+#titulo_noticia1_home{
+	width:300px;
+	height:45px;
+	color:#D10000;
+	float:left;
+	padding-left:10px;
+	margin-top:10px;
+	margin-left:5px;
+	}	
+#texto_noticia{
+	width:450px;
+	float:left;
+	font-size:11px;
+	color:#000;
+	padding-left:10px;
+	margin-top:10px;
+	}	
+#texto_noticia_home{
+	width:300px;
+	height:30px;
+	float:left;
+	font-size:11px;
+	color:#000;
+	padding-left:10px;
+	margin-top:10px;
+	margin-left:5px;
+	margin-bottom:0px;	
+	}
+#mais_noticia{
+	width:18px;
+	height:17px;
+	float: left;
+	margin-top:50px;
+	margin-left:-20px;	
+	}
+#leia_todasnoticias{
+	width:130px;
+	float:right;
+	text-align:right;
+	margin-top:30px;
+	margin-right:10px;
+	color:#D10000;
+	}
+		
+	
+   /*ESPECIFICAÇÃO DIREITA*/	
+   
+#direita{
+	width:373px;
+	height:auto;
+	float:right;
+	margin-top:30px;
+	margin-right:25px;
+	}
+#titulo_agenda{
+	width:373px;
+	height:auto;
+	 float:left;
+	 }	
+	
+   /*ESPECIFICAÇÃO CALENDARIO*/
+   
+#fundo_calendario{
+	width:373px;
+	height:270px;
+	float:left;
+	margin-top:5px;
+	/*background:url(img/calendario_atual_copy.png) no-repeat;
+	background-image:url(img/calendario_atual_copy.png);*/
+	
+	}
+#historia_wilson{
+	width:373px;
+	height:133px;
+	float:left;
+	margin-top:40px;
+	
+	}
+#calendario_home{
+	width:290px;
+	height:182px;
+	margin:auto;
+	margin-top:7px;
+	background-image:url(img/calendario_home2.png);
+	}		   
+   
+/*ESPECIFICAÇÃO RODAPE*/
+
+		
+#engloba_rodape{
+	width:100%;
+	float:left;
+	background:url(img/fundo_rodape.jpg) repeat-x;
+	}		
+#rodape{
+	width:989px;
+	height:168px;
+	margin:auto;
+	}
+	
+#texto_rodape{
+	width:472px;
+	float:left;
+	margin-top:25px;
+	margin-left:50px;
+	}	
+#bloco1{
+	width:275px;
+	height:50px;
+	float:left;
+	text-align:right;
+	}	
+#caixa1{
+	width:145px;
+	height:40px;
+	float:left;
+	margin-left:20px;
+	}	
+.negrito{
+	font-weight:bold;
+	}	
+#divisoria{
+	width:439px;
+	height:1px;
+	float:left;
+	margin-top:15px;
+	margin-bottom:15px;
+	}
+#bloco2{
+	width:275px;
+	height:50px;
+	float:left;
+	text-align:right;
+	}	
+#caixa2{
+	width:145px;
+	height:40px;
+	float:left;
+	margin-left:20px;
+	}	
+	
+#hba{
+	width:100px;
+	color: #999;
+	text-align:right;
+	line-height:24px;
+	font-size:10px;
+	float:right;
+	margin-right:25px;
+	margin-top:25px;
+	}
+	
+#arearestrita{
+	width:100px;
+	color: #999;
+	text-align:right;
+	line-height:24px;
+	font-size:11px;
+	float: left;
+	margin-top:55px;
+	margin-left:345px;
+	}	
+		
+/*ESPECIFICAÇÃO DIREITO PEQUENO*/	
+
+#direita_menor{
+	width:290px;
+	float: right;
+	margin-top:30px;
+	margin-right:15px;
+	}
+#titulo_direita_menor{
+	width:290px;
+	float:left;
+	}
+#calendario_menor{
+	width:290px;
+	height:200px;
+	float:left;
+	margin-top:10px;
+	/*background-image:url(img/calendario_atual_menor.png);*/
+	background-image:url(img/calendario_atual_menor_copy.png);
+	}		
+#titulo_linksinteressantes{
+	width:290px;
+	float:left;
+	margin-top:30px;
+	}	
+#textolinksesquerda	{
+	width:290px;
+    color:#333333;
+	font-size:11px;
+	float:left;
+	margin-top:15px;
+	}
+#titulo_noticiadireita{
+	width:290px;
+	margin-top:25px;
+	float:left;
+	margin-bottom:3px;
+	}	
+#bloco_noticiaesquerda{
+	width:290px;
+	float:left;
+	margin-top:10px;
+	}
+#titulo_esquerda{
+	width:290px;
+	font-size:11px;
+	float:left;
+	color:#D10000;	
+	}
+#texto_esquerda{
+	width:290px;
+	float:left;
+	font-size:11px;
+	margin-top:10px;
+	color:#333333;
+	}	
+.vejamaisesquerda{
+	float:right;
+	margin-top:2px;
+	color: #333;
+	text-decoration:none
+	}
+#pesquisa_protocolo_menor{
+	width:290px;
+	height:66px;
+	float:left;
+	margin-top:30px;
+	}		
+		
+/*ESPECIFICAÇÃO TEXTO*/	
+
+#texto{
+	width:630px;
+	float:left;
+	margin-top:30px;
+	margin-left:15px;
+	}	
+#titulo_centro{
+	width:630px;
+	}
+#texto_centro{
+	width:630px;
+	margin-top:20px;	
+	}	
+.link a{
+	color:#D10000;
+	text-decoration:none
+	
+	}
+.link a:hover{
+	color:#D10000;
+	text-decoration: underline
+	
+	}
+.link_links a{
+	color: #333;
+	text-decoration:none
+	
+	}
+.link_links a:hover{
+	color: #333;
+	text-decoration: underline
+	
+	}
+	
+/*ESPECIFICAÇÃO TABELA*/		
+	
+.table tr td{
+	border: 1px dotted #CCC;
+	text-align: left;
+	line-height:20px;
+	
+		}
+.cor_cinza_claro{
+	background-color:#DFE6EC;
+	}
+.cor_cinza_escuro{
+	background-color:#C2D0DA;
+	
+	}			
+.titulo_tabela{
+	text-align:center;
+	background-color:#859CB1;
+	color:#FFF;
+	font-weight:bold;
+	
+	}
+.tema_tabela{
+	text-align:left;
+	}			
+	
+.destaque1{
+	color:#6E808C
+	}		
+.destaque_vermelho{
+	color:#D10000;
+	font:14px;
+	}	
+#texto_centro_contato{
+	width:370px;
+	height:210px;
+	margin-top:20px;
+	background-color:#EEEEEE;
+	border:1px solid #CCC	
+	}	
+				
+/********************************		ESTILO CALENDARIO		***********************************************/				
+#diaCalendarioMaior{
+	background:url(img/quadradoDia_maior.png) no-repeat;
+}
+.tableCalendario tr td{
+	width:36px;
+	height:19px;
+	color:#67808F;
+	font-weight:bold;
+}
+
+.tableCalendario{
+	padding-left:3px;
+	margin-left:10px;
+	margin-bottom:20px;
+	text-align:center;
+	}
+.mesCalendario{
+/*	background-image:url(img/calendario_atual_menor.png);*/
+	margin-bottom:17px;
+	text-transform:uppercase;
+	text-align:center;
+	height:25px;
+	color:#FFFFFF;
+}
+.linha1 {
+	width:100%;
+	height:1px;
+	border-bottom:2px Solid #FFFFFF;
+	clear:both;
+}
+.diaAtualMaior{
+	text-decoration:underline;
+}
+.diaEvento1{
+	background:url(img/quadradoMaior_evento1.png) no-repeat; /*Dia com reuniao tipo Congresso*/
+	color:#F2F2E3;
+	cursor:help;
+}
+.diaEvento2{
+	background:url(img/quadradoMaior_evento2.png) no-repeat; /*Dia com reuniao tipo Congresso*/
+	color:#D1D9F1;
+	cursor:help;
+	}
+.diaDiferente1{
+	background:url(img/quadradoMaior_evento1.png) no-repeat; /*Dia com reuniao tipo Congresso*/
+	color:#F2F2E3;
+	cursor:help;
+}
+.diaDiferente2{
+	background:url(img/quadradoMaior_evento2.png) no-repeat; /*Dia com reuniao tipo Congresso*/
+	color:#D1D9F1;
+	cursor:help;
+}
+.diaAtual{
+	color:#006699;
+}
+/*************CALENDARIO DA DIREITA*********/
+#diaCalendarioPeq{
+	background:url(img/quadradoDia_menor.png) no-repeat;
+}
+.tableCalendarioPeq tr td{
+	width:30px;
+	height:15px;
+	color:#67808F;
+	font-weight:bold;
+}
+
+.tableCalendarioPeq{
+	margin-left:10px;
+	font-size:11px;
+	margin-bottom:20px;
+	text-align:center;
+	}
+.mesCalendarioPeq{
+	/*background-image:url(img/fundoMes.png);*/
+	text-transform:uppercase;
+	padding-top:5px;
+	text-align:center;
+	height:25px;
+	color:#006699;
+	margin-bottom:20px;
+}
+.linha1 {
+	width:100%;
+	height:1px;
+	border-bottom:2px Solid #FFFFFF;
+	clear:both;
+}
+.diaEventoPeq1{
+	background:url(img/quadradoMenor_evento1.png) no-repeat; /*Dia com reuniao tipo Congresso*/
+	cursor:help;
+	color:#F2F2E3;
+	}
+.diaEventoPeq2{
+	background:url(img/quadradoMenor_evento2.png) no-repeat; /*Dia com reuniao tipo Congresso*/
+	cursor:help;
+	color:#D1D9F1;;
+	}
+.diaDiferentePeq1{
+	background:url(img/quadradoMenor_evento1.png) no-repeat; /*Dia com reuniao tipo Congresso*/
+	cursor:help;
+	color:#F2F2E3;
+}
+.diaDiferentePeq2{
+	background:url(img/quadradoMenor_evento2.png) no-repeat; /*Dia com reuniao tipo Congresso*/
+	cursor:help;
+	color:#D1D9F1;
+}
+.diaAtualPeq{
+	/*color:#006699;*/
+	text-decoration:underline
+}
+
+
+.tabelaEvento{
+}
+.colunaData{
+	background:url(img/dataEvento.jpg) no-repeat;
+	height:95px;
+	width:96px;
+}
+.conteudoEvento{
+	padding-top:10px;
+}
+.tituloEvento{
+	text-align:left;
+	padding-bottom:10px;
+}
+	
+/*************Galeria*********/	
+
+h2{
+	padding-top:15px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	}	
+	
+/*************CADASTRO EXEMPLO*********/		
+	
+#cadastro_exemplo{
+	width:505px;
+	min-height:657px;
+	background-color:#F4F9F9;
+	border:1px solid #CCC;
+	text-decoration:#666666;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin-top:10px;
+	margin-left:10px;
+	margin:auto;
+	}
+#titulo_cadastro_exemplo{
+	width:479px;
+	height:32px;
+	text-align:center;
+	font-size:15px;
+	color:#445560;
+	border:1px solid #FFF;
+	background-color:#F4F4F4;
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:5px;
+	}	
+#table_cadastro_exemplo{
+	width:480px;
+	height:590px;
+	float:left;
+	font-size:12px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	margin-top:10px;
+	margin-left:10px;
+	margin-right:10px;
+/*	border:1px solid #F00;*/
+	
+	}
+	
+#observacao_cadastro_exemplo{
+	width:479px;
+	height:32px;
+	text-align:center;
+	font-size:11px;
+	color: #F00;
+	border:1px solid #FFF;
+	background-color:#F4F4F4;
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-left:auto;
+	margin-right:auto;	
+	}
+.asterisco{
+	color:#F00;
+	}		
+#quadradoEvento{
+	padding: 10px;
+	border:1px solid #CCCCCC; 
+	background-color:#FCFCFC; 
+	min-height:475px;
+}	
+.tabela {
+background:#F4F4F4;
+color:#999;	
+font-size:14px;
+}
+.feriado{
+	background:url(img/quadradoMenor_eventoferiado.png) no-repeat; /*Dia com reuniao tipo Congresso*/
+}
+
+.informacoes_categoria{
+	padding:10px;
+	background:#D8E0E3;
+	font-weight:bold;
+	font-size:14px;
+	border:1px solid #CCC}

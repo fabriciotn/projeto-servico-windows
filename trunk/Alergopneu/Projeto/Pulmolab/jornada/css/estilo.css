@@ -1,0 +1,235 @@
+
+body {
+margin:0px;
+background:url(../img/topo_fundo.jpg) 50% 0 no-repeat;	
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.centraliza {
+width:875px;
+margin:auto;	
+}
+
+#topo {
+width:875px;
+height:151px;	
+padding-top:20px;
+}
+
+#logo {
+width:280px;
+float:left;	
+}
+
+#menu {
+width:595px;
+float:left;
+padding:20px 0px 0px 0px;
+text-align:right;
+}
+
+#banner {
+width:670px;
+float:left;	
+min-height:260px;
+}
+
+#palestrantes {
+width:205px;
+float:left;	
+min-height:260px;
+}
+
+#local, #especialista {
+width:205px;
+float:left;	
+}
+
+ul {
+list-style:none;
+}
+
+ul li {
+font-size:13px;
+float:left;	
+margin:10px;
+color:#9B96CB;
+}
+
+ul li a {
+color:#9B96CB;
+text-decoration:none;
+}
+
+ul li a:hover {
+color:#9B96CB;
+text-decoration:underline;
+}
+
+#sobre, #interna {
+width:670px;
+float:left;	
+}
+
+#sobre p {
+font-size:12px;	
+color:#999;
+line-height:22px;
+padding:0px 15px 0px 35px;
+}
+
+#rodape {
+width:100%;
+height:195px;
+float:left;	
+padding:60px 0px 0px 0px;
+margin:20px 0px 0px 0px;
+background:url(../img/rodape_fundo.jpg) 50% 0 no-repeat;	
+text-align:center;
+}
+
+#lateral {
+width:205px;
+float:left;		
+font-size:11px;
+color:#999;
+}
+
+.alerta {
+width:507px;
+height:33px;
+background:url(../img/fundo_alerta.jpg);
+font-size:12px;
+color:#666;
+line-height:33px;
+padding:0px 0px 0px 40px;
+}
+
+.icone {
+margin:0px 10px 0px 0px;	
+}
+
+h2 {
+color:#9B95C9;
+font-size:18px;	
+}
+
+table {
+color:#999;	
+}
+
+table p {
+padding:0px;
+margin:0px;
+line-height:33px;
+}
+
+table tr td {
+border-bottom:1px solid #E9E9E9;
+padding:5px 0px 5px 0px;
+}
+
+table ul {
+list-style:square;	
+padding:0px;
+margin:10px 0px 0px 0px;
+}
+
+table ul li {
+font-size:11px;	
+color:#333;
+float:none;
+padding:0px;
+margin:0px 0px 0px 90px;
+}
+
+table .coluna {
+font-size:11px;
+color:#999;	
+font-weight:normal;
+text-align:center;
+}
+
+table .coluna2 {
+background:#E5E5E5;
+text-align:center;
+color:#333;	
+}
+
+table img {	
+padding:0px 0px 20px 0px;
+display:block;
+}
+
+table .palestrante {
+color:#666;	
+line-height:13px;
+}
+
+table ul li .palestrante {
+margin:0px 0px 0px 5px;	
+}
+
+h3 {
+font-size:17px;
+color:#D8262D;
+font-weight:normal;
+}
+
+h6 {
+font-weight:normal;
+font-size:11px;
+padding:0px;
+margin:0px;
+}
+
+#opiniao, #computado {
+display:none;	
+}
+
+p {
+font-size:12px;
+color:#333;	
+}
+
+.palestrantes {
+width:600px;
+border:1px solid #D4E0AE;
+background:#F0F4E3;
+padding:10px;	
+margin:0px 0px 20px 0px;
+min-height:150px;
+}
+
+.palestrantes img {
+margin:0px 10px 0px 0px;
+border:1px solid #CCC;
+}
+
+.palestrantes h3 {
+padding:0px;
+margin:0px;	
+}
+
+.tabela_inscricao {
+background:#F0F4E3;	
+}
+
+.tabela_inscricao tr td {
+font-size:12px;
+padding:10px;	
+}
+
+.tabela_inscricao .categoria {
+background:#E06D45;
+color:#FFF;	
+}
+
+.tabela_inscricao .topo {
+background:#837ABC;
+color:#FFF;
+}
+
+.tabela_inscricao .valores {
+background:#EAE9F3;
+}
