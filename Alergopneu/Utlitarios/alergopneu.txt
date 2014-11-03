@@ -6,7 +6,7 @@ id: alergopneu@hotmail.com
 senha: wrocha55
 
 maquina virtual
-usuario: alergopneu/alergopneu
+usuario: alergopneu\alergopneu
 senha: Wrocha55
 
 
