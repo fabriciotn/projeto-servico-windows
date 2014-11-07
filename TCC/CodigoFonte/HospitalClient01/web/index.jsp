@@ -32,7 +32,8 @@
                 <div>
                     <ul>
                         <li><a href="paciente.jsp">Cadastrar paciente</a></li><br>
-                        <li><a href="procedimento.jsp">Registra procedimentos</a></li>
+                        <li><a href="procedimento.jsp">Registra procedimentos</a></li><br>
+                        <li><a href="reacoesAdversas.jsp">Visualiza Reações Adversas</a></li><br>
                     </ul>
                 </div>
             </div>

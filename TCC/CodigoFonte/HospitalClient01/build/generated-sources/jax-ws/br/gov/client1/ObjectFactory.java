@@ -24,14 +24,18 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _ListarReacoesResponse_QNAME = new QName("http://Integrador.gov.br/", "ListarReacoesResponse");
     private final static QName _GravaUtilizacaoResponse_QNAME = new QName("http://Integrador.gov.br/", "GravaUtilizacaoResponse");
     private final static QName _RecebeDadosPacienteResponse_QNAME = new QName("http://Integrador.gov.br/", "RecebeDadosPacienteResponse");
     private final static QName _GravaPaciente_QNAME = new QName("http://Integrador.gov.br/", "GravaPaciente");
     private final static QName _GravaPacienteResponse_QNAME = new QName("http://Integrador.gov.br/", "GravaPacienteResponse");
-    private final static QName _RecebeDados_QNAME = new QName("http://Integrador.gov.br/", "RecebeDados");
+    private final static QName _ListarReacoes_QNAME = new QName("http://Integrador.gov.br/", "ListarReacoes");
     private final static QName _RecebeDadosPaciente_QNAME = new QName("http://Integrador.gov.br/", "RecebeDadosPaciente");
     private final static QName _GravaUtilizacao_QNAME = new QName("http://Integrador.gov.br/", "GravaUtilizacao");
-    private final static QName _RecebeDadosResponse_QNAME = new QName("http://Integrador.gov.br/", "RecebeDadosResponse");
+    private final static QName _GravarReacoes_QNAME = new QName("http://Integrador.gov.br/", "GravarReacoes");
+    private final static QName _GravarReacoesResponse_QNAME = new QName("http://Integrador.gov.br/", "GravarReacoesResponse");
+    private final static QName _RecebeDadosHemocomponente_QNAME = new QName("http://Integrador.gov.br/", "RecebeDadosHemocomponente");
+    private final static QName _RecebeDadosHemocomponenteResponse_QNAME = new QName("http://Integrador.gov.br/", "RecebeDadosHemocomponenteResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: br.gov.client1
@@ -41,11 +45,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RecebeDadosResponse }
+     * Create an instance of {@link RecebeDadosHemocomponenteResponse }
      * 
      */
-    public RecebeDadosResponse createRecebeDadosResponse() {
-        return new RecebeDadosResponse();
+    public RecebeDadosHemocomponenteResponse createRecebeDadosHemocomponenteResponse() {
+        return new RecebeDadosHemocomponenteResponse();
+    }
+
+    /**
+     * Create an instance of {@link RecebeDadosHemocomponente }
+     * 
+     */
+    public RecebeDadosHemocomponente createRecebeDadosHemocomponente() {
+        return new RecebeDadosHemocomponente();
+    }
+
+    /**
+     * Create an instance of {@link GravarReacoesResponse }
+     * 
+     */
+    public GravarReacoesResponse createGravarReacoesResponse() {
+        return new GravarReacoesResponse();
+    }
+
+    /**
+     * Create an instance of {@link GravarReacoes }
+     * 
+     */
+    public GravarReacoes createGravarReacoes() {
+        return new GravarReacoes();
     }
 
     /**
@@ -65,11 +93,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RecebeDados }
+     * Create an instance of {@link ListarReacoes }
      * 
      */
-    public RecebeDados createRecebeDados() {
-        return new RecebeDados();
+    public ListarReacoes createListarReacoes() {
+        return new ListarReacoes();
     }
 
     /**
@@ -105,6 +133,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ListarReacoesResponse }
+     * 
+     */
+    public ListarReacoesResponse createListarReacoesResponse() {
+        return new ListarReacoesResponse();
+    }
+
+    /**
      * Create an instance of {@link Paciente }
      * 
      */
@@ -118,6 +154,23 @@ public class ObjectFactory {
      */
     public Hemocomponente createHemocomponente() {
         return new Hemocomponente();
+    }
+
+    /**
+     * Create an instance of {@link Reacoes }
+     * 
+     */
+    public Reacoes createReacoes() {
+        return new Reacoes();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarReacoesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "ListarReacoesResponse")
+    public JAXBElement<ListarReacoesResponse> createListarReacoesResponse(ListarReacoesResponse value) {
+        return new JAXBElement<ListarReacoesResponse>(_ListarReacoesResponse_QNAME, ListarReacoesResponse.class, null, value);
     }
 
     /**
@@ -157,12 +210,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RecebeDados }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListarReacoes }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "RecebeDados")
-    public JAXBElement<RecebeDados> createRecebeDados(RecebeDados value) {
-        return new JAXBElement<RecebeDados>(_RecebeDados_QNAME, RecebeDados.class, null, value);
+    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "ListarReacoes")
+    public JAXBElement<ListarReacoes> createListarReacoes(ListarReacoes value) {
+        return new JAXBElement<ListarReacoes>(_ListarReacoes_QNAME, ListarReacoes.class, null, value);
     }
 
     /**
@@ -184,12 +237,39 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RecebeDadosResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GravarReacoes }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "RecebeDadosResponse")
-    public JAXBElement<RecebeDadosResponse> createRecebeDadosResponse(RecebeDadosResponse value) {
-        return new JAXBElement<RecebeDadosResponse>(_RecebeDadosResponse_QNAME, RecebeDadosResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "GravarReacoes")
+    public JAXBElement<GravarReacoes> createGravarReacoes(GravarReacoes value) {
+        return new JAXBElement<GravarReacoes>(_GravarReacoes_QNAME, GravarReacoes.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GravarReacoesResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "GravarReacoesResponse")
+    public JAXBElement<GravarReacoesResponse> createGravarReacoesResponse(GravarReacoesResponse value) {
+        return new JAXBElement<GravarReacoesResponse>(_GravarReacoesResponse_QNAME, GravarReacoesResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RecebeDadosHemocomponente }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "RecebeDadosHemocomponente")
+    public JAXBElement<RecebeDadosHemocomponente> createRecebeDadosHemocomponente(RecebeDadosHemocomponente value) {
+        return new JAXBElement<RecebeDadosHemocomponente>(_RecebeDadosHemocomponente_QNAME, RecebeDadosHemocomponente.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RecebeDadosHemocomponenteResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://Integrador.gov.br/", name = "RecebeDadosHemocomponenteResponse")
+    public JAXBElement<RecebeDadosHemocomponenteResponse> createRecebeDadosHemocomponenteResponse(RecebeDadosHemocomponenteResponse value) {
+        return new JAXBElement<RecebeDadosHemocomponenteResponse>(_RecebeDadosHemocomponenteResponse_QNAME, RecebeDadosHemocomponenteResponse.class, null, value);
     }
 
 }

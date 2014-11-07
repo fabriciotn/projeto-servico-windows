@@ -7,11 +7,14 @@ package br.gov.Integrador;
 
 import DAO.HemocomponenteDAO;
 import DAO.PacienteDAO;
+import DAO.ReacoesDAO;
 import DAO.UtilizacaoDAO;
 import POJO.Hemocomponente;
 import POJO.Paciente;
+import POJO.Reacoes;
 import POJO.Utilizacao;
-import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -25,8 +28,11 @@ public class IntegraWS {
 
     /**
      * Método que envia os dados do hemocomponente para o hospital client.
+     *
+     * @param numeroBolsa
+     * @return
      */
-    @WebMethod(operationName = "RecebeDados")
+    @WebMethod(operationName = "RecebeDadosHemocomponente")
     public Hemocomponente getData(@WebParam(name = "numeroBolsa") String numeroBolsa) {
         HemocomponenteDAO hemoDao = new HemocomponenteDAO();
         Hemocomponente bolsa = new Hemocomponente();
@@ -35,10 +41,12 @@ public class IntegraWS {
 
         return bolsa;
     }
-    
-    
+
     /**
      * Método que envia os dados do paciente para o hospital client.
+     *
+     * @param id
+     * @return
      */
     @WebMethod(operationName = "RecebeDadosPaciente")
     public Paciente getPaciente(@WebParam(name = "id") int id) {
@@ -52,6 +60,16 @@ public class IntegraWS {
 
     /**
      * Método que recebe os dados dos pacientes para gravar
+     *
+     * @param nome
+     * @param pai
+     * @param rg
+     * @param cpf
+     * @param mae
+     * @param endereco
+     * @param rhPac
+     * @param aboPac
+     * @return
      */
     @WebMethod(operationName = "GravaPaciente")
     public boolean insertPaciente(
@@ -63,10 +81,10 @@ public class IntegraWS {
             @WebParam(name = "aboPac") String aboPac,
             @WebParam(name = "rhPac") String rhPac,
             @WebParam(name = "enderco") String endereco) {
-        
+
         PacienteDAO pacienteDao = new PacienteDAO();
         Paciente paciente = new Paciente();
-        
+
         paciente.setNome(nome);
         paciente.setCpf(cpf);
         paciente.setRg(rg);
@@ -80,10 +98,18 @@ public class IntegraWS {
 
         return retorno;
     }
-    
-    
+
     /**
      * Método que grava os dados referente a utilização do hemocomponente
+     *
+     * @param codPaciente
+     * @param data
+     * @param codHemocomponente
+     * @param motivo
+     * @param codInstituicao
+     * @param obs
+     * @param responsavel
+     * @return
      */
     @WebMethod(operationName = "GravaUtilizacao")
     public boolean insertUtilizacao(
@@ -94,10 +120,10 @@ public class IntegraWS {
             @WebParam(name = "responsavel") String responsavel,
             @WebParam(name = "obs") String obs,
             @WebParam(name = "codInstituicao") int codInstituicao) {
-        
+
         UtilizacaoDAO procedimentoDao = new UtilizacaoDAO();
         Utilizacao procedimento = new Utilizacao();
-        
+
         procedimento.setCodPaciente(codPaciente);
         procedimento.setCodHemocomponente(codHemocomponente);
         procedimento.setData(data);
@@ -109,5 +135,31 @@ public class IntegraWS {
         boolean retorno = procedimentoDao.insert(procedimento);
 
         return retorno;
+    }
+
+    /**
+     * Método que envia os dados de reações transfusionais para os hospitais
+     * client.
+     *
+     * @param nomePaciente
+     * @return List<Reacoes> reacoes
+     * 
+     */
+    @WebMethod(operationName = "ListarReacoes")
+    public List<Reacoes> listReacoes(@WebParam(name = "nomePaciente") String nomePaciente) {
+        ReacoesDAO reacoesDao = new ReacoesDAO();
+        return reacoesDao.getReacoes(nomePaciente);
+    }
+    
+    /**
+     * Método responsável pela gravação das reações adversas nas transfusões
+     * 
+     * @param reacao
+     * @return
+     */
+    @WebMethod(operationName = "GravarReacoes")
+    public boolean insertReacoes(@WebParam(name = "reacao") Reacoes reacao) {
+        ReacoesDAO reacoesDao = new ReacoesDAO();
+        return reacoesDao.insert(reacao);
     }
 }
