@@ -28,7 +28,7 @@
             // TODO initialize WS operation arguments here
             String numeroBolsa = request.getParameter("bolsa");
             // TODO process result here
-            hemocomp = port.recebeDados(numeroBolsa);
+            hemocomp = port.recebeDadosHemocomponente(numeroBolsa);
 
             session.setAttribute("numeroBolsa", hemocomp.getCodigo());
             session.setAttribute("aboBolsa", hemocomp.getAbo());

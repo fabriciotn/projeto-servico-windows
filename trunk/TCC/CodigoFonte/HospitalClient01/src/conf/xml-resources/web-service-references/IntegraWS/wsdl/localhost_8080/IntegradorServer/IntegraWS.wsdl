@@ -4,17 +4,11 @@
 <xsd:import namespace="http://Integrador.gov.br/" schemaLocation="http://localhost:8080/IntegradorServer/IntegraWS?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="RecebeDados">
-<part name="parameters" element="tns:RecebeDados"/>
+<message name="RecebeDadosHemocomponente">
+<part name="parameters" element="tns:RecebeDadosHemocomponente"/>
 </message>
-<message name="RecebeDadosResponse">
-<part name="parameters" element="tns:RecebeDadosResponse"/>
-</message>
-<message name="GravaUtilizacao">
-<part name="parameters" element="tns:GravaUtilizacao"/>
-</message>
-<message name="GravaUtilizacaoResponse">
-<part name="parameters" element="tns:GravaUtilizacaoResponse"/>
+<message name="RecebeDadosHemocomponenteResponse">
+<part name="parameters" element="tns:RecebeDadosHemocomponenteResponse"/>
 </message>
 <message name="RecebeDadosPaciente">
 <part name="parameters" element="tns:RecebeDadosPaciente"/>
@@ -22,42 +16,59 @@
 <message name="RecebeDadosPacienteResponse">
 <part name="parameters" element="tns:RecebeDadosPacienteResponse"/>
 </message>
+<message name="ListarReacoes">
+<part name="parameters" element="tns:ListarReacoes"/>
+</message>
+<message name="ListarReacoesResponse">
+<part name="parameters" element="tns:ListarReacoesResponse"/>
+</message>
+<message name="GravarReacoes">
+<part name="parameters" element="tns:GravarReacoes"/>
+</message>
+<message name="GravarReacoesResponse">
+<part name="parameters" element="tns:GravarReacoesResponse"/>
+</message>
 <message name="GravaPaciente">
 <part name="parameters" element="tns:GravaPaciente"/>
 </message>
 <message name="GravaPacienteResponse">
 <part name="parameters" element="tns:GravaPacienteResponse"/>
 </message>
+<message name="GravaUtilizacao">
+<part name="parameters" element="tns:GravaUtilizacao"/>
+</message>
+<message name="GravaUtilizacaoResponse">
+<part name="parameters" element="tns:GravaUtilizacaoResponse"/>
+</message>
 <portType name="IntegraWS">
-<operation name="RecebeDados">
-<input wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosRequest" message="tns:RecebeDados"/>
-<output wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosResponse" message="tns:RecebeDadosResponse"/>
-</operation>
-<operation name="GravaUtilizacao">
-<input wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoRequest" message="tns:GravaUtilizacao"/>
-<output wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoResponse" message="tns:GravaUtilizacaoResponse"/>
+<operation name="RecebeDadosHemocomponente">
+<input wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosHemocomponenteRequest" message="tns:RecebeDadosHemocomponente"/>
+<output wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosHemocomponenteResponse" message="tns:RecebeDadosHemocomponenteResponse"/>
 </operation>
 <operation name="RecebeDadosPaciente">
 <input wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteRequest" message="tns:RecebeDadosPaciente"/>
 <output wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteResponse" message="tns:RecebeDadosPacienteResponse"/>
 </operation>
+<operation name="ListarReacoes">
+<input wsam:Action="http://Integrador.gov.br/IntegraWS/ListarReacoesRequest" message="tns:ListarReacoes"/>
+<output wsam:Action="http://Integrador.gov.br/IntegraWS/ListarReacoesResponse" message="tns:ListarReacoesResponse"/>
+</operation>
+<operation name="GravarReacoes">
+<input wsam:Action="http://Integrador.gov.br/IntegraWS/GravarReacoesRequest" message="tns:GravarReacoes"/>
+<output wsam:Action="http://Integrador.gov.br/IntegraWS/GravarReacoesResponse" message="tns:GravarReacoesResponse"/>
+</operation>
 <operation name="GravaPaciente">
 <input wsam:Action="http://Integrador.gov.br/IntegraWS/GravaPacienteRequest" message="tns:GravaPaciente"/>
 <output wsam:Action="http://Integrador.gov.br/IntegraWS/GravaPacienteResponse" message="tns:GravaPacienteResponse"/>
 </operation>
+<operation name="GravaUtilizacao">
+<input wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoRequest" message="tns:GravaUtilizacao"/>
+<output wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoResponse" message="tns:GravaUtilizacaoResponse"/>
+</operation>
 </portType>
 <binding name="IntegraWSPortBinding" type="tns:IntegraWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="RecebeDados">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="GravaUtilizacao">
+<operation name="RecebeDadosHemocomponente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -75,7 +86,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="ListarReacoes">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GravarReacoes">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="GravaPaciente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GravaUtilizacao">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

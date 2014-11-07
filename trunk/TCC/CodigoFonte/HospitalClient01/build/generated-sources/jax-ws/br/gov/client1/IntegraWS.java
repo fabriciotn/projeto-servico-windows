@@ -1,6 +1,7 @@
 
 package br.gov.client1;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -30,47 +31,14 @@ public interface IntegraWS {
      * @return
      *     returns br.gov.client1.Hemocomponente
      */
-    @WebMethod(operationName = "RecebeDados")
+    @WebMethod(operationName = "RecebeDadosHemocomponente")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "RecebeDados", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.RecebeDados")
-    @ResponseWrapper(localName = "RecebeDadosResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.RecebeDadosResponse")
-    @Action(input = "http://Integrador.gov.br/IntegraWS/RecebeDadosRequest", output = "http://Integrador.gov.br/IntegraWS/RecebeDadosResponse")
-    public Hemocomponente recebeDados(
+    @RequestWrapper(localName = "RecebeDadosHemocomponente", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.RecebeDadosHemocomponente")
+    @ResponseWrapper(localName = "RecebeDadosHemocomponenteResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.RecebeDadosHemocomponenteResponse")
+    @Action(input = "http://Integrador.gov.br/IntegraWS/RecebeDadosHemocomponenteRequest", output = "http://Integrador.gov.br/IntegraWS/RecebeDadosHemocomponenteResponse")
+    public Hemocomponente recebeDadosHemocomponente(
         @WebParam(name = "numeroBolsa", targetNamespace = "")
         String numeroBolsa);
-
-    /**
-     * 
-     * @param obs
-     * @param motivo
-     * @param codInstituicao
-     * @param data
-     * @param responsavel
-     * @param codHemocomponente
-     * @param codPaciente
-     * @return
-     *     returns boolean
-     */
-    @WebMethod(operationName = "GravaUtilizacao")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GravaUtilizacao", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravaUtilizacao")
-    @ResponseWrapper(localName = "GravaUtilizacaoResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravaUtilizacaoResponse")
-    @Action(input = "http://Integrador.gov.br/IntegraWS/GravaUtilizacaoRequest", output = "http://Integrador.gov.br/IntegraWS/GravaUtilizacaoResponse")
-    public boolean gravaUtilizacao(
-        @WebParam(name = "codPaciente", targetNamespace = "")
-        int codPaciente,
-        @WebParam(name = "codHemocomponente", targetNamespace = "")
-        String codHemocomponente,
-        @WebParam(name = "data", targetNamespace = "")
-        String data,
-        @WebParam(name = "motivo", targetNamespace = "")
-        String motivo,
-        @WebParam(name = "responsavel", targetNamespace = "")
-        String responsavel,
-        @WebParam(name = "obs", targetNamespace = "")
-        String obs,
-        @WebParam(name = "codInstituicao", targetNamespace = "")
-        int codInstituicao);
 
     /**
      * 
@@ -86,6 +54,36 @@ public interface IntegraWS {
     public Paciente recebeDadosPaciente(
         @WebParam(name = "id", targetNamespace = "")
         int id);
+
+    /**
+     * 
+     * @param nomePaciente
+     * @return
+     *     returns java.util.List<br.gov.client1.Reacoes>
+     */
+    @WebMethod(operationName = "ListarReacoes")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ListarReacoes", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.ListarReacoes")
+    @ResponseWrapper(localName = "ListarReacoesResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.ListarReacoesResponse")
+    @Action(input = "http://Integrador.gov.br/IntegraWS/ListarReacoesRequest", output = "http://Integrador.gov.br/IntegraWS/ListarReacoesResponse")
+    public List<Reacoes> listarReacoes(
+        @WebParam(name = "nomePaciente", targetNamespace = "")
+        String nomePaciente);
+
+    /**
+     * 
+     * @param reacao
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(operationName = "GravarReacoes")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GravarReacoes", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravarReacoes")
+    @ResponseWrapper(localName = "GravarReacoesResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravarReacoesResponse")
+    @Action(input = "http://Integrador.gov.br/IntegraWS/GravarReacoesRequest", output = "http://Integrador.gov.br/IntegraWS/GravarReacoesResponse")
+    public boolean gravarReacoes(
+        @WebParam(name = "reacao", targetNamespace = "")
+        Reacoes reacao);
 
     /**
      * 
@@ -122,5 +120,38 @@ public interface IntegraWS {
         String rhPac,
         @WebParam(name = "enderco", targetNamespace = "")
         String enderco);
+
+    /**
+     * 
+     * @param obs
+     * @param motivo
+     * @param codInstituicao
+     * @param data
+     * @param responsavel
+     * @param codHemocomponente
+     * @param codPaciente
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(operationName = "GravaUtilizacao")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GravaUtilizacao", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravaUtilizacao")
+    @ResponseWrapper(localName = "GravaUtilizacaoResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravaUtilizacaoResponse")
+    @Action(input = "http://Integrador.gov.br/IntegraWS/GravaUtilizacaoRequest", output = "http://Integrador.gov.br/IntegraWS/GravaUtilizacaoResponse")
+    public boolean gravaUtilizacao(
+        @WebParam(name = "codPaciente", targetNamespace = "")
+        int codPaciente,
+        @WebParam(name = "codHemocomponente", targetNamespace = "")
+        String codHemocomponente,
+        @WebParam(name = "data", targetNamespace = "")
+        String data,
+        @WebParam(name = "motivo", targetNamespace = "")
+        String motivo,
+        @WebParam(name = "responsavel", targetNamespace = "")
+        String responsavel,
+        @WebParam(name = "obs", targetNamespace = "")
+        String obs,
+        @WebParam(name = "codInstituicao", targetNamespace = "")
+        int codInstituicao);
 
 }
