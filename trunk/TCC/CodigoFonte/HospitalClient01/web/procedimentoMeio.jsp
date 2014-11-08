@@ -28,12 +28,22 @@
             // TODO initialize WS operation arguments here
             String numeroBolsa = request.getParameter("bolsa");
             // TODO process result here
+            if(request.getParameter("bolsa") == null){
+                numeroBolsa = session.getAttribute("numeroBolsa").toString();
+            }
             hemocomp = port.recebeDadosHemocomponente(numeroBolsa);
+            session.setAttribute("numeroBolsa", numeroBolsa);
 
-            session.setAttribute("numeroBolsa", hemocomp.getCodigo());
-            session.setAttribute("aboBolsa", hemocomp.getAbo());
-            session.setAttribute("rhBolsa", hemocomp.getRh());
-            session.setAttribute("descricaoBolsa", hemocomp.getDescricao());
+            if (hemocomp.getCodigo() != null) {
+                session.setAttribute("numeroBolsa", hemocomp.getCodigo());
+                session.setAttribute("aboBolsa", hemocomp.getAbo());
+                session.setAttribute("rhBolsa", hemocomp.getRh());
+                session.setAttribute("descricaoBolsa", hemocomp.getDescricao());
+            }else{
+                session.setAttribute("msg", "Hemocomponente não localizado");
+                session.setAttribute("pagina", "procedimento.jsp");
+                response.sendRedirect("mensagem.jsp");
+            }
         } catch (Exception ex) {
             out.print("erro");
         }

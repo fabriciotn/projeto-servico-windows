@@ -42,51 +42,6 @@ public interface IntegraWS {
 
     /**
      * 
-     * @param id
-     * @return
-     *     returns br.gov.client1.Paciente
-     */
-    @WebMethod(operationName = "RecebeDadosPaciente")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "RecebeDadosPaciente", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.RecebeDadosPaciente")
-    @ResponseWrapper(localName = "RecebeDadosPacienteResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.RecebeDadosPacienteResponse")
-    @Action(input = "http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteRequest", output = "http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteResponse")
-    public Paciente recebeDadosPaciente(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
-     * @param nomePaciente
-     * @return
-     *     returns java.util.List<br.gov.client1.Reacoes>
-     */
-    @WebMethod(operationName = "ListarReacoes")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ListarReacoes", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.ListarReacoes")
-    @ResponseWrapper(localName = "ListarReacoesResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.ListarReacoesResponse")
-    @Action(input = "http://Integrador.gov.br/IntegraWS/ListarReacoesRequest", output = "http://Integrador.gov.br/IntegraWS/ListarReacoesResponse")
-    public List<Reacoes> listarReacoes(
-        @WebParam(name = "nomePaciente", targetNamespace = "")
-        String nomePaciente);
-
-    /**
-     * 
-     * @param reacao
-     * @return
-     *     returns boolean
-     */
-    @WebMethod(operationName = "GravarReacoes")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GravarReacoes", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravarReacoes")
-    @ResponseWrapper(localName = "GravarReacoesResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravarReacoesResponse")
-    @Action(input = "http://Integrador.gov.br/IntegraWS/GravarReacoesRequest", output = "http://Integrador.gov.br/IntegraWS/GravarReacoesResponse")
-    public boolean gravarReacoes(
-        @WebParam(name = "reacao", targetNamespace = "")
-        Reacoes reacao);
-
-    /**
-     * 
      * @param rhPac
      * @param enderco
      * @param mae
@@ -153,5 +108,50 @@ public interface IntegraWS {
         String obs,
         @WebParam(name = "codInstituicao", targetNamespace = "")
         int codInstituicao);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns br.gov.client1.Paciente
+     */
+    @WebMethod(operationName = "RecebeDadosPaciente")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "RecebeDadosPaciente", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.RecebeDadosPaciente")
+    @ResponseWrapper(localName = "RecebeDadosPacienteResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.RecebeDadosPacienteResponse")
+    @Action(input = "http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteRequest", output = "http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteResponse")
+    public Paciente recebeDadosPaciente(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
+     * @param nomePaciente
+     * @return
+     *     returns java.util.List<br.gov.client1.Reacoes>
+     */
+    @WebMethod(operationName = "ListarReacoes")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "ListarReacoes", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.ListarReacoes")
+    @ResponseWrapper(localName = "ListarReacoesResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.ListarReacoesResponse")
+    @Action(input = "http://Integrador.gov.br/IntegraWS/ListarReacoesRequest", output = "http://Integrador.gov.br/IntegraWS/ListarReacoesResponse")
+    public List<Reacoes> listarReacoes(
+        @WebParam(name = "nomePaciente", targetNamespace = "")
+        String nomePaciente);
+
+    /**
+     * 
+     * @param reacao
+     * @return
+     *     returns boolean
+     */
+    @WebMethod(operationName = "GravarReacoes")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GravarReacoes", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravarReacoes")
+    @ResponseWrapper(localName = "GravarReacoesResponse", targetNamespace = "http://Integrador.gov.br/", className = "br.gov.client1.GravarReacoesResponse")
+    @Action(input = "http://Integrador.gov.br/IntegraWS/GravarReacoesRequest", output = "http://Integrador.gov.br/IntegraWS/GravarReacoesResponse")
+    public boolean gravarReacoes(
+        @WebParam(name = "reacao", targetNamespace = "")
+        Reacoes reacao);
 
 }

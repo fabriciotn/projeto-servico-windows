@@ -10,6 +10,18 @@
 <message name="RecebeDadosHemocomponenteResponse">
 <part name="parameters" element="tns:RecebeDadosHemocomponenteResponse"/>
 </message>
+<message name="GravaPaciente">
+<part name="parameters" element="tns:GravaPaciente"/>
+</message>
+<message name="GravaPacienteResponse">
+<part name="parameters" element="tns:GravaPacienteResponse"/>
+</message>
+<message name="GravaUtilizacao">
+<part name="parameters" element="tns:GravaUtilizacao"/>
+</message>
+<message name="GravaUtilizacaoResponse">
+<part name="parameters" element="tns:GravaUtilizacaoResponse"/>
+</message>
 <message name="RecebeDadosPaciente">
 <part name="parameters" element="tns:RecebeDadosPaciente"/>
 </message>
@@ -28,22 +40,18 @@
 <message name="GravarReacoesResponse">
 <part name="parameters" element="tns:GravarReacoesResponse"/>
 </message>
-<message name="GravaPaciente">
-<part name="parameters" element="tns:GravaPaciente"/>
-</message>
-<message name="GravaPacienteResponse">
-<part name="parameters" element="tns:GravaPacienteResponse"/>
-</message>
-<message name="GravaUtilizacao">
-<part name="parameters" element="tns:GravaUtilizacao"/>
-</message>
-<message name="GravaUtilizacaoResponse">
-<part name="parameters" element="tns:GravaUtilizacaoResponse"/>
-</message>
 <portType name="IntegraWS">
 <operation name="RecebeDadosHemocomponente">
 <input wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosHemocomponenteRequest" message="tns:RecebeDadosHemocomponente"/>
 <output wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosHemocomponenteResponse" message="tns:RecebeDadosHemocomponenteResponse"/>
+</operation>
+<operation name="GravaPaciente">
+<input wsam:Action="http://Integrador.gov.br/IntegraWS/GravaPacienteRequest" message="tns:GravaPaciente"/>
+<output wsam:Action="http://Integrador.gov.br/IntegraWS/GravaPacienteResponse" message="tns:GravaPacienteResponse"/>
+</operation>
+<operation name="GravaUtilizacao">
+<input wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoRequest" message="tns:GravaUtilizacao"/>
+<output wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoResponse" message="tns:GravaUtilizacaoResponse"/>
 </operation>
 <operation name="RecebeDadosPaciente">
 <input wsam:Action="http://Integrador.gov.br/IntegraWS/RecebeDadosPacienteRequest" message="tns:RecebeDadosPaciente"/>
@@ -57,18 +65,28 @@
 <input wsam:Action="http://Integrador.gov.br/IntegraWS/GravarReacoesRequest" message="tns:GravarReacoes"/>
 <output wsam:Action="http://Integrador.gov.br/IntegraWS/GravarReacoesResponse" message="tns:GravarReacoesResponse"/>
 </operation>
-<operation name="GravaPaciente">
-<input wsam:Action="http://Integrador.gov.br/IntegraWS/GravaPacienteRequest" message="tns:GravaPaciente"/>
-<output wsam:Action="http://Integrador.gov.br/IntegraWS/GravaPacienteResponse" message="tns:GravaPacienteResponse"/>
-</operation>
-<operation name="GravaUtilizacao">
-<input wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoRequest" message="tns:GravaUtilizacao"/>
-<output wsam:Action="http://Integrador.gov.br/IntegraWS/GravaUtilizacaoResponse" message="tns:GravaUtilizacaoResponse"/>
-</operation>
 </portType>
 <binding name="IntegraWSPortBinding" type="tns:IntegraWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="RecebeDadosHemocomponente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GravaPaciente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GravaUtilizacao">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -96,24 +114,6 @@
 </output>
 </operation>
 <operation name="GravarReacoes">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="GravaPaciente">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="GravaUtilizacao">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

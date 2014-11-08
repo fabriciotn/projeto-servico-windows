@@ -68,13 +68,13 @@ public class ReacoesDAO {
                 + " AND p.NOME LIKE ?";
         ResultSet rs;
         PreparedStatement ps = null;
-        Reacoes reacao = new Reacoes();
         List<Reacoes> reacoes = new ArrayList<>();
         try {
             ps = this.connection.prepareStatement(sql);
             ps.setString(1, "%" + nome + "%");
             rs = ps.executeQuery();
-            if (rs.next()) {
+            while (rs.next()) {
+                Reacoes reacao = new Reacoes();
                 reacao.setIdPaciente(rs.getInt("CodPaciente"));
                 reacao.setNomePaciente(rs.getString("NomePaciente"));
                 reacao.setIdUtilizacao(rs.getInt("CodProcedimento"));
@@ -82,9 +82,6 @@ public class ReacoesDAO {
                 reacao.setReacao(rs.getString("Reacao"));
 
                 reacoes.add(reacao);
-                ps.close();
-            } else {
-                ps.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
