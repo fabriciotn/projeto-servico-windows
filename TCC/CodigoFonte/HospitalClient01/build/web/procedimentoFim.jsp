@@ -30,19 +30,25 @@
             IntegraWS port = service.getIntegraWSPort();
             int id = Integer.parseInt(request.getParameter("id"));
             result = port.recebeDadosPaciente(id);
-            
-            session.setAttribute("idPaciente", result.getId());
-            session.setAttribute("nomePaciente", result.getNome());
-            session.setAttribute("cpfPaciente", result.getCpf());
-            session.setAttribute("rgPaciente", result.getRg());
-            session.setAttribute("paiPaciente", result.getNomeDoPai());
-            session.setAttribute("maePaciente", result.getNomeDaMae());
-            session.setAttribute("aboPaciente", result.getAbo());
-            session.setAttribute("rhPaciente", result.getRh());
-            session.setAttribute("enderecoPaciente", result.getEndereco());
-            
-            session.setAttribute("codInstituicao", "5");
-            
+
+            if (result.getId() > 0) {
+                session.setAttribute("idPaciente", result.getId());
+                session.setAttribute("nomePaciente", result.getNome());
+                session.setAttribute("cpfPaciente", result.getCpf());
+                session.setAttribute("rgPaciente", result.getRg());
+                session.setAttribute("paiPaciente", result.getNomeDoPai());
+                session.setAttribute("maePaciente", result.getNomeDaMae());
+                session.setAttribute("aboPaciente", result.getAbo());
+                session.setAttribute("rhPaciente", result.getRh());
+                session.setAttribute("enderecoPaciente", result.getEndereco());
+
+                session.setAttribute("codInstituicao", "5");
+            }else{
+                session.setAttribute("msg", "Paciente não localizado");
+                session.setAttribute("pagina", "procedimentoMeio.jsp");
+                response.sendRedirect("mensagem.jsp");
+            }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -65,33 +71,33 @@
                         out.println("<b>Descrição: </b>" + session.getAttribute("descricaoBolsa") + "<br>");
                         out.println("<b>ABO: </b>" + session.getAttribute("aboBolsa") + "<br>");
                         out.println("<b>RH: </b>" + session.getAttribute("rhBolsa") + "<br><br>");
-                        
+
                         out.println("<b>Nome do paciente: </b>" + result.getNome() + "<br>");
-                        out.println("<b>CPF: </b>" + result.getCpf()+ "<br>");
-                        out.println("<b>RG: </b>" + result.getRg()+ "<br>");
-                        out.println("<b>Nome do pai: </b>" + result.getNomeDoPai()+ "<br>");
-                        out.println("<b>Nome da mae: </b>" + result.getNomeDaMae()+ "<br>");
-                        out.println("<b>ABO paciente: </b>" + result.getAbo()+ "<br>");
-                        out.println("<b>RH paciente: </b>" + result.getRh()+ "<br>");
-                        out.println("<b>Enderço:  </b>" + result.getEndereco()+ "<br><br>");
-                        
+                        out.println("<b>CPF: </b>" + result.getCpf() + "<br>");
+                        out.println("<b>RG: </b>" + result.getRg() + "<br>");
+                        out.println("<b>Nome do pai: </b>" + result.getNomeDoPai() + "<br>");
+                        out.println("<b>Nome da mae: </b>" + result.getNomeDaMae() + "<br>");
+                        out.println("<b>ABO paciente: </b>" + result.getAbo() + "<br>");
+                        out.println("<b>RH paciente: </b>" + result.getRh() + "<br>");
+                        out.println("<b>Enderço:  </b>" + result.getEndereco() + "<br><br>");
+
                         Date date = new Date();
                         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                     %>
 
                     <label for="data"><b>Data do procedimento:</b></label>
-                    <input type="text" name="data" id="data" value="<%out.print(sdf.format(date)); %>"><br>
-                    
+                    <input type="text" name="data" id="data" value="<%out.print(sdf.format(date));%>"><br>
+
                     <label for="motivo"><b>Motivo:</b></label>
                     <input type="text" name="motivo" id="motivo"><br>
-                    
+
                     <label for="responsavel"><b>Responsavel:</b></label>
                     <input type="text" name="responsavel" id="responsavel"><br>
-                    
+
                     <label for="obs"><b>Observações:</b></label>
                     <textarea name="obs" id="obs"></textarea>
-                     <br>
-                    
+                    <br>
+
                     <input type="submit" value="Registrar Procedimento">
                 </form>
             </div>

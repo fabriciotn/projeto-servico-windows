@@ -4,6 +4,10 @@
     Author     : 12546446
 --%>
 
+<%@page import="br.gov.client1.Reacoes"%>
+<%@page import="java.util.List"%>
+<%@page import="br.gov.client1.IntegraWS"%>
+<%@page import="br.gov.client1.IntegraWS_Service"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -34,31 +38,61 @@
                 </form>
 
                 <%
-                
-                    
-                    
+                    List<Reacoes> reacoes = null;
+                    IntegraWS port = null;
+                    String nomePaciente = request.getParameter("paciente");
+
+                    try {
+                        IntegraWS_Service service = new IntegraWS_Service();
+                        port = service.getIntegraWSPort();
+
+                        if (nomePaciente != null && !nomePaciente.isEmpty()) {
+                            reacoes = port.listarReacoes(nomePaciente);
+                        }
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
                 %>
-                
-                <table border="1">
-                    <thead>
+
+                <br><br>
+                <table>
+                    <thead class="tbHeader">
                         <tr>
                             <td>ID Paciente</td>
                             <td>Nome Paciente</td>
                             <td>ID Procedimento</td>
                             <td>Data Procedimento</td>
-                            <td>ID Reação</td>
                             <td>Reação</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <%
-                                
-                            %>
-                        </tr>
+                        <%
+                            if (reacoes != null) {
+                                int i = 0;
+                                String classe = "";
+
+                                for (Reacoes reacao : reacoes) {
+                                    if ((i % 2) == 0) {
+                                        classe = "tbDetail2";
+                                    } else {
+                                        classe = "tbDetail1";
+                                    }
+
+                                    out.println("<tr class=" + classe + ">");
+                                    out.println("<td>" + reacao.getIdPaciente() + "</td>");
+                                    out.println("<td>" + reacao.getNomePaciente() + "</td>");
+                                    out.println("<td>" + reacao.getIdUtilizacao() + "</td>");
+                                    out.println("<td>" + reacao.getDataProcedimento() + "</td>");
+                                    out.println("<td>" + reacao.getReacao() + "</td>");
+                                    out.println("</tr>");
+
+                                    i++;
+                                }
+                            }
+                        %>
                     </tbody>
                 </table>
-                
+
             </div>
         </div>
     </body>
