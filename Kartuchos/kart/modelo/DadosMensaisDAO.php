@@ -32,12 +32,15 @@ class DadosMensaisDAO{
 	
 	
 	public function getRegistoAnterior($idImpressora,$mes,$ano){
+        
+        $mes = $mes-1;
+        
         $sql = "SELECT
                 MAX(total_copias_absoluto) as total_copias_absoluto,
                 MAX(total_digit_absoluto) as total_digit_absoluto
 		FROM
                 dados_mensais_locacao
-		WHERE idImpressora = '$idImpressora' AND mes < '$mes' AND ano <= '$ano'";
+		WHERE idImpressora = '$idImpressora' AND mes = '$mes' AND ano <= '$ano'";
 		
         $this->con->conectar();
 		if($this->con->query($sql))
