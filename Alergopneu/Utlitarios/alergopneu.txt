@@ -5,7 +5,7 @@ entra em portal
 id: alergopneu@hotmail.com
 senha: wrocha55
 
-maquina virtual
+maquina virtual (arquivo rdp na pasta)
 usuario: alergopneu\alergopneu
 senha: Wrocha55
 
