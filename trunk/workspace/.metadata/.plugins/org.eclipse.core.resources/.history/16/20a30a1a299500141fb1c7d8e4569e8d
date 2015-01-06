@@ -1,0 +1,6 @@
+package Requisicao;
+
+public interface Resposta {
+
+	
+}

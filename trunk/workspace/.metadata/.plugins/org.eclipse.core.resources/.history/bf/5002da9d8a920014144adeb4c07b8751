@@ -1,0 +1,7 @@
+package Descontos;
+
+import Investimentos.Investimento;
+
+public interface DescontoPorCincoItens extends Investimento {
+
+}

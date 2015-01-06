@@ -1,0 +1,19 @@
+package Descontos;
+
+import CalculoDeImpostos.Orcamento;
+
+public class DescontoPorMaisDeQuinhentosReais implements Desconto {
+
+	private Desconto proximo;
+	
+	@Override
+	public double desconta(Orcamento orcamento) {
+		
+	}
+
+	@Override
+	public void setProximo(Desconto proximo) {
+		this.proximo = proximo;
+	}
+
+}

@@ -1,0 +1,19 @@
+package Descontos;
+
+import CalculoDeImpostos.Orcamento;
+
+public class DescontoPorMaisDeQuinhentosReais implements Desconto {
+
+	@Override
+	public double desconta(Orcamento orcamento) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setProximo(Desconto proximo) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

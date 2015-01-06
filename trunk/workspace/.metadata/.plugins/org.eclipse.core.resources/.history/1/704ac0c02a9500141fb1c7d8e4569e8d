@@ -1,0 +1,20 @@
+package Requisicao;
+
+public class RetornaPorcento implements Resposta{
+
+	Resposta proximaResposta;
+
+	@Override
+	public void responde(Requisicao req, Conta conta) {
+		if (req.equals(Formato.XML)) {
+			System.out.println("<conta><titular>" + conta.getTitular()
+					+ "</titular>" + "<saldo>" + conta.getSaldo()
+					+ "</saldo></conta>");
+		}
+	}
+
+	@Override
+	public void setProxima(Resposta resposta) {
+		this.proximaResposta = resposta;
+	}
+}
