@@ -1,0 +1,18 @@
+package br.com.caelum.jdbc;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import br.com.caelum.jdbc.model.Produto;
+
+public class Testa {
+
+	 public static void main(String[] args) throws SQLException {
+		
+		 Produto produto = new Produto("Mesa Azul", "Mesa com 4 pés");
+		 
+		 try(Connection connection = new ConnectionPool().getConnection()){
+			 
+		 }
+	}
+}

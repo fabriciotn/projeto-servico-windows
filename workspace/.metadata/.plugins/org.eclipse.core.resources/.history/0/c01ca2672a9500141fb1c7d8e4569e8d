@@ -1,0 +1,19 @@
+package Requisicao;
+
+public class RetornaXml implements Resposta{
+
+	Resposta proximaResposta;
+	
+	@Override
+	public void responde(Requisicao req, Conta conta) {
+		if(req.equals(Formato.XML)){
+			System.out.println("<CONTA><TITULAR>" + conta.getTitular() + "</TITULAR>");
+		}
+	}
+
+	@Override
+	public void setProxima(Resposta resposta) {
+		this.proximaResposta = resposta;
+	}
+
+}

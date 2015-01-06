@@ -1,0 +1,13 @@
+package Descontos;
+
+import CalculoDeImpostos.Orcamento;
+
+public class SemDesconto {
+	public double calcula(Orcamento orcamento) {
+		return 0;
+	}
+
+	public void setProximo(Desconto desconto) {
+		// nao tem!
+	}
+}

@@ -1,0 +1,5 @@
+package Requisicao;
+
+public enum Formato {
+
+}

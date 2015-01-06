@@ -1,0 +1,18 @@
+package Requisicao;
+
+public class RetornaXml implements Resposta{
+
+	Resposta proximaResposta;
+	
+	@Override
+	public void responde(Requisicao req, Conta conta) {
+		
+		
+	}
+
+	@Override
+	public void setProxima(Resposta resposta) {
+		this.proximaResposta = resposta;
+	}
+
+}

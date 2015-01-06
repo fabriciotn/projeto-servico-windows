@@ -1,0 +1,14 @@
+package Descontos;
+
+import Investimentos.Conta;
+import Investimentos.Investimento;
+
+public class DescontoPorCincoItens implements Investimento {
+
+	@Override
+	public double calcula(Conta conta) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

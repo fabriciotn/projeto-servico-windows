@@ -1,0 +1,12 @@
+public class TestaImpostos {
+
+	public static void main(String[] args) {
+		
+		ISS iss = new ISS();
+		ICMS icms = new ICMS();
+		ICCC iccc = new ICCC();
+		
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+
+public class ICCC implements Imposto{
+
+	@Override
+	public double calcula(Orcamento orcamento) {
+		
+	}
+
+}
