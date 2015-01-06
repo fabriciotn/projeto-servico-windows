@@ -6,11 +6,10 @@ public class RetornaCsv implements Resposta {
 
 	@Override
 	public void responde(Requisicao req, Conta conta) {
-		if (req.equals(Formato.CSV)) {
+		if (req.getFormato() == Formato.CSV) {
 			System.out.println(conta.getTitular() + ";" + conta.getSaldo());
 		} else {
 			proximaResposta.responde(req, conta);
-			;
 		}
 	}
 
