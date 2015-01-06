@@ -6,11 +6,11 @@ public class RetornaXml implements Resposta{
 	
 	@Override
 	public void responde(Requisicao req, Conta conta) {
-		if(req.equals(Formato.XML)){
+		if(req.getFormato() == Formato.XML){
 			System.out.println("<conta><titular>" + conta.getTitular() + "</titular>" +
 					"<saldo>" + conta.getSaldo() + "</saldo></conta>");
 		}else{
-			proximaResposta.responde(req, conta);;
+			proximaResposta.responde(req, conta);
 		}
 	}
 

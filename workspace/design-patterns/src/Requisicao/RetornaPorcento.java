@@ -6,12 +6,12 @@ public class RetornaPorcento implements Resposta{
 
 	@Override
 	public void responde(Requisicao req, Conta conta) {
-		if (req.equals(Formato.PORCENTO)) {
+		if (req.getFormato() == Formato.PORCENTO) {
 			System.out.println("%" + conta.getTitular()
 					+ "%" + conta.getSaldo()
 					+ "%");
 		}else{
-			proximaResposta.responde(req, conta);;
+			proximaResposta.responde(req, conta);
 		}
 	}
 
