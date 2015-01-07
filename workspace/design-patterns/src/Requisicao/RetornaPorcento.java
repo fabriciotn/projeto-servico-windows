@@ -10,7 +10,9 @@ public class RetornaPorcento implements Resposta{
 			System.out.println("%" + conta.getTitular()
 					+ "%" + conta.getSaldo()
 					+ "%");
-		}else{
+		} else if(proximaResposta == null){
+			throw new RuntimeException("Sem resposta");
+		}else {
 			proximaResposta.responde(req, conta);
 		}
 	}
@@ -18,5 +20,10 @@ public class RetornaPorcento implements Resposta{
 	@Override
 	public void setProxima(Resposta resposta) {
 		this.proximaResposta = resposta;
+	}
+
+	@Override
+	public void setProxima() {
+		this.proximaResposta = null;
 	}
 }

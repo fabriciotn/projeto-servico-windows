@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="ValorInvalidoException"/>
-<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
-<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="br.com.empresa.banco.conta.Conta"/>
-<fullyQualifiedTypeName name="java.math.BigDecimal"/>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.PrintStream"/>
@@ -47,17 +35,29 @@
 <fullyQualifiedTypeName name="CalculadorDeImposto"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="Investimentos.Investimento"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="Descontos.DescontoPorVendaCasada"/>
 <fullyQualifiedTypeName name="Descontos.CalculadorDeDescontos"/>
-<fullyQualifiedTypeName name="Descontos.Item"/>
 <fullyQualifiedTypeName name="Descontos.Desconto"/>
 <fullyQualifiedTypeName name="Requisicao.Requisicao"/>
 <fullyQualifiedTypeName name="Requisicao.Formato"/>
 <fullyQualifiedTypeName name="Requisicao.Resposta"/>
+<fullyQualifiedTypeName name="javax.management.RuntimeErrorException"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="CalculoDeImpostos.Orcamento"/>
+<fullyQualifiedTypeName name="Descontos.Item"/>
+<fullyQualifiedTypeName name="CalculoDeImpostos.ICPP"/>
+<fullyQualifiedTypeName name="CalculoDeImpostos.IKCV"/>
+<fullyQualifiedTypeName name="CalculoDeImpostos.TemplateDeImpostosCondicional"/>
+<fullyQualifiedTypeName name="CalculoDeImpostos.IHIT"/>
 <fullyQualifiedTypeName name="Requisicao.Conta"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="Relatorios.Conta"/>
+<fullyQualifiedTypeName name="Relatorios.RelatorioCompleto"/>
+<fullyQualifiedTypeName name="Relatorios.Relatorio"/>
+<fullyQualifiedTypeName name="Relatorios.RelatorioSimples"/>
+<fullyQualifiedTypeName name="javax.management.relation.RelationService"/>
 </qualifiedTypeNameHistroy>

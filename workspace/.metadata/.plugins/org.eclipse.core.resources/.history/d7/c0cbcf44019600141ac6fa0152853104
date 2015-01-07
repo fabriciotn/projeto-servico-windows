@@ -1,0 +1,10 @@
+package Relatorios;
+
+public abstract class Relatorio {
+
+	public void imprime(List<Conta> contas){
+		cabecalho();
+		corpo();
+		rodape();
+	}
+}

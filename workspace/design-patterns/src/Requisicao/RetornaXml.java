@@ -9,7 +9,9 @@ public class RetornaXml implements Resposta{
 		if(req.getFormato() == Formato.XML){
 			System.out.println("<conta><titular>" + conta.getTitular() + "</titular>" +
 					"<saldo>" + conta.getSaldo() + "</saldo></conta>");
-		}else{
+		} else if(proximaResposta == null){
+			throw new RuntimeException("Sem resposta");
+		}else {
 			proximaResposta.responde(req, conta);
 		}
 	}
@@ -17,6 +19,11 @@ public class RetornaXml implements Resposta{
 	@Override
 	public void setProxima(Resposta resposta) {
 		this.proximaResposta = resposta;
+	}
+
+	@Override
+	public void setProxima() {
+		this.proximaResposta = null;
 	}
 
 }

@@ -10,4 +10,10 @@ public class RetornaSemResposta implements Resposta {
 	public void setProxima(Resposta resposta) {
 	}
 
+	@Override
+	public void setProxima() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

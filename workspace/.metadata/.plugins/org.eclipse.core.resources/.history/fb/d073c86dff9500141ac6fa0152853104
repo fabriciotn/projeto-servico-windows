@@ -1,0 +1,22 @@
+package CalculoDeImpostos;
+
+public class IHIT extends TemplateDeImpostosCondicional{
+
+	@Override
+	protected double minimaTaxacao(Orcamento orcamento) {
+		
+	}
+
+	@Override
+	protected double maximaTaxacao(Orcamento orcamento) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	protected boolean deveUsarMaximaTaxacao(Orcamento orcamento) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,12 @@
+package CalculoDeImpostos;
+
+import Descontos.Item;
+
+public class TestaTemplateImpostos {
+
+	public static void main(String[] args) {
+		Orcamento orcamento = new Orcamento(600);
+		orcamento.adicionaItem(new Item("Item1", 200.0));
+		orcamento.adicionaItem(new Item("Item2", 400.0));
+	}
+}
