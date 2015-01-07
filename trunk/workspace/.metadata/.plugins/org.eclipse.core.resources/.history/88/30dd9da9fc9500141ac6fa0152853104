@@ -1,0 +1,11 @@
+package CalculoDeImpostos;
+
+public class TemplateDeImpostosCondicional implements Imposto {
+
+	@Override
+	public double calcula(Orcamento orcamento) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
