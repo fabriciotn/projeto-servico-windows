@@ -1,7 +1,9 @@
+TerminalPrefInvertColors=true
 eclipse.preferences.version=1
-org.eclipse.ant.ui.commentsColor=102,102,102
-org.eclipse.ant.ui.constantStringsColor=0,164,15
-org.eclipse.ant.ui.dtdColor=247,197,39
-org.eclipse.ant.ui.processingInstructionsColor=255,255,255
-org.eclipse.ant.ui.tagsColor=247,197,39
-org.eclipse.ant.ui.textColor=255,255,255
+org.eclipse.ant.ui.commentsColor=205,139,0
+org.eclipse.ant.ui.constantStringsColor=255,205,139
+org.eclipse.ant.ui.dtdColor=135,206,250
+org.eclipse.ant.ui.processingInstructionsColor=207,191,173
+org.eclipse.ant.ui.tagsColor=135,206,250
+org.eclipse.ant.ui.textColor=207,191,173
+overriddenByCSS=,TerminalPrefInvertColors,

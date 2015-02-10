@@ -1,11 +1,14 @@
 package Relatorios;
 
+import java.util.Calendar;
+
 public class Conta {
 
 	private double saldo;
 	private String titular;
 	private String agencia;
 	private String numero;
+	private Calendar dataAbertura;
 	
 	public Conta(String titular, String agencia, String numero, double saldoInicial) {
 		this.titular = titular;
@@ -32,5 +35,9 @@ public class Conta {
 
 	public String getAgencia() {
 		return agencia;
+	}
+
+	public Calendar getDataAbertura() {
+		return dataAbertura;
 	}
 }

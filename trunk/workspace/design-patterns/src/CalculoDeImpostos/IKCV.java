@@ -3,6 +3,12 @@ package CalculoDeImpostos;
 import Descontos.Item;
 
 public class IKCV extends TemplateDeImpostosCondicional{
+	
+	public IKCV(Imposto outroImposto) {
+		super(outroImposto);
+	}
+	
+	public IKCV() {}
 
 	@Override
 	public double minimaTaxacao(Orcamento orcamento) {
