@@ -1,0 +1,13 @@
+package Descontos;
+
+import CalculoDeImpostos.Orcamento;
+
+public class Reprovado implements EstadoDeUmOrcamento{
+
+	@Override
+	public void aplicaDescontoExtra(Orcamento orcamento) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

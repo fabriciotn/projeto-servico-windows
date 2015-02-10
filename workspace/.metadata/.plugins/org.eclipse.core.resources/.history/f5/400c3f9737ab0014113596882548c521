@@ -1,0 +1,8 @@
+package Build;
+
+public class ItemDaNota {
+
+	private String descricao;
+    private double valor;
+    
+}

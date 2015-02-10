@@ -1,7 +1,6 @@
 TerminalPrefInvertColors=true
 eclipse.preferences.version=1
 overriddenByCSS=,TerminalPrefInvertColors,
-xsltagAttributeName=\#C38705 | \#000000 | null | null | null | null
-xsltagAttributeValue=\#00A40F | \#000000 | null | null | null | null
-xsltagBorder=\#F7C527 | \#000000 | null | null | null | null
-xsltagName=\#F7C527 | \#000000 | null | null | null | null
+xsltagAttributeName=\#CFBFAD | \#1F1F27 | null | null | null | null
+xsltagAttributeValue=\#FFCD8B | \#1F1F27 | null | null | null | null
+xsltagBorder=\#CFBFAD | \#1F1F27 | null | null | null | null

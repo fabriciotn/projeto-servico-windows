@@ -1,6 +1,6 @@
 package CalculoDeImpostos;
 
-public class ICCC implements Imposto{
+public class ICCC extends Imposto{
 
 	@Override
 	public double calcula(Orcamento orcamento) {

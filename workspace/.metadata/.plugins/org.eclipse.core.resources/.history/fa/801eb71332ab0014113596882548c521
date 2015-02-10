@@ -1,0 +1,13 @@
+package Descontos;
+
+import CalculoDeImpostos.Orcamento;
+
+public class Finalizado implements EstadoDeUmOrcamento{
+
+	@Override
+	public void aplicaDescontoExtra(Orcamento orcamento) {
+		throw new RuntimeException("Orçamentos finalizados não recebem desconto extra!");
+		
+	}
+
+}
