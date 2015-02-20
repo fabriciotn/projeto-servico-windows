@@ -6,7 +6,7 @@ public class TesteDaNotaFiscal {
 
 	public static void main(String[] args) {
 		
-		NotaFiscalBuilder builder = new NotaFiscalBuilder();
+		/*NotaFiscalBuilder builder = new NotaFiscalBuilder();
 		
 		builder.paraEmpresa("Fabricio S/A")
 		.comCnpj("01.001/00001-01")
@@ -19,6 +19,7 @@ public class TesteDaNotaFiscal {
 		NotaFiscal nf = builder.constroi();
 		
 		System.out.println(nf.getValorBruto());
+		*/
 		
 	}
 }
