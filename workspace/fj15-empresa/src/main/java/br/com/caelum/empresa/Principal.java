@@ -12,5 +12,6 @@ public class Principal {
 		System.out.println(funcionario);
 		System.err.println(funcionario);
 		System.out.println("Principal.main()");
+		asd
 	}
 }
