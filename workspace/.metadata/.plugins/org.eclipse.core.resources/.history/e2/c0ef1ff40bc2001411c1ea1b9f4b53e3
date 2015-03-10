@@ -1,0 +1,12 @@
+package br.com.caelum.empresa;
+
+import java.util.Calendar;
+
+import br.com.caelum.empresa.modelo.Funcionario;
+
+public class Principal {
+	public static void main(String[] args) {
+		Calendar dataNascimento = null;
+		Funcionario funcionario = new Funcionario("Fabricio", 20, dataNascimento);
+	}
+}
