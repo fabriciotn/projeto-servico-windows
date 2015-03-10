@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
-<fullyQualifiedTypeName name="javax.activation.DataSource"/>
-<fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="br.com.caelum.jdbc.DAO.ProdutosDao"/>
 <fullyQualifiedTypeName name="br.com.caelum.jdbc.model.Produto"/>
@@ -59,5 +54,10 @@
 <fullyQualifiedTypeName name="Build.ItemDaNota"/>
 <fullyQualifiedTypeName name="Build.NotaFiscal"/>
 <fullyQualifiedTypeName name="Build.NotaFiscalBuilder"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="br.com.caelum.empresa.modelo.Funcionario"/>
+<fullyQualifiedTypeName name="br.com.caelum.empresa.modelo.Gasto"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
 </qualifiedTypeNameHistroy>

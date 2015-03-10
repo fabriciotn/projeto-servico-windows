@@ -1,0 +1,9 @@
+package br.com.caelum.empresa;
+
+import br.com.caelum.empresa.modelo.Funcionario;
+
+public class Principal {
+	public static void main(String[] args) {
+		new Funcionario("José", 20, dataNascimento);
+	}
+}

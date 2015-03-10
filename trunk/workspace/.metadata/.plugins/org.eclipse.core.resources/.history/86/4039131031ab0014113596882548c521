@@ -1,7 +1,0 @@
-package Descontos;
-
-import CalculoDeImpostos.Orcamento;
-
-public interface EstadoDeUmOrcamento{
-	void aplicaDescontoExtra(Orcamento orcamento);
-}
