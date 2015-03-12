@@ -10,24 +10,16 @@
 		<list key="textEntries">
 			<item value="1"/>
 			<item value="1"/>
-			<item value="1"/>
-			<item value="1"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.jdt.ui.edit.text.java.generate.constructor.using.fields"/>
-			<item value="org.eclipse.jdt.ui.edit.text.java.generate.tostring"/>
 			<item value="org.eclipse.ui.file.import(importWizardId=org.eclipse.ui.wizards.import.ExternalProject)"/>
 			<item value="org.eclipse.ui.views.ResourceNavigator"/>
 		</list>
 		<list key="orderedProviders">
 			<item value="org.eclipse.ui.commands"/>
-			<item value="org.eclipse.ui.commands"/>
-			<item value="org.eclipse.ui.commands"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
 		<list key="textArray">
-			<item value="gcu"/>
-			<item value="tos"/>
 			<item value="existing pro"/>
 			<item value="navi"/>
 		</list>
