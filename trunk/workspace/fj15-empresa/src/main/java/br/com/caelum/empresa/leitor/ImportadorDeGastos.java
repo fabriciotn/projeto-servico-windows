@@ -3,10 +3,11 @@ package br.com.caelum.empresa.leitor;
 import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
+import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 import br.com.caelum.empresa.modelo.Funcionario;
 import br.com.caelum.empresa.modelo.Gasto;
@@ -15,9 +16,9 @@ public class ImportadorDeGastos {
 	
 	private SimpleDateFormat df = new SimpleDateFormat("ddMMyyyy");
 	
-	public List<Gasto> importa(InputStream entrada) throws ParseException {
+	public Collection<Gasto> importa(InputStream entrada) throws ParseException {
 		Scanner leitor = new Scanner(entrada);
-		List<Gasto> gastos = new ArrayList<Gasto>();
+		Set<Gasto> gastos = new LinkedHashSet<Gasto>();
 		while (leitor.hasNextLine()) {
 			
 			String line = leitor.nextLine();
@@ -36,7 +37,7 @@ public class ImportadorDeGastos {
 			
 			Funcionario funcionario = new Funcionario(nomeTxt, matricula,
 					dataNascimento);
-			gastos.add(new Gasto(valor, tipoDeGastoTxt, funcionario, dataDespesa));
+			gastos.add(new Gasto(valor,tipoDeGastoTxt, funcionario, dataDespesa, true));
 		}
 		return gastos;
 	}
