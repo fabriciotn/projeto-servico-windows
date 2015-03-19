@@ -69,6 +69,16 @@ public class Gasto {
 	}
 
 	
+	public Gasto(double d, String string, Funcionario funcionario2,
+			Calendar hoje) {
+		super();
+		this.valor = d;
+		this.tipo = string;
+		this.funcionario = funcionario2;
+		this.data = hoje;
+	}
+
+
 	public double getValor() {
 		return valor;
 	}
