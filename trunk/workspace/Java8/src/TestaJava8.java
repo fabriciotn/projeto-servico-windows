@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class TestaJava8 {
@@ -9,10 +10,9 @@ public class TestaJava8 {
 		palavras.add("casa do código");
 		palavras.add("caelum");
 
-		palavras.sort((String str1, String str2) -> Integer.compare(str1.length(), str2.length()));
-		palavras.sort((String str1, String str2) -> Integer.compare(str1.length(), str2.length()));
+		palavras.sort(Comparator.comparing(String::length));
 
-		palavras.forEach(t -> System.out.println(t));
+		palavras.forEach(System.out::println);
 
 		new Thread(() -> System.out.println("Executando um Runnable")).start();
 
