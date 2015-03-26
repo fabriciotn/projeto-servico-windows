@@ -8,7 +8,7 @@
 		<item value="550" key="dialogHeight"/>
 		<item value="960" key="dialogWidth"/>
 		<list key="textEntries">
-			<item value="1"/>
+			<item value="3"/>
 			<item value="1"/>
 		</list>
 		<list key="orderedElements">
@@ -21,6 +21,8 @@
 		</list>
 		<list key="textArray">
 			<item value="existing pro"/>
+			<item value="impo"/>
+			<item value="import"/>
 			<item value="navi"/>
 		</list>
 	</section>
