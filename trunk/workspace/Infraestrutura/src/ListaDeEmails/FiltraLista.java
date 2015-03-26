@@ -41,5 +41,6 @@ public class FiltraLista {
 
 		sc.close();
 		ps.close();
+		ps1.close();
 	}
 }
