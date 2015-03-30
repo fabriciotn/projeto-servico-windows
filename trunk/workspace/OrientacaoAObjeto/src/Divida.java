@@ -1,34 +1,39 @@
-
 public class Divida {
 
-	private double valorTotalDaDivida;
-	private double valorJaPago;
-	String nomeDoCredor;
-	String cnpjDoCredor;
-	
-	public double getValorTotalDaDivida() {
-		return valorTotalDaDivida;
+	private String credor;
+	private Cnpj cnpjCredor;
+	private double total;
+	private Pagamentos pagamentos = new Pagamentos();
+
+	public Pagamentos getPagamentos() {
+		return pagamentos;
 	}
-	public void setValorTotalDaDivida(double valorTotalDaDivida) {
-		this.valorTotalDaDivida = valorTotalDaDivida;
-	}
-	public String getNomeDoCredor() {
-		return nomeDoCredor;
-	}
-	public void setNomeDoCredor(String nomeDoCredor) {
-		this.nomeDoCredor = nomeDoCredor;
-	}
-	public String getCnpjDoCredor() {
-		return cnpjDoCredor;
-	}
-	public void setCnpjDoCredor(String cnpjDoCredor) {
-		this.cnpjDoCredor = cnpjDoCredor;
-	}
-	public double getValorJaPago() {
-		return valorJaPago;
+
+	public double getTotal() {
+		return this.total;
 	}
 	
-	public void paga(double valor){
-		valorJaPago += valor;
-	}	
+	public void setTotal(double total) {
+		this.total = total;
+	}
+
+	public String getCredor() {
+		return this.credor;
+	}
+
+	public Cnpj getCnpjCredor() {
+		return this.cnpjCredor;
+	}
+
+	public void setCnpjCredor(Cnpj cnpjCredor) {
+		this.cnpjCredor = cnpjCredor;
+	}
+
+	public void setCredor(String credor) {
+		this.credor = credor;
+	}
+
+	public double valorAPagar() {
+		return this.total - this.pagamentos.getValorPago();
+	}
 }
