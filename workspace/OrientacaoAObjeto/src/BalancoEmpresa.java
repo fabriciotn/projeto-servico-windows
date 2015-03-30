@@ -1,23 +1,16 @@
 import java.util.HashMap;
 
-
 public class BalancoEmpresa {
+	private HashMap<Cnpj, Divida> dividas = new HashMap<Cnpj, Divida>();
 
-	private HashMap<String, Divida> dividas = new HashMap<String, Divida>();
-	
-	public void criaDivida(String credor, String cnpjCredor, double valor){
-		Divida divida = new Divida();
-		divida.setCnpjDoCredor(credor);
-		divida.setCnpjDoCredor(cnpjCredor);
-		divida.setValorTotalDaDivida(valor);
-		
-		dividas.put(cnpjCredor, divida);
+	public void registraDivida(Divida divida) {
+		dividas.put(divida.getCnpjCredor().getCnpjCredor(), divida);
 	}
-	
-	public void pagaDivida(String cnpjCredor, double valor){
-		Divida divida = dividas.get(cnpjCredor);
-		if(divida != null){
-			divida.paga(valor);
+
+	public void pagaDivida(String cnpj, Pagamento pagamento) {
+		Divida divida = dividas.get(cnpj);
+		if (divida != null) {
+			divida.getPagamentos().registra(pagamento);
 		}
 	}
 }
