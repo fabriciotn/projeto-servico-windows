@@ -41,4 +41,17 @@ public class Cnpj {
 		return 0;
 	}
 
+	@Override
+	public int hashCode() {
+		return this.getCnpjCredor().hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Cnpj)) {
+            return false;
+        } 
+        Cnpj outro = (Cnpj) obj;
+        return this.getCnpjCredor().equals(outro.getCnpjCredor());
+	}
 }
