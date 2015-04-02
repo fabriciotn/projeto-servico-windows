@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 public class BalancoEmpresa {
-	private HashMap<Cnpj, Divida> dividas = new HashMap<Cnpj, Divida>();
+	private HashMap<String, Divida> dividas = new HashMap<String, Divida>();
 
 	public void registraDivida(Divida divida) {
 		dividas.put(divida.getCnpjCredor().getCnpjCredor(), divida);
