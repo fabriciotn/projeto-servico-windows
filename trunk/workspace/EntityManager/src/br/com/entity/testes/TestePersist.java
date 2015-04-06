@@ -17,7 +17,7 @@ public class TestePersist {
 		
 		//OBJETO NO ESTADO NEW
 		Pessoa p = new Pessoa();
-		p.setNome("Fabricio");
+		p.setNome("Andréia Nascimento");
 		
 		//OBJETO NO ESTADO MANAGED
 		manager.persist(p);
