@@ -13,6 +13,8 @@ public class FiltradorDeGastosEspeciais {
 		for (Gasto gasto : gastos) {
 			if (gasto.getValor() >= this.limite)
 				gastosAcimaDoLimite.add(gasto);
+			System.out.println(gasto.getTipo());
+			System.out.println(gasto.getValor());
 		}
 		return gastosAcimaDoLimite;
 	}
@@ -20,5 +22,7 @@ public class FiltradorDeGastosEspeciais {
 	public FiltradorDeGastosEspeciais(double limite) {
 		super();
 		this.limite = limite;
+
 	}
+
 }
