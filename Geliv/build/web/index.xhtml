@@ -1,0 +1,29 @@
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="conteudo">
+        <h:form>
+            <p:panel header="Login">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputLabel for="nome" value="Nome: " />
+                    <p:inputText id="text" value="#{usuarioBean.nome}" required="true">
+                        <f:validateLength minimum="2"/>
+                        <p:clientValidator />
+                    </p:inputText>
+
+                    <h:outputLabel for="senha" value="Senha: " />
+                    <p:password id="integer" value="#{usuarioBean.senha}">
+                        <f:validateLength minimum="2"/>
+                    </p:password>
+                </h:panelGrid>
+
+                <p:commandButton value="Save" ajax="false" icon="ui-icon-check" validateClient="true" />
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
