@@ -7,23 +7,28 @@
                 xmlns:p="http://primefaces.org/ui">
 
     <ui:define name="conteudo">
-        <h:form>
-            <p:panel header="Login">
-                <h:panelGrid columns="2" cellpadding="5">
+        <center>
+            <h:form>
+                <p:panelGrid columns="2">
+                    <f:facet name="header">
+                        <h:outputText value="Login" />
+                    </f:facet>
+
                     <h:outputLabel for="nome" value="Nome: " />
-                    <p:inputText id="text" value="#{usuarioBean.nome}" required="true">
+                    <p:inputText id="nome" value="#{usuarioBean.nome}" required="true" label="nome">
                         <f:validateLength minimum="2"/>
                         <p:clientValidator />
                     </p:inputText>
 
                     <h:outputLabel for="senha" value="Senha: " />
-                    <p:password id="integer" value="#{usuarioBean.senha}">
+                    <p:password id="senha" value="#{usuarioBean.senha}" required="true" label="nome">
                         <f:validateLength minimum="2"/>
                     </p:password>
-                </h:panelGrid>
-
-                <p:commandButton value="Save" ajax="false" icon="ui-icon-check" validateClient="true" />
-            </p:panel>
-        </h:form>
+                </p:panelGrid>
+                <br/>
+                <p:commandButton value="Entrar" ajax="false" icon="ui-icon-check" action="#{usuarioBean.getLogin(usuarioBean.nome, usuarioBean.senha)}"  />
+            </h:form>
+        </center>
     </ui:define>
+
 </ui:composition>

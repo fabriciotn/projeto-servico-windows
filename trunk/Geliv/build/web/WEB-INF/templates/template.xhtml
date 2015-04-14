@@ -2,24 +2,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title>Título</title>
+        <title>Hemominas - Gerenciador de Projetos</title>
     </h:head>
 
-    <h:body>
-        <div id="header">
-            <img src="./imagens/Hemominas_topo.PNG"/>
-            <hr/>
+    <h:body style="font-family: arial; margin: 0;">
+        <div id="header" align="center">
+            <img name="logo" src="./imagens/logoHemominas.png" width="550px"/>
         </div>
-
-        <ui:insert name="conteudo">
-            Espaço para o conteúdo da tela.
+        <div style="padding: 20px; background-color: #41AADA">
+        </div>
+        <br/>
+        
+        <ui:insert name="menu">
+                
         </ui:insert>
 
-        <div id="footer" style="text-align: center">
-            <hr />
+        <ui:insert name="conteudo">
+            <center>
+                Espaço para o conteúdo da tela.
+            </center>
+        </ui:insert>
+
+        <br/><br/><br/>
+        <div id="footer" style="text-align: center; background-color: darkgray; font-size: 15px; padding: 10px; color: white">
             &copy;Fundação Hemominas - 2015. Todos os direitos reservados.
         </div>
     </h:body>

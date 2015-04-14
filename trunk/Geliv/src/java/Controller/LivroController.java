@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Controller;
 
 import Dao.LivroDao;
@@ -15,10 +10,7 @@ import javax.faces.event.ActionEvent;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
-/**
- *
- * @author José Alexandre
- */
+
 @ManagedBean
 @SessionScoped
 public class LivroController {
