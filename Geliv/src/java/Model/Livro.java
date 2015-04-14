@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Model;
 
 import java.io.Serializable;
@@ -10,10 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- *
- * @author José Alexandre
- */
 @Entity
 public class Livro implements Serializable {
 
