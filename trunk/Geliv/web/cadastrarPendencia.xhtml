@@ -9,10 +9,29 @@
     <ui:define name="menu">
         <ui:include src ="/WEB-INF/partials/menu.xhtml"/>
     </ui:define>
-    
+
     <ui:define name="conteudo">
         <center>
-            Cadastrar
+            <div>
+                <h:form>
+                    <p:panel header="Cadastro de Pendências">
+                        <p:messages />
+                        <h:panelGrid columns="2" columnClasses="label, value">
+                            <h:outputText value="Titulo: *" />
+                            <p:inputText value="#{userWizard.user.firstname}" required="true" label="Firstname"/>
+
+                            <h:outputText value="Lastname: *" />
+                            <p:inputText value="#{userWizard.user.lastname}" required="true" label="Lastname"/>
+
+                            <h:outputText value="Age: " />
+                            <p:inputText value="#{userWizard.user.age}" />
+
+                            <h:outputText value="Skip to last: " />
+                            <h:selectBooleanCheckbox value="#{userWizard.skip}" />
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </div>
         </center>
     </ui:define>
 
