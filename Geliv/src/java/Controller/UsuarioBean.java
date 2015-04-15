@@ -10,7 +10,7 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class UsuarioBean {
 
-    private String nome;
+    private String masp;
     private String senha;
 
     public String getLogin(String usuario, String senha) {
@@ -25,18 +25,18 @@ public class UsuarioBean {
         return pag;
     }
 
-    public String getNome() {
-        return nome;
+    public String getMasp() {
+        return masp;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setMasp(String masp) {
+        this.masp = masp;
     }
 
     public String getSenha() {
         return senha;
     }
-
+    
     public void setSenha(String senha) {
         this.senha = senha;
     }
