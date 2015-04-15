@@ -14,19 +14,19 @@
                         <h:outputText value="Login" />
                     </f:facet>
 
-                    <h:outputLabel for="nome" value="Nome: " />
-                    <p:inputText id="nome" value="#{usuarioBean.nome}" required="true" label="nome">
+                    <h:outputLabel for="masp" value="Masp: " />
+                    <p:inputText id="masp" value="#{usuarioBean.masp}" required="true" label="masp">
                         <f:validateLength minimum="2"/>
                         <p:clientValidator />
                     </p:inputText>
 
                     <h:outputLabel for="senha" value="Senha: " />
-                    <p:password id="senha" value="#{usuarioBean.senha}" required="true" label="nome">
+                    <p:password id="senha" value="#{usuarioBean.senha}" required="true" label="senha">
                         <f:validateLength minimum="2"/>
                     </p:password>
                 </p:panelGrid>
                 <br/>
-                <p:commandButton value="Entrar" ajax="false" icon="ui-icon-check" action="#{usuarioBean.getLogin(usuarioBean.nome, usuarioBean.senha)}"  />
+                <p:commandButton value="Entrar" ajax="false" icon="ui-icon-check" action="#{usuarioBean.getLogin(usuarioBean.masp, usuarioBean.senha)}"  />
             </h:form>
         </center>
     </ui:define>
