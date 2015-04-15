@@ -18,16 +18,21 @@
                         <p:messages />
                         <h:panelGrid columns="2" columnClasses="label, value">
                             <h:outputText value="Titulo: *" />
-                            <p:inputText value="#{userWizard.user.firstname}" required="true" label="Firstname"/>
+                            <p:inputText value="#{pendenciaBean.titulo}" required="true" label="Título"/>
 
-                            <h:outputText value="Lastname: *" />
-                            <p:inputText value="#{userWizard.user.lastname}" required="true" label="Lastname"/>
+                            <h:outputText value="Setor: " />
+                            <p:selectOneMenu id="console" value="#{selectOneMenuView.console}">
+                                <f:selectItem itemLabel="Selecione" itemValue="" />
+                                <f:selectItem itemLabel="Controle de qualidade" itemValue="CQ" />
+                                <f:selectItem itemLabel="Sorologia" itemValue="Sorologia" />
+                                <f:selectItem itemLabel="Fracionamento" itemValue="Fracionamento" />
+                                <f:selectItem itemLabel="NAT" itemValue="NAT" />
+                                <f:selectItem itemLabel="Imuno" itemValue="Imuno" />
+                            </p:selectOneMenu>
 
-                            <h:outputText value="Age: " />
-                            <p:inputText value="#{userWizard.user.age}" />
+                            <h:outputText value="Descricao: *" />
+                            <p:inputTextarea rows="10" cols="50" completeMethod="#{inputTextareaView.completeArea}" queryDelay="750" minQueryLength="4" />
 
-                            <h:outputText value="Skip to last: " />
-                            <h:selectBooleanCheckbox value="#{userWizard.skip}" />
                         </h:panelGrid>
                     </p:panel>
                 </h:form>
