@@ -15,13 +15,12 @@
             <div>
                 <h:form>
                     <p:panel header="Cadastro de Pendências">
-                        <p:messages />
-                        <h:panelGrid columns="2" columnClasses="label, value">
+                        <h:panelGrid columns="2" columnClasses="label, value" >
                             <h:outputText value="Titulo: *" />
-                            <p:inputText value="#{pendenciaBean.titulo}" required="true" label="Título"/>
+                            <p:inputText value="#{pendenciaBean.titulo}" required="true" label="Título" size="48"/>
 
-                            <h:outputText value="Setor: " />
-                            <p:selectOneMenu id="console" value="#{selectOneMenuView.console}">
+                            <h:outputText value="Setor: "/>
+                            <p:selectOneMenu id="setor" value="#{selectOneMenuView.console}">
                                 <f:selectItem itemLabel="Selecione" itemValue="" />
                                 <f:selectItem itemLabel="Controle de qualidade" itemValue="CQ" />
                                 <f:selectItem itemLabel="Sorologia" itemValue="Sorologia" />
@@ -30,12 +29,60 @@
                                 <f:selectItem itemLabel="Imuno" itemValue="Imuno" />
                             </p:selectOneMenu>
 
+                            <h:outputText value="Projeto: " />
+                            <p:selectOneMenu id="projeto" value="#{selectOneMenuView.console}" disabled="true">
+                                <f:selectItem itemLabel="Ciclo do Sangue" itemValue="Ciclo do Sangue" />
+                            </p:selectOneMenu>
+
+                            <h:outputText value="Status: " />
+                            <p:selectOneMenu id="status" value="#{selectOneMenuView.console}" disabled="true">
+                                <f:selectItem itemLabel="Aberto" itemValue="Aberto" />
+                                <f:selectItem itemLabel="Fechado" itemValue="Fechado" />
+                                <f:selectItem itemLabel="Em análise" itemValue="Em análise" />
+                                <f:selectItem itemLabel="Em execução" itemValue="Em execução" />
+                            </p:selectOneMenu>
+
+                            <h:outputText value="Prioridade: " />
+                            <p:selectOneMenu id="prioridade" value="#{selectOneMenuView.console}">
+                                <f:selectItem itemLabel="Selecione" itemValue="" />
+                                <f:selectItem itemLabel="Leve" itemValue="Leve" />
+                                <f:selectItem itemLabel="Moderado" itemValue="Moderado" />
+                                <f:selectItem itemLabel="Grave" itemValue="Grave" />
+                                <f:selectItem itemLabel="Crítico" itemValue="Crítico" />
+                            </p:selectOneMenu>
+
+                            <h:outputText value="Categoria: " />
+                            <p:selectOneMenu id="categoria" value="#{selectOneMenuView.console}">
+                                <f:selectItem itemLabel="Selecione" itemValue="" />
+                                <f:selectItem itemLabel="Configuração" itemValue="Configuração" />
+                                <f:selectItem itemLabel="Desenvolvimento" itemValue="Desenvolvimento" />
+                                <f:selectItem itemLabel="Treinamento" itemValue="Treinamento" />
+                                <f:selectItem itemLabel="Definição de Fluxo" itemValue="Definição de Fluxo" />
+                            </p:selectOneMenu>
+
+                            <h:outputText value="Item do edital: " />
+                            <p:inputText value="#{pendenciaBean.titulo}" required="false" label=""/>
+
                             <h:outputText value="Descricao: *" />
                             <p:inputTextarea rows="10" cols="50" completeMethod="#{inputTextareaView.completeArea}" queryDelay="750" minQueryLength="4" />
 
+                            <h:outputText value="Observações: *" />
+                            <p:inputTextarea rows="5" cols="50" completeMethod="#{inputTextareaView.completeArea}" queryDelay="750" minQueryLength="4" />
+
+                            <p:columnGroup>
+                            </p:columnGroup>
+
+                            <p:columnGroup>
+                                <p:commandButton value="Enviar" ajax="false" icon="ui-icon-check" action="#"  />
+                                <p:commandButton value="Limpar" immediate="true" ajax="false" icon="ui-icon-cancel">
+                                    <p:resetInput target="form" />
+                                </p:commandButton>
+
+                            </p:columnGroup>
                         </h:panelGrid>
                     </p:panel>
                 </h:form>
+
             </div>
         </center>
     </ui:define>
