@@ -1,0 +1,20 @@
+<!--
+                            
+<h:outputText value="Anexe arquivos: " />
+<p:fileUpload fileUploadListener="#{fileUploadView.upload}" fileLimit="5" fileLimitMessage="Excedido Limite de arquivos"
+                                  cancelLabel="Cancelar" label="Arquivo" uploadLabel="Anexar" 
+
+                                  invalidFileMessage="Somente arquivos .doc, .docx, .txt, .jpg, .png ou .gif"
+                                  allowTypes="/(\.|\/)(gif|jpe?g|png|doc?x|txt)$/" value="#{teste.file}"
+                                  mode="advanced" skinSimple="false" />-->
+
+
+
+
+
+
+
+
+
+
+
