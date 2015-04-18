@@ -2,8 +2,18 @@
 package br.org.mg.hemoproject.modelo;
 
 public enum Prioridade {
-    LEVE,
-    MODERADO,
-    GRAVE,
-    CRITICO
+    LEVE("Leve"),
+    MODERADO("Moderado"),
+    GRAVE("Grave"),
+    CRITICO("Crítico");
+    
+    private String label;
+    
+    private Prioridade(String label){
+    	this.label = label;
+    }
+
+	public String getLabel() {
+		return label;
+	}
 }

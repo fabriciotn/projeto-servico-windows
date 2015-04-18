@@ -1,8 +1,18 @@
 package br.org.mg.hemoproject.modelo;
 
 public enum Status {
-    ABERTO,
-    FECHADO,
-    ANALISE,
-    EXECUCAO
+    ABERTO("Aberto"),
+    FECHADO("Fechado"),
+    ANALISE("Em análise"),
+    EXECUCAO("Em execução");
+    
+    private String label;
+    
+    private Status(String label) {
+		this.label = label;
+	}
+    
+    public String getLabel(){
+    	return label;
+    }
 }
