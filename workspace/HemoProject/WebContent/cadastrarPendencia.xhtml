@@ -27,11 +27,16 @@
 								<f:selectItems value="#{setorBean.setorList}" />
 							</p:selectOneMenu>
 
-							<h:outputText value="Projeto: " />
-							<p:selectOneMenu id="projeto" value="#{projetoBean.projeto}">
-								<f:selectItem itemLabel="Selecione" itemValue="" />
-								<f:selectItems value="#{projetoBean.projetosList}" />
-							</p:selectOneMenu>
+							<h:panelGroup rendered="#{not empty projetoBean.projetos}">
+								<h1>Lista de projetos</h1>
+								<ul>
+									<ui:repeat value="#{projetoBean.projetos}" var="projeto">
+										<li><h:outputText value="#{projeto.id} #{projeto.nome}" /></li>
+									</ui:repeat>
+								</ul>
+							</h:panelGroup>
+							
+							
 
 							<h:outputText value="Status: " />
 							<p:selectOneMenu id="status" value="#{statusBean.status}">
@@ -40,13 +45,15 @@
 							</p:selectOneMenu>
 
 							<h:outputText value="Prioridade: " />
-							<p:selectOneMenu id="prioridade" value="#{prioridadeBean.prioridade}">
+							<p:selectOneMenu id="prioridade"
+								value="#{prioridadeBean.prioridade}">
 								<f:selectItem itemLabel="Selecione" itemValue="" />
 								<f:selectItems value="#{prioridadeBean.prioridadeList}" />
 							</p:selectOneMenu>
 
 							<h:outputText value="Categoria: " />
-							<p:selectOneMenu id="categoria" value="#{categoriaBean.categoria}">
+							<p:selectOneMenu id="categoria"
+								value="#{categoriaBean.categoria}">
 								<f:selectItem itemLabel="Selecione" itemValue="" />
 								<f:selectItems value="#{categoriaBean.categoriaList}" />
 							</p:selectOneMenu>

@@ -16,16 +16,16 @@ public class Projeto {
     
     private String nome;
     
-    @OneToMany
-    private List<Pendencia> pendencias;
+    //@OneToMany
+    //private List<Pendencia> pendencias;
 
-    public List<Pendencia> getPendencias() {
-        return pendencias;
-    }
+    //public List<Pendencia> getPendencias() {
+    //    return pendencias;
+    //}
 
-    public void setPendencias(List<Pendencia> pendencias) {
-        this.pendencias = pendencias;
-    }
+    //public void setPendencias(List<Pendencia> pendencias) {
+    //    this.pendencias = pendencias;
+    //}
 
     public String getNome() {
         return nome;
