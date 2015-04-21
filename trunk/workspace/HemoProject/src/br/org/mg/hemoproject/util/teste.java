@@ -12,22 +12,35 @@ import br.org.mg.hemoproject.modelo.Categoria;
 import br.org.mg.hemoproject.modelo.Pendencia;
 import br.org.mg.hemoproject.modelo.Prioridade;
 import br.org.mg.hemoproject.modelo.Projeto;
+import br.org.mg.hemoproject.modelo.ProjetoRepository;
 import br.org.mg.hemoproject.modelo.Setor;
 import br.org.mg.hemoproject.modelo.Status;
 import br.org.mg.hemoproject.modelo.Usuario;
 
 public class teste {
 	public static void main(String[] args) {
-
+		listaProjetosBean();
+	}
+	
+	public static void listaProjetosBean(){
 		ProjetoBean p = new ProjetoBean();
-		List<Projeto> projetos = p.getProjetosList();
-		
+		List<Projeto> projetos = p.getProjetos();
 		for (Projeto projeto : projetos) {
 			System.out.println(projeto.getNome());
 		}
 	}
+	
+	
+	public void listaProjetos(){
+		ProjetoBean p = new ProjetoBean();
+		//List<Projeto> projetos = p.getProjetosList();
+		
+		//for (Projeto projeto : projetos) {
+		//	System.out.println(projeto.getNome());
+		//}
+	}
 
-	public void teste() {
+	public static void teste() {
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("hemoproject");
 		EntityManager manager = factory.createEntityManager();
@@ -54,7 +67,8 @@ public class teste {
 		pendencia.setTitulo("Problema 1 - titulo");
 
 		Projeto projeto = new Projeto();
-		projeto.setNome("Ciclo do Sangue");
+		projeto.setNome("Sistema do Ciclo do Sangue");
+		
 		// projeto.getPendencias().add(pendencia);
 
 		// manager.persist(usuario);
