@@ -1,12 +1,19 @@
 package com.mb;
 
-import javax.annotation.PostConstruct;
 import java.io.Serializable;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+
+import org.primefaces.component.chart.ChartRenderer;
+import org.primefaces.component.chart.renderer.BarRenderer;
 import org.primefaces.model.chart.Axis;
 import org.primefaces.model.chart.AxisType;
 import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.ChartSeries;
+
+import com.facade.PendenciaFacade;
  
 @ManagedBean
 public class ChartView implements Serializable {
@@ -26,42 +33,36 @@ public class ChartView implements Serializable {
         animatedModel2 = initBarModel();
         animatedModel2.setTitle("Pendências por setor");
         animatedModel2.setAnimate(true);
-        animatedModel2.setLegendPosition("ne");
+        animatedModel2.setLegendPosition("su");
+        animatedModel2.setShowPointLabels(true);
+        
         Axis yAxis = animatedModel2.getAxis(AxisType.Y);
-        yAxis.setMin(0);
-        yAxis.setMax(200);
+        yAxis.setLabel("Quantidade de pendências");
+        
     }
      
     private BarChartModel initBarModel() {
-        BarChartModel model = new BarChartModel();
- 
-        ChartSeries fracionamento = new ChartSeries();
-        fracionamento.setLabel("Fracionamento");
-        fracionamento.set("",200);        
-        
-        ChartSeries controleQualidade = new ChartSeries();
-        controleQualidade.setLabel("Controle de Qualidade");
-        controleQualidade.set("", 98);
-        
-        ChartSeries sorologia = new ChartSeries();
-        sorologia.setLabel("Sorologia");
-        sorologia.set("", 150);
-        
-        ChartSeries imuno = new ChartSeries();
-        imuno.setLabel("Imuno");
-        imuno.set("", 90);
-        
-        ChartSeries nat = new ChartSeries();
-        nat.setLabel("NAT");
-        nat.set("", 90);
-
-        
-        model.addSeries(fracionamento);
-        model.addSeries(controleQualidade);
-        model.addSeries(sorologia);
-        model.addSeries(imuno);
-        model.addSeries(nat);
-         
+    	String sql = "select p.id as id, "
+				+ "p.titulo as titulo, "
+				+ "p.categoria as categoria, "
+				+ "p.status as status, "
+				+ "s.nome as setor, "
+				+ "count(*) as qtd_Pendencia "
+				+ "from Pendencia p, "
+				+ "Setor s where p.setor = s.id "
+				+ "group by s";
+		
+		PendenciaFacade facade = new PendenciaFacade();
+		List<Object[]> lista = facade.buscaComQuery(sql);
+		
+		BarChartModel model = new BarChartModel();
+		ChartSeries setor;
+		for (Object[] objects : lista) {
+			setor = new ChartSeries(objects[4].toString());
+	        setor.set("Setores",(Number) objects[5]);
+	        model.addSeries(setor);
+		}
+    	
         return model;
     }
      

@@ -3,13 +3,15 @@ package com.facade;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Query;
+
 import com.dao.PendenciaDAO;
 import com.model.Pendencia;
 
-public class PendenciaFacade implements Serializable{
-	
+public class PendenciaFacade implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private PendenciaDAO pendenciaDAO = new PendenciaDAO();
 
 	public void createPendencia(Pendencia pendencia) {
@@ -28,9 +30,9 @@ public class PendenciaFacade implements Serializable{
 		persistedPendencia.setItemDoEdital(pendencia.getItemDoEdital());
 		persistedPendencia.setObs(pendencia.getObs());
 		persistedPendencia.setPrioridade(pendencia.getPrioridade());
-		persistedPendencia.setSetor(pendencia.getSetor());		
+		persistedPendencia.setSetor(pendencia.getSetor());
 		persistedPendencia.setStatus(pendencia.getStatus());
-		
+
 		pendenciaDAO.update(persistedPendencia);
 		pendenciaDAO.commitAndCloseTransaction();
 	}
@@ -51,9 +53,17 @@ public class PendenciaFacade implements Serializable{
 
 	public void deletePendencia(Pendencia pendencia) {
 		pendenciaDAO.beginTransaction();
-		Pendencia persistedPendencia = pendenciaDAO.findReferenceOnly(pendencia.getId());
+		Pendencia persistedPendencia = pendenciaDAO.findReferenceOnly(pendencia
+				.getId());
 		pendenciaDAO.delete(persistedPendencia);
 		pendenciaDAO.commitAndCloseTransaction();
+	}
+
+	public List<Object[]> buscaComQuery(String sql) {
+		pendenciaDAO.beginTransaction();
+		Query query = pendenciaDAO.selectComQuery(sql);
+		List<Object[]> list = (List<Object[]>)query.getResultList();
+		return list;
 	}
 
 }

@@ -2,8 +2,8 @@ package com.dao;
 
 import com.model.Pendencia;
 
-public class PendenciaDAO extends GenericDAO<Pendencia>{
-	
+public class PendenciaDAO extends GenericDAO<Pendencia> {
+
 	private static final long serialVersionUID = 1L;
 
 	public PendenciaDAO() {
@@ -13,5 +13,4 @@ public class PendenciaDAO extends GenericDAO<Pendencia>{
 	public void delete(Pendencia pendencia) {
 		super.delete(pendencia.getId(), Pendencia.class);
 	}
-
 }
