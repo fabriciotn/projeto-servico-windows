@@ -118,4 +118,9 @@ abstract class GenericDAO<T> implements Serializable {
 			query.setParameter(entry.getKey(), entry.getValue());
 		}
 	}
+	
+	public Query selectComQuery(String q){
+		Query query = em.createQuery(q);
+		return query;
+	}
 }
