@@ -26,7 +26,11 @@ public class Pendencia implements Serializable{
     private String titulo;
     @OneToOne
     private Setor setor;
-    private String itemDoEdital;
+    @OneToOne
+    private Projeto projeto;
+    @OneToOne
+    private User usuario;
+   	private String itemDoEdital;
     @Lob
     private String descricao;
     @Enumerated(EnumType.STRING)
@@ -34,12 +38,29 @@ public class Pendencia implements Serializable{
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
     @Enumerated(EnumType.STRING)
-    private Enum prioridade;
+    private Prioridade prioridade;
     @Lob
     private String obs;
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar dataDaPendencia;
 
+    
+    public User getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(User usuario) {
+		this.usuario = usuario;
+	}
+
+	public Projeto getProjeto() {
+		return projeto;
+	}
+
+	public void setProjeto(Projeto projeto) {
+		this.projeto = projeto;
+	}
+    
     public String getTitulo() {
         return titulo;
     }
@@ -88,11 +109,11 @@ public class Pendencia implements Serializable{
         this.categoria = categoria;
     }
 
-    public Enum getPrioridade() {
+    public Prioridade getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(Enum prioridade) {
+    public void setPrioridade(Prioridade prioridade) {
         this.prioridade = prioridade;
     }
 

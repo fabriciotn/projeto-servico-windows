@@ -1,17 +1,28 @@
 package com.mb;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 import com.facade.ProjetoFacade;
 import com.model.Projeto;
+import com.model.Setor;
 
 @ViewScoped
 @ManagedBean
 public class ProjetoMB extends AbstractMB implements Serializable {
+	public List<Projeto> getProjetos() {
+		return projetos;
+	}
+
+	public void setProjetos(List<Projeto> projetos) {
+		this.projetos = projetos;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	private Projeto projeto;
@@ -86,6 +97,16 @@ public class ProjetoMB extends AbstractMB implements Serializable {
 		}
 
 		return projetos;
+	}
+	
+	public Map<String, String> exibeTotosProjetos(){
+		Map<String, String> lista = new HashMap<String, String>();
+		List<Projeto> listaProjetos = getAllProjetos();
+		for (Projeto projeto : listaProjetos) {
+			lista.put(projeto.getNome(), projeto.getNome());
+		}
+		
+		return lista;
 	}
 
 	private void loadProjetos() {

@@ -1,6 +1,7 @@
 package com.util;
 
 import java.util.Hashtable;
+
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
@@ -10,6 +11,9 @@ import javax.naming.directory.SearchControls;
 import javax.naming.directory.SearchResult;
 import javax.naming.ldap.InitialLdapContext;
 import javax.naming.ldap.LdapContext;
+
+import com.model.Role;
+import com.model.User;
 
 public class ADAuthenticator {
 
@@ -29,9 +33,11 @@ public class ADAuthenticator {
         this.searchBase = dn;
     }
 
-    public String authenticate(String user, String pass) {
+    public User authenticate(String masp, String pass) {
+    	User usuarioAd = new User();
+    	
         String returnedAtts[] = {"sn", "givenName", "mail", "displayName"};
-        String searchFilter = "(&(objectClass=user)(sAMAccountName=" + user + "))";
+        String searchFilter = "(&(objectClass=user)(sAMAccountName=" + masp + "))";
         String displayName = "";
         
         //Create the search controls
@@ -45,7 +51,7 @@ public class ADAuthenticator {
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
         env.put(Context.PROVIDER_URL, ldapHost);
         env.put(Context.SECURITY_AUTHENTICATION, "simple");
-        env.put(Context.SECURITY_PRINCIPAL, user + "@" + domain);
+        env.put(Context.SECURITY_PRINCIPAL, masp + "@" + domain);
         env.put(Context.SECURITY_CREDENTIALS, pass);
 
         LdapContext ctxGC = null;
@@ -59,14 +65,22 @@ public class ADAuthenticator {
             Attributes attributes = searchResult.getAttributes();
            
             Attribute attrCN = attributes.get("displayName");
-            displayName = (String) attrCN.get();
+            usuarioAd.setName((String) attrCN.get());
+            
+            attrCN = attributes.get("mail");
+            usuarioAd.setEmail((String) attrCN.get());
+            
+            usuarioAd.setMasp(masp);
+            
+            usuarioAd.setRole(Role.ADMIN);
+            
         } catch (NamingException ex) {
             ex.printStackTrace();
-            return "null";
+            return null;
         }catch (Exception e){
             e.printStackTrace();
-            return "null";
+            return null;
         }
-        return displayName;
+        return usuarioAd;
     }
 }
