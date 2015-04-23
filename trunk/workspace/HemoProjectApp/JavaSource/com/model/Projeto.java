@@ -2,6 +2,7 @@
 package com.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -20,9 +21,8 @@ public class Projeto implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nome;
-    
 
-    public String getNome() {
+	public String getNome() {
         return nome;
     }
 

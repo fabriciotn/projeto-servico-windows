@@ -1,6 +1,8 @@
 package com.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,6 +40,7 @@ public class Setor implements Serializable {
 	public int hashCode() {
 		return id;
 	}
+	
 
 	@Override
 	public boolean equals(Object obj) {

@@ -30,6 +30,15 @@ public class User implements Serializable {
 	private String name;
 	@Enumerated(EnumType.STRING)
 	private Role role;
+	private String email;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public int getId() {
 		return id;
@@ -37,14 +46,6 @@ public class User implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getEmail() {
-		return masp;
-	}
-
-	public void setEmail(String email) {
-		this.masp = email;
 	}
 
 	public String getPassword() {
@@ -92,5 +93,13 @@ public class User implements Serializable {
 		}
 
 		return false;
+	}
+
+	public String getMasp() {
+		return masp;
+	}
+
+	public void setMasp(String masp) {
+		this.masp = masp;
 	}
 }

@@ -1,11 +1,20 @@
 package com.mb;
 
 import java.io.Serializable;
+import java.util.GregorianCalendar;
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+
+import com.dao.UserDAO;
 import com.facade.PendenciaFacade;
 import com.model.Pendencia;
+import com.model.User;
 
+@ViewScoped
+@ManagedBean
 public class PendenciaMB extends AbstractMB implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -34,30 +43,40 @@ public class PendenciaMB extends AbstractMB implements Serializable{
 		this.pendencia = pendencia;
 	}
 
-	public void createPendencia() {
+	public String createPendencia() {
 		try {
+			User user = (User) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user");
+			
+			pendencia.setUsuario(user);
+			
+			//Seta a data de criação da pendencia
+			pendencia.setDataDaPendencia(new GregorianCalendar());
+			
 			getPendenciaFacade().createPendencia(pendencia);
 			closeDialog();
-			displayInfoMessageToUser("Created With Sucess");
+			displayInfoMessageToUser("Cadastro realizado com sucesso!");
 			loadPendencias();
 			resetPendencia();
 		} catch (Exception e) {
 			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
+			displayErrorMessageToUser("Ops, ocorreu algum problema. Tente novamente!");
 			e.printStackTrace();
+			return "/erro.xhtml";
 		}
+		
+		return "/home.xhtml";
 	}
 	
 	public void updatePendencia() {
 		try {
 			getPendenciaFacade().updatePendencia(pendencia);
 			closeDialog();
-			displayInfoMessageToUser("Updated With Sucess");
+			displayInfoMessageToUser("Atualizado com sucesso!");
 			loadPendencias();
 			resetPendencia();
 		} catch (Exception e) {
 			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
+			displayErrorMessageToUser("Ops, ocorreu algum problema. Tente novamente!");
 			e.printStackTrace();
 		}
 	}
@@ -66,12 +85,12 @@ public class PendenciaMB extends AbstractMB implements Serializable{
 		try {
 			getPendenciaFacade().deletePendencia(pendencia);
 			closeDialog();
-			displayInfoMessageToUser("Deleted With Sucess");
+			displayInfoMessageToUser("Deletado com sucesso!");
 			loadPendencias();
 			resetPendencia();
 		} catch (Exception e) {
 			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
+			displayErrorMessageToUser("Ops, ocorreu algum problema. Tente novamente!");
 			e.printStackTrace();
 		}
 	}

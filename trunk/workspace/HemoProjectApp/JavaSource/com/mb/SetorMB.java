@@ -1,7 +1,9 @@
 package com.mb;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -87,8 +89,17 @@ public class SetorMB extends AbstractMB implements Serializable {
 		if (setores == null) {
 			loadSetores();
 		}
-
 		return setores;
+	}
+	
+	public Map<String, String> exibeTotosSetores(){
+		Map<String, String> lista = new HashMap<String, String>();
+		List<Setor> listaSetor = getAllSetores();
+		for (Setor setor : listaSetor) {
+			lista.put(setor.getNome(), setor.getNome());
+		}
+		
+		return lista;
 	}
 
 	private void loadSetores() {
@@ -98,4 +109,14 @@ public class SetorMB extends AbstractMB implements Serializable {
 	public void resetSetor() {
 		setor = new Setor();
 	}
+
+	public List<Setor> getSetores() {
+		return setores;
+	}
+
+	public void setSetores(List<Setor> setores) {
+		this.setores = setores;
+	}
+	
+	
 }

@@ -4,7 +4,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpServletRequest;
 
 import com.facade.UserFacade;
 import com.model.User;
@@ -37,19 +36,23 @@ public class LoginMB extends AbstractMB {
 	public String login() {
 		UserFacade userFacade = new UserFacade();
 
-		User user = userFacade.isValidLogin(masp, password);
+		User user = new User();
+		user = userFacade.isValidLogin(masp, password);
 		
 		if(user != null){
 			userMB.setUser(user);
-			FacesContext context = FacesContext.getCurrentInstance();
-			HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
-			request.getSession().setAttribute("user", user);
-			return "/pages/protected/index.xhtml";
+			//FacesContext context = FacesContext.getCurrentInstance();
+			//HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
+			//request.getSession().setAttribute("user", user);
+			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user",user);
+			MessagesView ms = new MessagesView();
+	        ms.info(user.getName(), "Bem vindo!");
+			return "/home.xhtml";
 		}
 
 		displayErrorMessageToUser("Check your email/password");
 		
-		return null;
+		return "/erro.xhtml";
 	}
 
 	public void setUserMB(UserMB userMB) {
