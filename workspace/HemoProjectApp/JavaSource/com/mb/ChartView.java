@@ -6,12 +6,11 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
-import org.primefaces.component.chart.ChartRenderer;
-import org.primefaces.component.chart.renderer.BarRenderer;
 import org.primefaces.model.chart.Axis;
 import org.primefaces.model.chart.AxisType;
 import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.ChartSeries;
+import org.primefaces.model.chart.LegendPlacement;
 
 import com.facade.PendenciaFacade;
  
@@ -34,6 +33,7 @@ public class ChartView implements Serializable {
         animatedModel2.setTitle("Pendências por setor");
         animatedModel2.setAnimate(true);
         animatedModel2.setLegendPosition("su");
+        animatedModel2.setLegendPlacement(LegendPlacement.OUTSIDEGRID);
         animatedModel2.setShowPointLabels(true);
         
         Axis yAxis = animatedModel2.getAxis(AxisType.Y);

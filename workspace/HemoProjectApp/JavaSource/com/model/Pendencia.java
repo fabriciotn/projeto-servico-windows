@@ -3,7 +3,9 @@ package com.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -11,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -43,9 +46,19 @@ public class Pendencia implements Serializable{
     private String obs;
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar dataDaPendencia;
-
     
-    public User getUsuario() {
+    @OneToMany(mappedBy="pendencia", cascade=CascadeType.ALL) 
+    private List<Iteracao> iteracoes;
+    
+    public List<Iteracao> getIteracoes() {
+		return iteracoes;
+	}
+
+	public void setIteracoes(List<Iteracao> iteracoes) {
+		this.iteracoes = iteracoes;
+	}
+
+	public User getUsuario() {
 		return usuario;
 	}
 
