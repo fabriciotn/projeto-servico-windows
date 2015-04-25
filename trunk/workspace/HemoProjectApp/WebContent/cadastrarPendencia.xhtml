@@ -19,14 +19,17 @@
 							style="text-align:left">
 							<h:outputText value="Titulo:*" />
 							<p:inputText value="#{pendenciaMB.pendencia.titulo}"
-								required="true" requiredMessage="O campo Título é obrigatório!" label="Título" size="48" />
+								required="true" requiredMessage="O campo Título é obrigatório!"
+								label="Título" size="48" />
 
 							<h:outputText value="Setor:* " />
 							<p:selectOneMenu id="setor"
 								value="#{pendenciaMB.pendencia.setor}"
-								converter="setorConverter" required="true" requiredMessage="O campo Setor é obrigatório!">
-								<f:param value="Setor"/> 
-								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}" noSelectionOption="true"/>
+								converter="setorConverter" required="true"
+								requiredMessage="O campo Setor é obrigatório!">
+								<f:param value="Setor" />
+								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
+									noSelectionOption="true" />
 								<f:selectItems value="#{setorMB.allSetores}" var="setor"
 									itemLabel="#{setor.nome}" itemValue="#{setor}" />
 							</p:selectOneMenu>
@@ -34,31 +37,44 @@
 							<h:outputText value="Projeto:* " />
 							<p:selectOneMenu id="projeto"
 								value="#{pendenciaMB.pendencia.projeto}"
-								converter="projetoConverter" required="true" requiredMessage="O campo Projeto é obrigatório!">
-								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}" noSelectionOption="true"/>
+								converter="projetoConverter" required="true"
+								requiredMessage="O campo Projeto é obrigatório!">
+								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
+									noSelectionOption="true" />
 								<f:selectItems value="#{projetoMB.allProjetos}" var="projeto"
 									itemLabel="#{projeto.nome}" itemValue="#{projeto}" />
 							</p:selectOneMenu>
 
 							<h:outputText value="Status:* " />
-							<p:selectOneMenu id="status" value="#{pendenciaMB.pendencia.status}" required="true" requiredMessage="O campo Status é obrigatório!">
-								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}" noSelectionOption="true"/>
+							<p:selectOneMenu id="status"
+								value="#{pendenciaMB.pendencia.status}" required="true"
+								requiredMessage="O campo Status é obrigatório!">
+								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
+									noSelectionOption="true" />
 								<f:selectItems value="#{statusBean.statusList}" var="status"
 									itemLabel="#{status.label}" itemValue="#{status}" />
 							</p:selectOneMenu>
 
 							<h:outputText value="Prioridade:* " />
-							<p:selectOneMenu id="prioridade" value="#{pendenciaMB.pendencia.prioridade}" required="true" requiredMessage="O campo Prioridade é obrigatório!">
-								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}" noSelectionOption="true"/>
-								<f:selectItems value="#{prioridadeBean.prioridadeList}" var="prioridade"
-									itemLabel="#{prioridade.label}" itemValue="#{prioridade}" />
+							<p:selectOneMenu id="prioridade"
+								value="#{pendenciaMB.pendencia.prioridade}" required="true"
+								requiredMessage="O campo Prioridade é obrigatório!">
+								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
+									noSelectionOption="true" />
+								<f:selectItems value="#{prioridadeBean.prioridadeList}"
+									var="prioridade" itemLabel="#{prioridade.label}"
+									itemValue="#{prioridade}" />
 							</p:selectOneMenu>
 
-							<h:outputText value="Categoria: "/>
-							<p:selectOneMenu id="categoria" value="#{pendenciaMB.pendencia.categoria}" required="true" requiredMessage="O campo Categoria é obrigatório!">
-								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}" noSelectionOption="true"/>
-								<f:selectItems value="#{categoriaBean.categoriaList}" var="categoria"
-									itemLabel="#{categoria.label}" itemValue="#{categoria}" />
+							<h:outputText value="Categoria: " />
+							<p:selectOneMenu id="categoria"
+								value="#{pendenciaMB.pendencia.categoria}" required="true"
+								requiredMessage="O campo Categoria é obrigatório!">
+								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
+									noSelectionOption="true" />
+								<f:selectItems value="#{categoriaBean.categoriaList}"
+									var="categoria" itemLabel="#{categoria.label}"
+									itemValue="#{categoria}" />
 							</p:selectOneMenu>
 
 							<h:outputText value="Item do edital: " />
@@ -68,7 +84,8 @@
 							<h:outputText value="Descricao: *" />
 							<p:inputTextarea rows="10" cols="50"
 								value="#{pendenciaMB.pendencia.descricao}" queryDelay="750"
-								minQueryLength="4" required="true" requiredMessage="O campo Descrição é obrigatório!"/>
+								minQueryLength="4" required="true"
+								requiredMessage="O campo Descrição é obrigatório!" />
 
 							<h:outputText value="Observações: " />
 							<p:inputTextarea rows="5" cols="50"
@@ -85,15 +102,12 @@
 									icon="ui-icon-cancel">
 									<p:resetInput target="form" />
 								</p:commandButton>
-
 							</p:columnGroup>
 						</h:panelGrid>
 					</p:panel>
 				</h:form>
-
 			</div>
 		</center>
-
 
 	</ui:define>
 

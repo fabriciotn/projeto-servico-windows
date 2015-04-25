@@ -1,0 +1,47 @@
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="menu">
+		<ui:include src="/WEB-INF/partials/menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="conteudo">
+		<p:growl id="msgs" showDetail="true"/>
+		
+		<p:tabView value="#{pendenciaMB.pendenciaFacade.findPendencia(request.getParameter('id'))}" var="pendencia">
+			<p:tab title="Visualização">
+				<h:panelGrid columns="2" cellpadding="3">
+					<h:outputLabel value="Código: " style="font-weight: bold;"/><h:outputText value="#{pendencia.id}" />
+					<h:outputLabel value="Título: " style="font-weight: bold;"/><h:outputText value="#{pendencia.titulo}" />
+					<h:outputLabel value="Setor: " style="font-weight: bold;"/><h:outputText value="#{pendencia.setor.nome}" />
+					<h:outputLabel value="Prioridade: " style="font-weight: bold;"/><h:outputText value="#{pendencia.prioridade.label}" />
+					<h:outputLabel value="Status: " style="font-weight: bold;"/><h:outputText value="#{pendencia.status.label}" />
+					<h:outputLabel value="Descrição:  " style="font-weight: bold;"/><h:outputText value="#{pendencia.descricao}" />
+					<h:outputLabel value="Observação:  " style="font-weight: bold;"/><h:outputText value="#{pendencia.obs}" />
+					<h:outputLabel value="Responsável:  " style="font-weight: bold;"/><h:outputText value="#{pendencia.usuario.name}" />
+					<h:outputLabel value="Data da criação:  " style="font-weight: bold;"/><h:outputText value="#{pendencia.dataDaPendencia.timeInMillis}" >
+						<f:convertDateTime type="date" dateStyle="short" pattern="dd/MM/yyyy"/>  
+					</h:outputText> 
+				</h:panelGrid>
+			</p:tab>
+			
+			<p:tab title="Godfather Part II">
+				<h:panelGrid columns="2" cellpadding="10">
+					<h:outputLabel value="Código: " style="font-weight: bold;"/><h:outputText value="#{pendencia.id}" />
+				</h:panelGrid>
+			</p:tab>
+			
+			<p:tab title="Godfather Part III">
+				<h:panelGrid columns="2" cellpadding="10">
+					<h:outputText value="After a break of more than 15 years..." />
+				</h:panelGrid>
+			</p:tab>
+		</p:tabView>
+	</ui:define>
+
+</ui:composition>

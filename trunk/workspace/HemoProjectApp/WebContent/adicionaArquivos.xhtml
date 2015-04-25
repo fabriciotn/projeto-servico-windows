@@ -1,0 +1,57 @@
+
+<ui:composition template="WEB-INF/templates/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="menu">
+		<ui:include src="/WEB-INF/partials/menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="conteudo">
+		<center>
+			<p:panel header="Anexar arquivos" style="width=100%; height=100%">
+				<p:layout>
+					<p:layoutUnit position="west">
+						<h:form>
+							<h3 style="margin-top: 0">Arquivos</h3>
+							<p:tree value="#{treeBasicView.root}" var="node">
+								<p:treeNode collapsedIcon="ui-icon-folder-collapsed">
+									<p:commandButton value="#{node}" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="ui-icon-arrowthick-1-s">
+										<p:fileDownload value="#{treeBasicView.FileDownloadView()}" />
+									</p:commandButton>
+								</p:treeNode>
+							</p:tree>
+							<script type="text/javascript">
+								function start() {
+								    PF('statusDialog').show();
+								}
+								 
+								function stop() {
+								    PF('statusDialog').hide();
+								}
+							</script>
+						</h:form>
+					</p:layoutUnit>
+
+
+					<p:layoutUnit position="center">
+						<h:form enctype="multipart/form-data">
+							<p:growl id="mensagens" showDetail="true" />
+							<h:outputText value="Anexe arquivos: " />
+							<p:fileUpload fileUploadListener="#{fileUploadView.upload}"
+								fileLimit="5" fileLimitMessage="Excedido Limite de arquivos"
+								cancelLabel="Cancelar" label="Arquivo" uploadLabel="Anexar"
+								invalidFileMessage="Somente arquivos .doc, .docx, .txt, .jpg, .png ou .gif"
+								allowTypes="/(\.|\/)(gif|jpe?g|png|doc?x|txt)$/"
+								value="#{teste.file}" mode="advanced" skinSimple="false" />
+						</h:form>
+					</p:layoutUnit>
+				</p:layout>
+			</p:panel>
+		</center>
+	</ui:define>
+
+</ui:composition>

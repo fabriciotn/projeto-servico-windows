@@ -2,30 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
 <h:body>
-	<ui:composition template="/pages/protected/templates/master.xhtml">
+	<ui:composition template="/WEB-INF/templates/master.xhtml">
 		<ui:define name="divMain">
 			<h:form id="dogsForm">
-				<p:dataTable id="dogsTable" value="#{dogMB.allDogs}" var="dog" emptyMessage="#{bundle.noRecords}" paginator="true" rows="10"
+				<p:dataTable id="dogsTable" value="" var="dog" emptyMessage="" paginator="true" rows="10"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					rowsPerPageTemplate="5,10,15">
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="#{bundle.dogName}" />
+							<h:outputText value="#{bundle.create}" />
 						</f:facet>
 
-						<h:outputText value="#{dog.name}" />
+						<h:outputText value="" />
 					</p:column>
 
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="#{bundle.dogAge}" />
+							<h:outputText value="#{bundle.cancel}" />
 						</f:facet>
 
-						<h:outputText value="#{dog.age}" />
+						<h:outputText value="" />
 					</p:column>
 					<p:column>
 						<p:commandButton value="#{bundle.detail}" icon="ui-icon-bullet" onclick="dogDetailDialogWidget.show();" update=":dogDetailDialogForm" >
-							<f:setPropertyActionListener target="#{dogMB.dog}" value="#{dog}" />
+							<f:setPropertyActionListener target="" value="" />
 						</p:commandButton> 
 						<p:spacer width="10px" />
 						<p:commandButton value="#{bundle.update}" icon="ui-icon-pencil" update=":dogUpdateDialogForm" onclick="dogUpdateDialogWidget.show();" >
@@ -33,12 +33,12 @@
 						</p:commandButton>
 						<p:spacer width="10px" />
 						<p:commandButton value="#{bundle.delete}" icon="ui-icon-trash" update=":dogDeleteDialogForm" onclick="dogDeleteDialogWidget.show();" >
-							<f:setPropertyActionListener target="#{dogMB.dog}" value="#{dog}" />
+							<f:setPropertyActionListener target="" value="" />
 						</p:commandButton>
 					</p:column>
 
 				</p:dataTable>
-				<p:commandButton value="#{bundle.create} #{bundle.dog}" icon="ui-icon-plus" update=":dogCreateDialogForm"
+				<p:commandButton value="#{bundle.create} " icon="ui-icon-plus" update=":dogCreateDialogForm"
 					actionListener="#{dogMB.resetDog()}" onclick="dogCreateDialogWidget.show();" />
 			</h:form>
 

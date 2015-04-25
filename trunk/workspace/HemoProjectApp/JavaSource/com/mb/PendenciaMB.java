@@ -7,15 +7,16 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
-import com.dao.UserDAO;
 import com.facade.PendenciaFacade;
 import com.model.Pendencia;
 import com.model.User;
 
 @ViewScoped
 @ManagedBean
-public class PendenciaMB extends AbstractMB implements Serializable{
+public class PendenciaMB extends AbstractMB implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -45,13 +46,14 @@ public class PendenciaMB extends AbstractMB implements Serializable{
 
 	public String createPendencia() {
 		try {
-			User user = (User) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user");
-			
+			User user = (User) FacesContext.getCurrentInstance()
+					.getExternalContext().getSessionMap().get("user");
+
 			pendencia.setUsuario(user);
-			
-			//Seta a data de criação da pendencia
+
+			// Seta a data de criação da pendencia
 			pendencia.setDataDaPendencia(new GregorianCalendar());
-			
+
 			getPendenciaFacade().createPendencia(pendencia);
 			closeDialog();
 			displayInfoMessageToUser("Cadastro realizado com sucesso!");
@@ -63,10 +65,10 @@ public class PendenciaMB extends AbstractMB implements Serializable{
 			e.printStackTrace();
 			return "/erro.xhtml";
 		}
-		
-		return "/home.xhtml";
+
+		return "/adicionaArquivos.xhtml";
 	}
-	
+
 	public void updatePendencia() {
 		try {
 			getPendenciaFacade().updatePendencia(pendencia);
@@ -80,7 +82,7 @@ public class PendenciaMB extends AbstractMB implements Serializable{
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void deletePendencia() {
 		try {
 			getPendenciaFacade().deletePendencia(pendencia);
@@ -93,6 +95,13 @@ public class PendenciaMB extends AbstractMB implements Serializable{
 			displayErrorMessageToUser("Ops, ocorreu algum problema. Tente novamente!");
 			e.printStackTrace();
 		}
+	}
+
+	public void deletePendencia(String id) {
+		System.out.println(id + " testestsetsetsetset");
+		int idPendencia = Integer.parseInt(id);
+		pendencia = pendenciaFacade.findPendencia(idPendencia);
+		deletePendencia();
 	}
 
 	public List<Pendencia> getAllPendencias() {
@@ -109,5 +118,19 @@ public class PendenciaMB extends AbstractMB implements Serializable{
 
 	public void resetPendencia() {
 		pendencia = new Pendencia();
+	}
+	
+	public Pendencia pesquisaPendencia(){
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+		
+		System.out.println("Teste: asdfsdfasd - " + session.getAttribute("id"));
+		
+		int id = (Integer) session.getAttribute("id");
+		int pendenciaId = id;
+		pendencia = pendenciaFacade.findPendencia(pendenciaId);
+		
+		System.out.println("Teste: " + pendencia.getId() + " - " + pendencia.getTitulo());
+		return pendencia;
 	}
 }

@@ -32,7 +32,16 @@ public class FileUploadView {
 
         if (file != null) {
 
-            File file1 = new File("C:\\Users\\12546446\\Desktop\\Projetos Fabricio\\Geliv\\build\\web\\fotos\\", file.getFileName());
+        	FacesContext facesContext = FacesContext.getCurrentInstance();
+            ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext();
+            String caminho = scontext.getRealPath("/WEB-INF/anexos/");
+            
+            //File file1 = new File("C:\\", file.getFileName());
+        	
+            File file1 = new File(caminho, file.getFileName());
+            
+            System.out.println(file1.getPath());
+            
             try {
                 FileOutputStream fos = new FileOutputStream(file1);
                 fos.write(event.getFile().getContents());
@@ -47,7 +56,7 @@ public class FileUploadView {
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-            }
+            }            
         }
     }
 }
