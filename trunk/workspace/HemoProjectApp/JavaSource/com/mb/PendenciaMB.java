@@ -98,7 +98,6 @@ public class PendenciaMB extends AbstractMB implements Serializable {
 	}
 
 	public void deletePendencia(String id) {
-		System.out.println(id + " testestsetsetsetset");
 		int idPendencia = Integer.parseInt(id);
 		pendencia = pendenciaFacade.findPendencia(idPendencia);
 		deletePendencia();
@@ -124,13 +123,10 @@ public class PendenciaMB extends AbstractMB implements Serializable {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 		
-		System.out.println("Teste: asdfsdfasd - " + session.getAttribute("id"));
-		
 		int id = (Integer) session.getAttribute("id");
 		int pendenciaId = id;
 		pendencia = pendenciaFacade.findPendencia(pendenciaId);
 		
-		System.out.println("Teste: " + pendencia.getId() + " - " + pendencia.getTitulo());
 		return pendencia;
 	}
 }

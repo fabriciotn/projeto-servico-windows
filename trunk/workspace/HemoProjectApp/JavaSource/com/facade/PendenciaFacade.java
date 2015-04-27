@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Query;
 
+import org.hibernate.SessionFactory;
+
 import com.dao.PendenciaDAO;
 import com.model.Pendencia;
 
@@ -13,6 +15,7 @@ public class PendenciaFacade implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private PendenciaDAO pendenciaDAO = new PendenciaDAO();
+	private static SessionFactory factory; 
 
 	public void createPendencia(Pendencia pendencia) {
 		pendenciaDAO.beginTransaction();
@@ -24,7 +27,6 @@ public class PendenciaFacade implements Serializable {
 		pendenciaDAO.beginTransaction();
 		Pendencia persistedPendencia = pendenciaDAO.find(pendencia.getId());
 		persistedPendencia.setTitulo(pendencia.getTitulo());
-		persistedPendencia.setCategoria(pendencia.getCategoria());
 		persistedPendencia.setDataDaPendencia(pendencia.getDataDaPendencia());
 		persistedPendencia.setDescricao(pendencia.getDescricao());
 		persistedPendencia.setItemDoEdital(pendencia.getItemDoEdital());

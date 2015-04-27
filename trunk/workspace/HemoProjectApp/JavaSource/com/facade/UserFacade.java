@@ -10,7 +10,6 @@ public class UserFacade {
 	public User isValidLogin(String masp, String password) {
 		userDAO.beginTransaction();
 		User userBD = userDAO.findUserByMasp(masp);
-		userDAO.closeTransaction();
 
 		User userAD = validaAD(masp, password);
 
@@ -24,8 +23,9 @@ public class UserFacade {
 		}else{
 			userBD.setName(userAD.getName());
 			userBD.setEmail(userAD.getEmail());
+			userDAO.commit();
 		}
-
+		userDAO.closeTransaction();
 		
 		return userBD;
 	}

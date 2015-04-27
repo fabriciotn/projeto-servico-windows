@@ -44,7 +44,6 @@ public class ChartView implements Serializable {
     private BarChartModel initBarModel() {
     	String sql = "select p.id as id, "
 				+ "p.titulo as titulo, "
-				+ "p.categoria as categoria, "
 				+ "p.status as status, "
 				+ "s.nome as setor, "
 				+ "count(*) as qtd_Pendencia "
@@ -58,8 +57,8 @@ public class ChartView implements Serializable {
 		BarChartModel model = new BarChartModel();
 		ChartSeries setor;
 		for (Object[] objects : lista) {
-			setor = new ChartSeries(objects[4].toString());
-	        setor.set("Setores",(Number) objects[5]);
+			setor = new ChartSeries(objects[3].toString());
+	        setor.set("Setores",(Number) objects[4]);
 	        model.addSeries(setor);
 		}
     	

@@ -15,10 +15,13 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+//@Table(name="PR_PENDENCIA") 
 public class Pendencia implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -39,18 +42,29 @@ public class Pendencia implements Serializable{
     @Enumerated(EnumType.STRING)
     private Status status;
     @Enumerated(EnumType.STRING)
-    private Categoria categoria;
-    @Enumerated(EnumType.STRING)
     private Prioridade prioridade;
+    @Enumerated(EnumType.STRING)
+    private Responsavel responsavel;
     @Lob
     private String obs;
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar dataDaPendencia;
     
-    @OneToMany(mappedBy="pendencia", cascade=CascadeType.ALL) 
+    @OneToMany(mappedBy="pendencia") 
+    @OrderBy(value="dataDaPendencia DESC")
     private List<Iteracao> iteracoes;
     
-    public List<Iteracao> getIteracoes() {
+    
+    
+    public Responsavel getResponsavel() {
+		return responsavel;
+	}
+
+	public void setResponsavel(Responsavel responsavel) {
+		this.responsavel = responsavel;
+	}
+
+	public List<Iteracao> getIteracoes() {
 		return iteracoes;
 	}
 
@@ -112,14 +126,6 @@ public class Pendencia implements Serializable{
 
     public void setStatus(Status status) {
         this.status = status;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
     }
 
     public Prioridade getPrioridade() {
