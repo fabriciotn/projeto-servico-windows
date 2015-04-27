@@ -13,7 +13,7 @@
 	<ui:define name="conteudo">
 		<center>
 			<div>
-				<h:form acceptcharset="ISO-8859-1">
+				<h:form acceptcharset="ISO-8859-1" id="form1">
 					<p:panel header="Cadastro de Pendências">
 						<h:panelGrid columns="2" columnClasses="label, value"
 							style="text-align:left">
@@ -45,13 +45,21 @@
 									itemLabel="#{projeto.nome}" itemValue="#{projeto}" />
 							</p:selectOneMenu>
 
+							<h:outputText value="Responsável:* " />
+							<p:selectOneMenu id="responsavel"
+								value="#{pendenciaMB.pendencia.responsavel}" required="true"
+								requiredMessage="O campo Responsável é obrigatório!">
+								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
+									noSelectionOption="true" />
+								<f:selectItems value="#{responsavelBean.responsavelList}" var="responsavel"
+									itemLabel="#{responsavel.label}" itemValue="#{responsavel}" />
+							</p:selectOneMenu>
+							
 							<h:outputText value="Status:* " />
 							<p:selectOneMenu id="status"
 								value="#{pendenciaMB.pendencia.status}" required="true"
 								requiredMessage="O campo Status é obrigatório!">
-								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
-									noSelectionOption="true" />
-								<f:selectItems value="#{statusBean.statusList}" var="status"
+								<f:selectItems value="#{statusBean.statusAberto}" var="status"
 									itemLabel="#{status.label}" itemValue="#{status}" />
 							</p:selectOneMenu>
 
@@ -64,17 +72,6 @@
 								<f:selectItems value="#{prioridadeBean.prioridadeList}"
 									var="prioridade" itemLabel="#{prioridade.label}"
 									itemValue="#{prioridade}" />
-							</p:selectOneMenu>
-
-							<h:outputText value="Categoria: " />
-							<p:selectOneMenu id="categoria"
-								value="#{pendenciaMB.pendencia.categoria}" required="true"
-								requiredMessage="O campo Categoria é obrigatório!">
-								<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
-									noSelectionOption="true" />
-								<f:selectItems value="#{categoriaBean.categoriaList}"
-									var="categoria" itemLabel="#{categoria.label}"
-									itemValue="#{categoria}" />
 							</p:selectOneMenu>
 
 							<h:outputText value="Item do edital: " />
@@ -98,9 +95,8 @@
 							<p:columnGroup>
 								<p:commandButton value="Enviar" ajax="false"
 									icon="ui-icon-check" action="#{pendenciaMB.createPendencia()}" />
-								<p:commandButton value="Limpar" immediate="true" ajax="false"
-									icon="ui-icon-cancel">
-									<p:resetInput target="form" />
+								<p:commandButton value="Limpar" icon="ui-icon-cancel">
+									<p:ajax update=":form1" resetValues="true" />
 								</p:commandButton>
 							</p:columnGroup>
 						</h:panelGrid>

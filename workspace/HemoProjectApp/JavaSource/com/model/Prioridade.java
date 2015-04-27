@@ -4,8 +4,7 @@ package com.model;
 public enum Prioridade {
     LEVE("Leve"),
     MODERADO("Moderado"),
-    GRAVE("Grave"),
-    CRITICO("Crítico");
+    GRAVE("Grave");
     
     private String label;
     

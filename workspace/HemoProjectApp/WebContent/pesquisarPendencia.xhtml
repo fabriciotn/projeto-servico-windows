@@ -45,52 +45,66 @@
 						</h:commandLink>
 					</f:facet>
 
-					<p:column width="80" filterBy="#{pendencia.id}" sortBy="{pendencia.id}">
+					<p:column width="80" filterBy="#{pendencia.id}"
+						sortBy="{pendencia.id}" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Id" />
 						</f:facet>
 						<h:outputText value="#{pendencia.id}" />
 					</p:column>
 
-					<p:column filterBy="#{pendencia.titulo}" sortBy="#{pendencia.titulo}">
+					<p:column filterBy="#{pendencia.titulo}"
+						sortBy="#{pendencia.titulo}">
 						<f:facet name="header">
 							<h:outputText value="Título" />
 						</f:facet>
 						<h:outputText value="#{pendencia.titulo}" />
 					</p:column>
 
-					<p:column filterBy="#{pendencia.setor.nome}" sortBy="#{pendencia.setor.nome}">
+					<p:column filterBy="#{pendencia.setor.nome}"
+						sortBy="#{pendencia.setor.nome}">
 						<f:facet name="header">
 							<h:outputText value="Setor" />
 						</f:facet>
 						<h:outputText value="#{pendencia.setor.nome}" />
 					</p:column>
 
-					<p:column filterBy="#{pendencia.prioridade}" sortBy="#{pendencia.prioridade}">
+					<p:column filterBy="#{pendencia.prioridade}"
+						sortBy="#{pendencia.prioridade}">
 						<f:facet name="header">
 							<h:outputText value="Prioridade" />
 						</f:facet>
 						<h:outputText value="#{pendencia.prioridade}" />
 					</p:column>
 
-					<p:column filterBy="#{pendencia.status}" sortBy="#{pendencia.status}">
+					<p:column filterBy="#{pendencia.status}"
+						sortBy="#{pendencia.status}">
 						<f:facet name="header">
 							<h:outputText value="Status" />
 						</f:facet>
 						<h:outputText value="#{pendencia.status}" />
 					</p:column>
 
-					<p:column width="50" exportable="false">
+					<p:column sortBy="#{pendencia.dataDaPendencia}"
+						style="text-align: center;">
+						<f:facet name="header">
+							<h:outputText value="Data" />
+						</f:facet>
+						<h:outputText value="#{pendencia.dataDaPendencia.timeInMillis}">
+							<f:convertDateTime type="date" dateStyle="short"
+								pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</p:column>
+
+					<p:column width="50" exportable="false" style="text-align: center;">
 						<f:facet name="header">
 							<h:outputText value="Editar" />
 						</f:facet>
-						<center>
-							<h:commandLink action="cadastrarIteracao">
-								<img src="images/edit.png" width="25" />
-								<f:param name="id" value="#{pendencia.id}" />
-								<f:param name="titulo" value="#{pendencia.titulo}" />
-							</h:commandLink>
-						</center>
+						<h:commandLink action="cadastrarIteracao">
+							<img src="images/edit.png" width="25" />
+							<f:param name="id" value="#{pendencia.id}" />
+							<f:param name="titulo" value="#{pendencia.titulo}" />
+						</h:commandLink>
 					</p:column>
 				</p:dataTable>
 			</h:form>

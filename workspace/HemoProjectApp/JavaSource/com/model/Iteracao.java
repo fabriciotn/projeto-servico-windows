@@ -3,18 +3,22 @@ package com.model;
 import java.io.Serializable;
 import java.util.Calendar;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+//@Table(name="PR_ITERACAO") 
 public class Iteracao implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -22,10 +26,9 @@ public class Iteracao implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String titulo;
     
-    @ManyToOne(cascade=CascadeType.ALL) 
-    @JoinColumn(name="id_iteracao") 
+    @ManyToOne
+    @JoinColumn(name="id_pendencia",nullable=false)
     private Pendencia pendencia;
     
     @Lob
@@ -33,17 +36,39 @@ public class Iteracao implements Serializable{
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar dataDaPendencia;
     
+    @Enumerated(EnumType.STRING)
+    private Categoria categoria;
+    
+    @OneToOne
+    private User usuario;
+    
+    @Enumerated(EnumType.STRING)
+    private Status status;
+    
+    
+	public Status getStatus() {
+		return status;
+	}
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+	public User getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(User usuario) {
+		this.usuario = usuario;
+	}
+	public Categoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getTitulo() {
-		return titulo;
-	}
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
 	}
 	public Pendencia getPendencia() {
 		return pendencia;
