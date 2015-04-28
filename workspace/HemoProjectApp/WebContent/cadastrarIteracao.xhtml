@@ -88,6 +88,23 @@
 							</h:outputText>
 
 							<p:columnGroup>
+							</p:columnGroup>
+
+							<h:outputText value="Data Estimada: " />
+							<p:calendar id="dataEstimada"
+								value="#{iteracaoMB.iteracao.dataEstimada}">
+								<p:ajax event="dateSelect" update="dataRealizada" />
+							</p:calendar>
+
+							<h:outputText value="Data realizada: " />
+							<p:calendar id="dataRealizada"
+								value="#{iteracaoMB.iteracao.dataRealizada}"
+								mindate="#{iteracaoMB.iteracao.dataEstimada}" />
+
+							<p:columnGroup>
+							</p:columnGroup>
+
+							<p:columnGroup>
 								<p:commandButton value="Enviar" ajax="true" icon="ui-icon-check"
 									actionListener="#{iteracaoMB.createIteracao()}"
 									update=":tabview:atualizar">
@@ -125,12 +142,20 @@
 								<li>Status: #{iteracao.status}</li>
 								<li>Descrição: #{iteracao.descricao}</li>
 							</ul>
+							<h:outputLabel value="#{iteracao.dataEstimada}">
+								<f:convertDateTime type="date" dateStyle="short"
+									pattern="'Data Estimada 'dd/MM/yyyy" />
+							</h:outputLabel>
+							<h:outputLabel value="#{iteracao.dataRealizada}">
+								<f:convertDateTime type="date" dateStyle="short"
+									pattern="'Data Realizada: 'dd/MM/yyyy" />
+							</h:outputLabel>
 						</h:panelGrid>
 						<p:separator />
 					</p:dataScroller>
-					</h:panelGrid>
+				</h:panelGrid>
 			</p:tab>
-			
+
 		</p:tabView>
 	</ui:define>
 

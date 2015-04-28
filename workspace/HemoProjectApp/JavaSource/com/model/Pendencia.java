@@ -1,4 +1,3 @@
-
 package com.model;
 
 import java.io.Serializable;
@@ -16,46 +15,46 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Pendencia implements Serializable{
+@SequenceGenerator(name = "SEQ_PENDENCIA", sequenceName = "SEQ_PENDENCIA")
+public class Pendencia implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String titulo;
-    @OneToOne
-    private Setor setor;
-    @OneToOne
-    private Projeto projeto;
-    @OneToOne
-    private User usuario;
-   	private String itemDoEdital;
-    @Lob
-    private String descricao;
-    @Enumerated(EnumType.STRING)
-    private Status status;
-    @Enumerated(EnumType.STRING)
-    private Prioridade prioridade;
-    @Enumerated(EnumType.STRING)
-    private Responsavel responsavel;
-    @Lob
-    private String obs;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Calendar dataDaPendencia;
-    
-    @OneToMany(mappedBy="pendencia") 
-    @OrderBy(value="dataDaPendencia DESC")
-    private List<Iteracao> iteracoes;
-    
-    
-    
-    public Responsavel getResponsavel() {
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_PENDENCIA")
+	private int id;
+	private String titulo;
+	@OneToOne
+	private Setor setor;
+	@OneToOne
+	private Projeto projeto;
+	@OneToOne
+	private User usuario;
+	private String itemDoEdital;
+	@Lob
+	private String descricao;
+	@Enumerated(EnumType.STRING)
+	private Status status;
+	@Enumerated(EnumType.STRING)
+	private Prioridade prioridade;
+	@Enumerated(EnumType.STRING)
+	private Responsavel responsavel;
+	@Lob
+	private String obs;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Calendar dataDaPendencia;
+
+	@OneToMany(mappedBy = "pendencia")
+	@OrderBy(value = "dataDaPendencia DESC")
+	private List<Iteracao> iteracoes;
+
+	public Responsavel getResponsavel() {
 		return responsavel;
 	}
 
@@ -86,66 +85,66 @@ public class Pendencia implements Serializable{
 	public void setProjeto(Projeto projeto) {
 		this.projeto = projeto;
 	}
-    
-    public String getTitulo() {
-        return titulo;
-    }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+	public String getTitulo() {
+		return titulo;
+	}
 
-    public Setor getSetor() {
-        return setor;
-    }
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-    public void setSetor(Setor setor) {
-        this.setor = setor;
-    }
+	public Setor getSetor() {
+		return setor;
+	}
 
-    public String getItemDoEdital() {
-        return itemDoEdital;
-    }
+	public void setSetor(Setor setor) {
+		this.setor = setor;
+	}
 
-    public void setItemDoEdital(String itemDoEdital) {
-        this.itemDoEdital = itemDoEdital;
-    }
+	public String getItemDoEdital() {
+		return itemDoEdital;
+	}
 
-    public String getDescricao() {
-        return descricao;
-    }
+	public void setItemDoEdital(String itemDoEdital) {
+		this.itemDoEdital = itemDoEdital;
+	}
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+	public String getDescricao() {
+		return descricao;
+	}
 
-    public Status getStatus() {
-        return status;
-    }
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
-    public void setStatus(Status status) {
-        this.status = status;
-    }
+	public Status getStatus() {
+		return status;
+	}
 
-    public Prioridade getPrioridade() {
-        return prioridade;
-    }
+	public void setStatus(Status status) {
+		this.status = status;
+	}
 
-    public void setPrioridade(Prioridade prioridade) {
-        this.prioridade = prioridade;
-    }
+	public Prioridade getPrioridade() {
+		return prioridade;
+	}
 
-    public String getObs() {
-        return obs;
-    }
+	public void setPrioridade(Prioridade prioridade) {
+		this.prioridade = prioridade;
+	}
 
-    public void setObs(String obs) {
-        this.obs = obs;
-    }
+	public String getObs() {
+		return obs;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public void setObs(String obs) {
+		this.obs = obs;
+	}
+
+	public int getId() {
+		return id;
+	}
 
 	public Calendar getDataDaPendencia() {
 		return dataDaPendencia;
@@ -158,6 +157,5 @@ public class Pendencia implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-    
-    
+
 }

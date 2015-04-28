@@ -10,18 +10,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "USERS")
 @NamedQuery(name = "User.findUserByMasp", query = "select u from User u where u.masp = :masp")
+@SequenceGenerator(name="SEQ_USER", sequenceName="SEQ_USER")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public static final String FIND_BY_MASP = "User.findUserByMasp";
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SEQ_USER")
 	private int id;
 
 	@Column(unique = true)

@@ -2,6 +2,7 @@ package com.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -13,17 +14,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@SequenceGenerator(name = "SEQ_ITERACAO", sequenceName = "SEQ_ITERACAO")
 public class Iteracao implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator= "SEQ_ITERACAO")
     private int id;
     
     @ManyToOne
@@ -32,8 +34,15 @@ public class Iteracao implements Serializable{
     
     @Lob
     private String descricao;
+    
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar dataDaPendencia;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataEstimada;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataRealizada;
     
     @Enumerated(EnumType.STRING)
     private Categoria categoria;
@@ -45,6 +54,19 @@ public class Iteracao implements Serializable{
     private Status status;
     
     
+    
+	public Date getDataEstimada() {
+		return dataEstimada;
+	}
+	public void setDataEstimada(Date dataEstimada) {
+		this.dataEstimada = dataEstimada;
+	}
+	public Date getDataRealizada() {
+		return dataRealizada;
+	}
+	public void setDataRealizada(Date dataRealizada) {
+		this.dataRealizada = dataRealizada;
+	}
 	public Status getStatus() {
 		return status;
 	}
