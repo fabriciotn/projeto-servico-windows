@@ -12,7 +12,6 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-//@Table(name="PR_SETOR")
 public class Setor implements Serializable {
 
 	private static final long serialVersionUID = 1L;

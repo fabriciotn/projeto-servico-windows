@@ -13,7 +13,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-//@Table(name="PR_PROJETO")
 public class Projeto implements Serializable{
 
 

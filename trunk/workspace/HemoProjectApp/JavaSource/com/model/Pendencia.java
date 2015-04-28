@@ -21,7 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-//@Table(name="PR_PENDENCIA") 
 public class Pendencia implements Serializable{
 
 	private static final long serialVersionUID = 1L;
