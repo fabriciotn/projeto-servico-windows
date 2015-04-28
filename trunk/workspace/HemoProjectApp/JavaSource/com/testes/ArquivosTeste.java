@@ -1,9 +1,9 @@
-package com.util;
+package com.testes;
 
 import java.io.File;
 import java.sql.Date;
 
-public class Testes {
+public class ArquivosTeste {
 
 	public static void main(String[] args) {
 		String dir = "c:/"; 

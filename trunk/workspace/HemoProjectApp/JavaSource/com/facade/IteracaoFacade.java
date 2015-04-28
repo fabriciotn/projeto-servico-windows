@@ -29,6 +29,8 @@ public class IteracaoFacade implements Serializable{
 		persistedIteracao.setDataDaPendencia(iteracao.getDataDaPendencia());
 		persistedIteracao.setDescricao(iteracao.getDescricao());
 		persistedIteracao.setPendencia(iteracao.getPendencia());
+		persistedIteracao.setDataEstimada(iteracao.getDataEstimada());
+		persistedIteracao.setDataRealizada(iteracao.getDataRealizada());
 
 		iteracaoDAO.update(persistedIteracao);
 		iteracaoDAO.commitAndCloseTransaction();
