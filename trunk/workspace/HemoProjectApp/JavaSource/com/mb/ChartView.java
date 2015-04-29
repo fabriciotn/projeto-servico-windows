@@ -45,11 +45,11 @@ public class ChartView implements Serializable {
 		String sql = "SELECT p.id AS id, "
 				+ "p.titulo AS titulo, "
 				+ "p.status AS status, "
-				+ "setor.nome AS setor, "
+				+ "s.nome AS setor, "
 				+ "COUNT(*) AS qtd_Pendencia "
-				+ "FROM Pendencia p, SETOR setor "
-				+ "WHERE p.setor_id = setor.id "
-				+ "GROUP BY setor.nome, p.id, p.titulo, p.status";
+				+ "FROM Pendencia p, Setor s "
+				+ "WHERE p.setor.id = s.id "
+				+ "GROUP BY p.id, p.titulo, p.status, s.nome";
 
 		PendenciaFacade facade = new PendenciaFacade();
 		List<Object[]> lista = facade.buscaComQuery(sql);
