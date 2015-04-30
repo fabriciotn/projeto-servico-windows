@@ -33,6 +33,7 @@ public class ChartView implements Serializable {
 		animatedModel2.setTitle("Pendências por setor");
 		animatedModel2.setAnimate(true);
 		animatedModel2.setLegendPosition("su");
+		animatedModel2.setLegendCols(2);
 		animatedModel2.setLegendPlacement(LegendPlacement.OUTSIDEGRID);
 		animatedModel2.setShowPointLabels(true);
 
@@ -42,14 +43,12 @@ public class ChartView implements Serializable {
 	}
 
 	private BarChartModel initBarModel() {
-		String sql = "SELECT p.id AS id, "
-				+ "p.titulo AS titulo, "
-				+ "p.status AS status, "
-				+ "s.nome AS setor, "
+		String sql = "SELECT s.nome, "
 				+ "COUNT(*) AS qtd_Pendencia "
 				+ "FROM Pendencia p, Setor s "
 				+ "WHERE p.setor.id = s.id "
-				+ "GROUP BY p.id, p.titulo, p.status, s.nome";
+				+ "AND p.status <> 'FECHADO' "
+				+ "GROUP BY s.nome";
 
 		PendenciaFacade facade = new PendenciaFacade();
 		List<Object[]> lista = facade.buscaComQuery(sql);
@@ -57,8 +56,8 @@ public class ChartView implements Serializable {
 		BarChartModel model = new BarChartModel();
 		ChartSeries setor;
 		for (Object[] objects : lista) {
-			setor = new ChartSeries(objects[3].toString());
-			setor.set("Setores", (Number) objects[4]);
+			setor = new ChartSeries(objects[0].toString());
+			setor.set("Setores", (Number) objects[1]);
 			model.addSeries(setor);
 		}
 
