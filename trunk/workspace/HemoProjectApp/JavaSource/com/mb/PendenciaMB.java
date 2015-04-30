@@ -65,8 +65,7 @@ public class PendenciaMB extends AbstractMB implements Serializable {
 			e.printStackTrace();
 			return "/erro.xhtml";
 		}
-
-		return "/adicionaArquivos.xhtml";
+		return "/cadastrarPendencia.xhtml";
 	}
 
 	public void updatePendencia() {

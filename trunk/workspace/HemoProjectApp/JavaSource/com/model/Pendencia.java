@@ -21,7 +21,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@SequenceGenerator(name = "SEQ_PENDENCIA", sequenceName = "SEQ_PENDENCIA")
+@SequenceGenerator(name = "SEQ_PENDENCIA", sequenceName = "SEQ_PENDENCIA", initialValue=1, allocationSize=1)
 public class Pendencia implements Serializable {
 
 	private static final long serialVersionUID = 1L;

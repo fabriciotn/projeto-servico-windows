@@ -19,7 +19,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@SequenceGenerator(name = "SEQ_ITERACAO", sequenceName = "SEQ_ITERACAO")
+@SequenceGenerator(name = "SEQ_ITERACAO", sequenceName = "SEQ_ITERACAO", initialValue=1, allocationSize=1)
 public class Iteracao implements Serializable{
 
 	private static final long serialVersionUID = 1L;

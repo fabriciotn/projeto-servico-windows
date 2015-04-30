@@ -65,6 +65,7 @@ public class PendenciaFacade implements Serializable {
 		pendenciaDAO.beginTransaction();
 		Query query = pendenciaDAO.selectComQuery(sql);
 		List<Object[]> list = (List<Object[]>)query.getResultList();
+		pendenciaDAO.closeTransaction();
 		return list;
 	}
 

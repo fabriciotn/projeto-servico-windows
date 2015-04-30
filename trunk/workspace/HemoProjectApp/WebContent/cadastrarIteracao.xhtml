@@ -44,7 +44,33 @@
 
 			<p:tab title="Anexos">
 				<h:panelGrid columns="2" cellpadding="10">
-					<h3>Aqui ficarão os anexos</h3>
+					<h:column style="width:50%">
+						<h:form id="dataList">
+							<p:dataList value="#{treeBasicView.listaDeArquivos}"
+								var="arquivo" type="ordered">
+								<f:facet name="header">
+					            Arquivos já anexados
+					        </f:facet>
+								<h:commandLink action="#{treeBasicView.downLoad(arquivo)}"
+									value="#{arquivo}" />
+							</p:dataList>
+						</h:form>
+					</h:column>
+					<h:column style="width:50%">
+						<h:form enctype="multipart/form-data">
+							<p:growl id="mensagens" showDetail="true" />
+							<h:outputText value="Anexe arquivos: " />
+
+							<p:fileUpload fileUploadListener="#{fileUploadView.upload}"
+								fileLimit="5" fileLimitMessage="Excedido o limite de arquivos"
+								cancelLabel="Cancelar" label="Arquivo" uploadLabel="Enviar"
+								invalidFileMessage="Somente arquivos .pdf, xls, .xlsx, .doc, .docx, .txt, .jpg, .png ou .gif"
+								allowTypes="/(\.|\/)(gif|jpe?g|png|doc|docx|txt|xls|xlsx|pdf)$/"
+								value="#{teste.file}" mode="advanced" skinSimple="false"
+								update=":tabview:dataList" />
+						</h:form>
+
+					</h:column>
 				</h:panelGrid>
 			</p:tab>
 
@@ -106,7 +132,7 @@
 
 							<p:columnGroup>
 								<p:commandButton value="Enviar" ajax="true" icon="ui-icon-check"
-									actionListener="#{iteracaoMB.createIteracao()}"
+									actionListener="#{iteracaoMB.createIteracao}"
 									update=":tabview:atualizar">
 									<f:param name="id" value="#{pendencia.id}" />
 								</p:commandButton>
