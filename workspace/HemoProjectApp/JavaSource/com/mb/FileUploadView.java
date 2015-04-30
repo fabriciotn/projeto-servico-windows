@@ -4,22 +4,25 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.context.ExternalContext;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletResponse;
 
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
+
+import com.util.AbreTelaDeIteracao;
 
 @ManagedBean
 public class FileUploadView {
 
     private UploadedFile file;
 
-    public UploadedFile getFile() {
+	public UploadedFile getFile() {
         return file;
     }
 
@@ -31,12 +34,14 @@ public class FileUploadView {
         file = event.getFile();
 
         if (file != null) {
-
         	FacesContext facesContext = FacesContext.getCurrentInstance();
             ServletContext scontext = (ServletContext) facesContext.getExternalContext().getContext();
-            String caminho = scontext.getRealPath("/WEB-INF/anexos/");
+            String caminho = scontext.getRealPath("/WEB-INF/anexos/PendenciaId_" + AbreTelaDeIteracao.ID_PENDENCIA_PESQUISADA);
             
-            //File file1 = new File("C:\\", file.getFileName());
+            File dir = new File(caminho);
+            if(!dir.exists()){
+            	dir.mkdir();
+            }
         	
             File file1 = new File(caminho, file.getFileName());
             

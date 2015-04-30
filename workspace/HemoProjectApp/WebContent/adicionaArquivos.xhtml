@@ -16,9 +16,9 @@
 				<p:layoutUnit position="west">
 					<h:form>
 						<h3 style="margin-top: 0">Arquivos</h3>
-						<p:tree value="#{treeBasicView}" var="node" dynamic="true">
+						<p:tree value="#{treeBasicView.root}" var="node">
 							<p:treeNode>
-								<h:outputText value="#{node}" />
+								<h:commandLink action="#{treeBasicView.downLoad(node)}" value="#{node}"/>
 							</p:treeNode>
 						</p:tree>
 					</h:form>
