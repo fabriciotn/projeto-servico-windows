@@ -64,10 +64,8 @@
 							<p:fileUpload fileUploadListener="#{fileUploadView.upload}"
 								fileLimit="5" fileLimitMessage="Excedido o limite de arquivos"
 								cancelLabel="Cancelar" label="Arquivo" uploadLabel="Enviar"
-								invalidFileMessage="Somente arquivos .pdf, xls, .xlsx, .doc, .docx, .txt, .jpg, .png ou .gif"
-								allowTypes="/(\.|\/)(gif|jpe?g|png|doc|docx|txt|xls|xlsx|pdf)$/"
 								value="#{teste.file}" mode="advanced" skinSimple="false"
-								update=":tabview:dataList" />
+								update=":tabview:dataList"/>
 						</h:form>
 
 					</h:column>

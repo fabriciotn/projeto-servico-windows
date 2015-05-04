@@ -27,7 +27,7 @@ public class UserMB implements Serializable {
 
 	public String logOut() {
 		getRequest().getSession().invalidate();
-		return "/pages/public/login.xhtml";
+		return "/index.xhtml";
 	}
 
 	private HttpServletRequest getRequest() {
