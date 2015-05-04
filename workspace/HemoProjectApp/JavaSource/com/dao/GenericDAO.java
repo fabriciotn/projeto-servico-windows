@@ -10,7 +10,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import com.model.Pendencia;
 
 abstract class GenericDAO<T> implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -78,14 +82,24 @@ abstract class GenericDAO<T> implements Serializable {
 		return em.getReference(entityClass, entityID);
 	}
 
-	// Using the unchecked because JPA does not have a
-	// em.getCriteriaBuilder().createQuery()<T> method
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public List<T> findAll() {
-		CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-		cq.select(cq.from(entityClass));
-		return em.createQuery(cq).getResultList();
+	public List<T> findAllAsc() {
+		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+		CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(entityClass);
+		Root<T> from = criteriaQuery.from(entityClass);
+		CriteriaQuery<T> select = criteriaQuery.select(from);
+		criteriaQuery.orderBy(criteriaBuilder.asc(from.get("id")));
+		return em.createQuery(select).getResultList();
 	}
+	
+	public List<T> findAllDesc() {
+		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
+		CriteriaQuery<T> criteriaQuery = criteriaBuilder.createQuery(entityClass);
+		Root<T> from = criteriaQuery.from(entityClass);
+		CriteriaQuery<T> select = criteriaQuery.select(from);
+		criteriaQuery.orderBy(criteriaBuilder.desc(from.get("id")));
+		return em.createQuery(select).getResultList();
+	}
+	
 
 	// Using the unchecked because JPA does not have a
 	// query.getSingleResult()<T> method

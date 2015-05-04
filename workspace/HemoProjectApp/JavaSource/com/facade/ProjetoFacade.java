@@ -34,7 +34,7 @@ public class ProjetoFacade implements Serializable{
 
 	public List<Projeto> listAll() {
 		projetoDAO.beginTransaction();
-		List<Projeto> result = projetoDAO.findAll();
+		List<Projeto> result = projetoDAO.findAllAsc();
 		projetoDAO.closeTransaction();
 		return result;
 	}
