@@ -41,7 +41,7 @@ public class SetorFacade implements Serializable {
 
 	public List<Setor> listAll() {
 		setorDAO.beginTransaction();
-		List<Setor> result = setorDAO.findAll();
+		List<Setor> result = setorDAO.findAllAsc();
 		setorDAO.closeTransaction();
 
 		return result;

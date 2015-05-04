@@ -45,7 +45,7 @@ public class IteracaoFacade implements Serializable{
 
 	public List<Iteracao> listAll() {
 		iteracaoDAO.beginTransaction();
-		List<Iteracao> result = iteracaoDAO.findAll();
+		List<Iteracao> result = iteracaoDAO.findAllDesc();
 		iteracaoDAO.closeTransaction();
 		return result;
 	}

@@ -48,7 +48,7 @@ public class PendenciaFacade implements Serializable {
 
 	public List<Pendencia> listAll() {
 		pendenciaDAO.beginTransaction();
-		List<Pendencia> result = pendenciaDAO.findAll();
+		List<Pendencia> result = pendenciaDAO.findAllAsc();
 		pendenciaDAO.closeTransaction();
 		return result;
 	}
