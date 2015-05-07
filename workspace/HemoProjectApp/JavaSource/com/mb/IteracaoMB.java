@@ -11,13 +11,14 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import com.facade.IteracaoFacade;
+import com.facade.PendenciaFacade;
 import com.model.Iteracao;
 import com.model.Pendencia;
 import com.model.User;
 
 @ViewScoped
 @ManagedBean
-public class IteracaoMB extends AbstractMB implements Serializable{
+public class IteracaoMB extends AbstractMB implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -26,17 +27,33 @@ public class IteracaoMB extends AbstractMB implements Serializable{
 	private IteracaoFacade iteracaoFacade;
 	private HtmlOutputText pendenciaId;
 	private Pendencia pendencia;
+	private PendenciaFacade pendenciaFacade;
+
+	public Pendencia getPendencia() {
+		return pendencia;
+	}
+
+	public void setPendencia(Pendencia pendencia) {
+		this.pendencia = pendencia;
+	}
 
 	public void setaPendencia() {
 		pendencia = (Pendencia) pendenciaId.getAttributes().get("pendenciaId");
-    }
-	
+	}
+
 	public HtmlOutputText getPendenciaId() {
 		return pendenciaId;
 	}
 
 	public void setPendenciaId(HtmlOutputText pendenciaId) {
 		this.pendenciaId = pendenciaId;
+	}
+
+	public PendenciaFacade getPendenciaFacade() {
+		if (pendenciaFacade == null) {
+			pendenciaFacade = new PendenciaFacade();
+		}
+		return pendenciaFacade;
 	}
 
 	public IteracaoFacade getIteracaoFacade() {
@@ -61,14 +78,18 @@ public class IteracaoMB extends AbstractMB implements Serializable{
 
 	public String createIteracao() {
 		try {
-			User user = (User) FacesContext.getCurrentInstance()
-					.getExternalContext().getSessionMap().get("user");
-			
+			User user = (User) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user");
+
 			iteracao.setUsuario(user);
 			iteracao.setPendencia(pendencia);
 
 			// Seta a data de criação da iteracao
 			iteracao.setDataDaPendencia(new GregorianCalendar());
+			
+			PendenciaFacade pf = getPendenciaFacade();
+			pendencia = pf.findPendencia(iteracao.getPendencia().getId());
+			pendencia.setStatus(iteracao.getStatus());
+			pf.updatePendencia(pendencia);
 
 			getIteracaoFacade().createIteracao(iteracao);
 			closeDialog();
@@ -134,15 +155,15 @@ public class IteracaoMB extends AbstractMB implements Serializable{
 	public void resetIteracao() {
 		iteracao = new Iteracao();
 	}
-	
-	public Iteracao pesquisaIteracao(){
+
+	public Iteracao pesquisaIteracao() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
-		
+
 		int id = (Integer) session.getAttribute("id");
 		int iteracaoId = id;
 		iteracao = iteracaoFacade.findIteracao(iteracaoId);
-		
+
 		return iteracao;
 	}
 }

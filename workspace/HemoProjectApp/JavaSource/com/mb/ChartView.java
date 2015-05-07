@@ -11,6 +11,7 @@ import org.primefaces.model.chart.AxisType;
 import org.primefaces.model.chart.BarChartModel;
 import org.primefaces.model.chart.ChartSeries;
 import org.primefaces.model.chart.LegendPlacement;
+import org.primefaces.model.chart.PieChartModel;
 
 import com.facade.PendenciaFacade;
 
@@ -18,30 +19,57 @@ import com.facade.PendenciaFacade;
 public class ChartView implements Serializable {
 
 	private BarChartModel animatedModel2;
+	private PieChartModel pieModel1;
 
 	@PostConstruct
 	public void init() {
 		createAnimatedModels();
+		createPieModels();
 	}
+	
+	public PieChartModel getPieModel1() {
+        return pieModel1;
+    }
+	
+	private void createPieModels() {
+        createPieModel1();
+    }
+	
+	private void createPieModel1() {
+        pieModel1 = new PieChartModel();
+        
+        String sql = "SELECT p.status, COUNT(*) as qtd FROM Pendencia p group by p.status";
+
+		PendenciaFacade facade = new PendenciaFacade();
+		List<Object[]> lista = facade.buscaComQuery(sql);
+
+		BarChartModel model = new BarChartModel();
+		ChartSeries setor;
+		for (Object[] objects : lista) {
+			pieModel1.set(objects[0].toString() + " - " + (Number) objects[1], (Number) objects[1]);
+		}
+         
+        pieModel1.setTitle("Pendências por Status");
+        pieModel1.setLegendPosition("w");
+        pieModel1.setShowDataLabels(true);
+    }
 
 	public BarChartModel getAnimatedModel2() {
 		return animatedModel2;
 	}
-
+	
 	private void createAnimatedModels() {
 		animatedModel2 = initBarModel();
-		animatedModel2.setTitle("Pendências por setor");
+		animatedModel2.setTitle("Pendências em aberto por setor");
 		animatedModel2.setAnimate(true);
 		animatedModel2.setLegendPosition("su");
 		animatedModel2.setLegendCols(2);
 		animatedModel2.setLegendPlacement(LegendPlacement.OUTSIDEGRID);
 		animatedModel2.setShowPointLabels(true);
-
 		Axis yAxis = animatedModel2.getAxis(AxisType.Y);
 		yAxis.setLabel("Quantidade de pendências");
-
 	}
-
+	
 	private BarChartModel initBarModel() {
 		String sql = "SELECT s.nome, "
 				+ "COUNT(*) AS qtd_Pendencia "
@@ -63,5 +91,4 @@ public class ChartView implements Serializable {
 
 		return model;
 	}
-
 }
