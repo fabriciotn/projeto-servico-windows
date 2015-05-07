@@ -17,7 +17,7 @@
 		<p:tabView id="tabview">
 			<p:tab title="Visualização">
 				<h:panelGrid columns="2" cellpadding="3">
-					<h:outputLabel value="Código: " style="font-weight: bold;" />
+					<h:outputLabel value="Código: " style="font-weight: bold; " />
 					<h:outputText value="#{pendencia.id}" />
 					<h:outputLabel value="Título: " style="font-weight: bold;" />
 					<h:outputText value="#{pendencia.titulo}" />
@@ -29,16 +29,20 @@
 					<h:outputText value="#{pendencia.status.label}" />
 					<h:outputLabel value="Descrição:  " style="font-weight: bold;" />
 					<h:outputText value="#{pendencia.descricao}" />
+					<h:outputLabel value="Item do edital:  " style="font-weight: bold;" />
+					<h:outputText value="#{pendencia.itemDoEdital}" />
 					<h:outputLabel value="Observação:  " style="font-weight: bold;" />
 					<h:outputText value="#{pendencia.obs}" />
 					<h:outputLabel value="Responsável:  " style="font-weight: bold;" />
-					<h:outputText value="#{pendencia.usuario.name}" />
+					<h:outputText value="#{pendencia.responsavel}" />
 					<h:outputLabel value="Data da criação:  "
 						style="font-weight: bold;" />
 					<h:outputText value="#{pendencia.dataDaPendencia.timeInMillis}">
 						<f:convertDateTime type="date" dateStyle="short"
 							pattern="dd/MM/yyyy HH:mm:ss" />
 					</h:outputText>
+					<h:outputLabel value="Usuário:  " style="font-weight: bold;" />
+					<h:outputText value="#{pendencia.usuario.name}" />
 				</h:panelGrid>
 			</p:tab>
 
