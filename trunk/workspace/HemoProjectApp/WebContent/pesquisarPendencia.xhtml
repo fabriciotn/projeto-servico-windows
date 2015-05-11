@@ -60,6 +60,14 @@
 						</f:facet>
 						<h:outputText value="#{pendencia.titulo}" />
 					</p:column>
+					
+					<p:column filterBy="#{pendencia.descricao}"
+						sortBy="#{pendencia.descricao}">
+						<f:facet name="header">
+							<h:outputText value="Descricão" />
+						</f:facet>
+						<h:outputText value="#{pendencia.descricao}" />
+					</p:column>
 
 					<p:column filterBy="#{pendencia.setor.nome}"
 						sortBy="#{pendencia.setor.nome}">

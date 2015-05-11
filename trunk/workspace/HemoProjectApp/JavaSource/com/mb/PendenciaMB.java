@@ -48,6 +48,9 @@ public class PendenciaMB extends AbstractMB implements Serializable {
 		try {
 			User user = (User) FacesContext.getCurrentInstance()
 					.getExternalContext().getSessionMap().get("user");
+			
+			if(user == null)
+				throw new RuntimeException("Problemas com usuário");
 
 			pendencia.setUsuario(user);
 
