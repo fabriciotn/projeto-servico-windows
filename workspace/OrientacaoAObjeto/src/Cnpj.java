@@ -1,5 +1,5 @@
 
-public class Cnpj {
+public class Cnpj implements Documento{
 
 	private String cnpjCredor;
 	
@@ -12,7 +12,7 @@ public class Cnpj {
 		this.cnpjCredor = cnpjCredor;
 	}
 
-	public boolean isValid() {
+	public boolean ehValido() {
 		return primeiroDigitoVerificador() == primeiroDigitoCorreto()
 				&& segundoDigitoVerificador() == segundoDigitoCorreto();
 	}
@@ -53,5 +53,15 @@ public class Cnpj {
         } 
         Cnpj outro = (Cnpj) obj;
         return this.getCnpjCredor().equals(outro.getCnpjCredor());
+	}
+	
+	@Override
+	public String toString() {
+		return cnpjCredor;
+	}
+
+	@Override
+	public String getValor() {
+		return cnpjCredor;
 	}
 }

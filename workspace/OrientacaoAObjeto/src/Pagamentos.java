@@ -1,13 +1,15 @@
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Iterator;
 
-public class Pagamentos extends ArrayList<Pagamento> {
+public class Pagamentos implements Iterable<Pagamento>{
 
-	private Pagamento pagamentos = new Pagamento();
 	private double valorPago;
+	private Collection<Pagamento> pagamentos = new ArrayList<Pagamento>();
 	
-	public ArrayList<Pagamento> pagamentosAntesDe(Calendar data) {
-		ArrayList<Pagamento> pagamentosFiltrados = new ArrayList<Pagamento>();
+	public Collection<Pagamento> pagamentosAntesDe(Calendar data) {
+		Collection<Pagamento> pagamentosFiltrados = new ArrayList<Pagamento>();
 		for (Pagamento pagamento : this) {
 			if (pagamento.getData().before(data)) {
 				pagamentosFiltrados.add(pagamento);
@@ -16,8 +18,8 @@ public class Pagamentos extends ArrayList<Pagamento> {
 		return pagamentosFiltrados;
 	}
 
-	public ArrayList<Pagamento> pagamentosComValorMaiorQue(double valorMinimo) {
-		ArrayList<Pagamento> pagamentosFiltrados = new ArrayList<Pagamento>();
+	public Collection<Pagamento> pagamentosComValorMaiorQue(double valorMinimo) {
+		Collection<Pagamento> pagamentosFiltrados = new ArrayList<Pagamento>();
 		for (Pagamento pagamento : this) {
 			if (pagamento.getValor() > valorMinimo) {
 				pagamentosFiltrados.add(pagamento);
@@ -26,10 +28,10 @@ public class Pagamentos extends ArrayList<Pagamento> {
 		return pagamentosFiltrados;
 	}
 
-	public ArrayList<Pagamento> pagamentosDo(String cnpjPagador) {
-		ArrayList<Pagamento> pagamentosFiltrados = new ArrayList<Pagamento>();
+	public Collection<Pagamento> pagamentosDo(String cnpjPagador) {
+		Collection<Pagamento> pagamentosFiltrados = new ArrayList<Pagamento>();
 		for (Pagamento pagamento : this) {
-			if (pagamento.getCnpjPagador().equals(cnpjPagador)) {
+			if (pagamento.getDocumentoPagador().equals(cnpjPagador)) {
 				pagamentosFiltrados.add(pagamento);
 			}
 		}
@@ -37,7 +39,7 @@ public class Pagamentos extends ArrayList<Pagamento> {
 	}
 	
 	public void registra(Pagamento pagamento) {
-		this.add(pagamento);
+		this.pagamentos.add(pagamento);
 		paga(pagamento.getValor());
 	}
 	
@@ -53,5 +55,10 @@ public class Pagamentos extends ArrayList<Pagamento> {
 			valor = valor - 8;
 		}
 		this.valorPago += valor;
+	}
+
+	@Override
+	public Iterator<Pagamento> iterator() {
+		return pagamentos.iterator();
 	}
 }
