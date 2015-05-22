@@ -8,10 +8,14 @@ public class Programa {
         NotasMusicais notas = new NotasMusicais();
         List<Nota> doReMiFa = Arrays.asList(
             notas.pega("do"),    
+            notas.pega("doSus"),    
             notas.pega("re"),    
+            notas.pega("reSus"),    
             notas.pega("mi"),    
             notas.pega("fa"),    
+            notas.pega("faSus"),    
             notas.pega("fa"),    
+            notas.pega("faSus"),    
             notas.pega("fa"),    
             notas.pega("do"),    
             notas.pega("re"),    
@@ -21,6 +25,7 @@ public class Programa {
             notas.pega("re"),
             notas.pega("do"),    
             notas.pega("sol"),    
+            notas.pega("solSus"),    
             notas.pega("fa"),    
             notas.pega("mi"),    
             notas.pega("mi"),    
