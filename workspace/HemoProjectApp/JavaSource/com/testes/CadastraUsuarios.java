@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.model.Projeto;
 import com.model.User;
 
 public class CadastraUsuarios {
