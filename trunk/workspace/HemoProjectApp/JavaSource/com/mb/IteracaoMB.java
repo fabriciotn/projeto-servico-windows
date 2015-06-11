@@ -93,6 +93,7 @@ public class IteracaoMB extends AbstractMB implements Serializable {
 			PendenciaFacade pf = getPendenciaFacade();
 			pendencia = pf.findPendencia(iteracao.getPendencia().getId());
 			pendencia.setStatus(iteracao.getStatus());
+			pendencia.setCategoria(iteracao.getCategoria());
 			pf.updatePendencia(pendencia);
 
 			getIteracaoFacade().createIteracao(iteracao);
@@ -104,7 +105,7 @@ public class IteracaoMB extends AbstractMB implements Serializable {
 			keepDialogOpen();
 			displayErrorMessageToUser("Ops, ocorreu algum problema. Tente novamente!");
 			e.printStackTrace();
-			return "/erro.xhtml";
+			return "/restrito/erro.xhtml";
 		}
 
 		return "";
