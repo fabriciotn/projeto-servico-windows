@@ -44,6 +44,8 @@ public class Pendencia implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Prioridade prioridade;
 	@Enumerated(EnumType.STRING)
+    private Categoria categoria;
+	@Enumerated(EnumType.STRING)
 	private Responsavel responsavel;
 	@Lob
 	private String obs;
@@ -68,6 +70,16 @@ public class Pendencia implements Serializable {
 
 	public void setIteracoes(List<Iteracao> iteracoes) {
 		this.iteracoes = iteracoes;
+	}
+	
+	
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 
 	public User getUsuario() {

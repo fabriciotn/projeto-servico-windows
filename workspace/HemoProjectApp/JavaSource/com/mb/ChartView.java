@@ -14,6 +14,7 @@ import org.primefaces.model.chart.LegendPlacement;
 import org.primefaces.model.chart.PieChartModel;
 
 import com.facade.PendenciaFacade;
+import com.model.Status;
 
 @ManagedBean
 public class ChartView implements Serializable {
@@ -45,7 +46,7 @@ public class ChartView implements Serializable {
 
 		BarChartModel model = new BarChartModel();
 		ChartSeries setor;
-		for (Object[] objects : lista) {
+		for (Object[] objects : lista) {				
 			pieModel1.set(objects[0].toString() + " - " + (Number) objects[1], (Number) objects[1]);
 		}
          

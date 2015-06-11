@@ -48,7 +48,7 @@ public class LoginMB extends AbstractMB {
 			//FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user",user);
 			MessagesView ms = new MessagesView();
 	        ms.info(user.getName(), "Bem vindo!");
-			return "/home.xhtml";
+			return "/restrito/home.xhtml";
 		}
 
 		displayErrorMessageToUser("Check your email/password");

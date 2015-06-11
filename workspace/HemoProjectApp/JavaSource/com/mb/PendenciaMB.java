@@ -66,9 +66,9 @@ public class PendenciaMB extends AbstractMB implements Serializable {
 			keepDialogOpen();
 			displayErrorMessageToUser("Ops, ocorreu algum problema. Tente novamente!");
 			e.printStackTrace();
-			return "/erro.xhtml";
+			return "/restrito/erro.xhtml";
 		}
-		return "/cadastrarPendencia.xhtml";
+		return "/restrito/cadastrarPendencia.xhtml";
 	}
 
 	public void updatePendencia() {

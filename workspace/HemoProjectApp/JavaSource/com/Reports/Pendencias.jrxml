@@ -14,14 +14,15 @@
   p.id,
   p.descricao,
   s.nome AS setor,
-  p.status
+  p.status,
+  p.prioridade
 FROM
   pendencia p
 JOIN setor s
 ON
   p.setor_id=s.id
 WHERE STATUS <> 'FECHADO'
-AND s.NOME = $P{SETOR}
+AND p.prioridade = 'GRAVE'
 ORDER BY
   p.id]]>
 	</queryString>
@@ -29,6 +30,7 @@ ORDER BY
 	<field name="DESCRICAO" class="java.lang.String"/>
 	<field name="SETOR" class="java.lang.String"/>
 	<field name="STATUS" class="java.lang.String"/>
+	<field name="PRIORIDADE" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -171,11 +173,11 @@ ORDER BY
 	<summary>
 		<band height="56">
 			<textField>
-				<reportElement uuid="bd4b3172-0638-4e9c-afb6-3633f800b143" x="0" y="36" width="255" height="20"/>
+				<reportElement uuid="bd4b3172-0638-4e9c-afb6-3633f800b143" x="0" y="36" width="427" height="20"/>
 				<textElement verticalAlignment="Bottom">
 					<font size="10" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Total de pendências: " + $V{REPORT_COUNT}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Total de pendências: " + $V{REPORT_COUNT} + " com prioridade "+ $F{PRIORIDADE}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>

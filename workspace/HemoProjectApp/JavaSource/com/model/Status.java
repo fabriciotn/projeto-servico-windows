@@ -4,7 +4,8 @@ public enum Status {
     ABERTO("Aberto"),
     FECHADO("Fechado"),
     ANALISE("Em análise"),
-    EXECUCAO("Em execução");
+    EXECUCAO("Em execução"),
+    PENDENTE_USUARIO("Pendente usuário");
     
     private String label;
     
