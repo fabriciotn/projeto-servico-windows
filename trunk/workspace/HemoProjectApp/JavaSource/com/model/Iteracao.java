@@ -53,8 +53,17 @@ public class Iteracao implements Serializable{
     @Enumerated(EnumType.STRING)
     private Status status;
     
+    @Enumerated(EnumType.STRING)
+	private Prioridade prioridade;
     
     
+    
+	public Prioridade getPrioridade() {
+		return prioridade;
+	}
+	public void setPrioridade(Prioridade prioridade) {
+		this.prioridade = prioridade;
+	}
 	public Date getDataEstimada() {
 		return dataEstimada;
 	}
