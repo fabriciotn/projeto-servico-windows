@@ -7,6 +7,7 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.component.html.HtmlOutputText;
+import javax.faces.component.html.HtmlSelectOneMenu;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
@@ -28,6 +29,24 @@ public class IteracaoMB extends AbstractMB implements Serializable {
 	private HtmlOutputText pendenciaId;
 	private Pendencia pendencia;
 	private PendenciaFacade pendenciaFacade;
+	HtmlSelectOneMenu selectOne;
+	HtmlSelectOneMenu selectOne1;
+	
+	public HtmlSelectOneMenu getSelectOne1() {
+		return selectOne1;
+	}
+
+	public void setSelectOne1(HtmlSelectOneMenu selectOne1) {
+		this.selectOne1 = selectOne1;
+	}
+
+	public HtmlSelectOneMenu getSelectOne() {
+		return selectOne;
+	}
+
+	public void setSelectOne(HtmlSelectOneMenu selectOne) {
+		this.selectOne = selectOne;
+	}
 
 	public Pendencia getPendencia() {
 		return pendencia;
@@ -94,6 +113,7 @@ public class IteracaoMB extends AbstractMB implements Serializable {
 			pendencia = pf.findPendencia(iteracao.getPendencia().getId());
 			pendencia.setStatus(iteracao.getStatus());
 			pendencia.setCategoria(iteracao.getCategoria());
+			pendencia.setPrioridade(iteracao.getPrioridade());
 			pf.updatePendencia(pendencia);
 
 			getIteracaoFacade().createIteracao(iteracao);

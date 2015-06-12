@@ -34,6 +34,7 @@ public class PendenciaFacade implements Serializable {
 		persistedPendencia.setPrioridade(pendencia.getPrioridade());
 		persistedPendencia.setSetor(pendencia.getSetor());
 		persistedPendencia.setStatus(pendencia.getStatus());
+		persistedPendencia.setCategoria(pendencia.getCategoria());
 
 		pendenciaDAO.update(persistedPendencia);
 		pendenciaDAO.commitAndCloseTransaction();
