@@ -1,137 +1,71 @@
 package com.util;
 
-import java.util.Date;
-import java.util.Properties;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import javax.mail.Address;
-import javax.mail.Message;
 import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
-import org.apache.commons.mail.SimpleEmail;
 
 public class Email {
 
-	public void enviaEmail() {
-		try {
-			SimpleEmail email = new SimpleEmail();
-			email.setDebug(true);
-			email.setSmtpPort(587);
-
-			email.setHostName("200.198.4.36"); // o servidor SMTP
-			email.addTo("fabricio.teixeira@hemominas.mg.gov.br"); // destinatário
-			email.setFrom("fabricio.teixeira@hemominas.mg.gov.br", "Fabricio teste"); // remetente
-			email.setSubject("Mensagem de Teste");// assunto do e-mail
-			email.setMsg("Teste de Email utilizando commons-email");// conteudo
-
-			//email.setStartTLSEnabled(true);
-			//email.setStartTLSRequired(true);
-			
-			email.setAuthentication("fabricio.teixeira", "fabricioadm00!");
-			
-			// email.setAuthentication("hemocurriculo", "$i$Hem0cur");
-			email.send(); // envia oe-mail
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void enviaEmailSimples() {
-		try {
-			SimpleEmail email = new SimpleEmail();
-			email.setDebug(true);
-			email.setHostName("smtp.gmail.com"); // o servidor SMTP para envio
-			email.addTo("fabricio.teixeira@hemominas.mg.gov.br", "Fabricio Hemo"); // destinatário
-			email.setFrom("fabricio.hemominas@gmail.com", "Fabricio gmail"); // remetente
-			email.setSubject("Teste -> Email simples"); // assunto do e-mail
-			email.setMsg("Teste de Email utilizando commons-email"); // conteudo
-																		// do
-																		// e-mail
-			email.setAuthentication("fabricio.hemominas@gmail.com", "fabricioadm00!");
-			email.setSmtpPort(587);
-			email.setStartTLSEnabled(true);
-			email.setStartTLSRequired(true);
-			email.send();
-			System.out.println("funfou");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void teste() {
-		String emailto = "fabricio.teixeira@hemominas.mg.gov.br";
-		String assunto = "teste";
-		String mensagem = "teste";
-
-		Properties p = new Properties();
-
-		p.put("mail.transport.protocol", "smtp");
-		p.put("mail.smtp.starttls.enable", "true");
-		p.put("mail.smtp.host", "mail.hemominas.mg.gov.br");
-		p.put("mail.smtp.auth", "true");
-		p.put("mail.smtp.user", "fabricio.teixeira@hemominas.mg.gov.br");
-		p.put("mail.smtp.auth", "true");
-		p.put("mail.debug", "true");
-		p.put("mail.smtp.port", "465");
-		p.put("mail.smtp.socketFactory.port", "465");
-		p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-		p.put("mail.smtp.socketFactory.fallback", "false");
-		p.put("mail.smtp.quitwait", "false");
-
-		Session session = Session.getInstance(p, null);
-		MimeMessage msg = new MimeMessage(session);
-
-		try {
-			msg.setFrom(new InternetAddress("fabricio.hemominas@gmail.com"));
-			msg.setRecipient(Message.RecipientType.TO, new InternetAddress(emailto));
-			msg.setSentDate(new Date());
-			msg.setSubject(assunto);
-			msg.setText(mensagem);
-			Transport.send(msg);
-
-		} catch (AddressException e) {
-			System.out.println("erro: " + e.getMessage() + "\nClasse: " + e.getClass());
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			System.out.println("erro: " + e.getMessage() + "\nClasse: " + e.getClass());
-			e.printStackTrace();
-		}
-
-	}
-
-	public void teste1() {
-		try {
-			Properties p = new Properties();
-			
-			p.put("mail.debug", "true");
-			p.put("mail.smtps.host", "mail.hemominas.mg.gov.br");
-			p.put("mail.smtps.auth", "true");
-			p.put("mail.smtps.port", "587");
-			p.put("mail.smtps.starttls.enable", "true");
-
-			Session session = Session.getInstance(p, null);
-
-			Transport t = session.getTransport("smtps");
-			Message msg = new MimeMessage(session);
-
-			t.connect("mail.hemominas.mg.gov.br", "fabricio.teixeira@hemominas.mg.gov.br", "fabricioadm00!");
-			t.sendMessage(msg, new Address[] { new InternetAddress("fabricio.hemominas@gmail.com") });
-
-		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
 	public static void main(String[] args) {
-		Email mail = new Email();
-		// mail.enviaEmailSimples();
-		mail.enviaEmail();
-		//mail.teste();
-		//mail.teste1();
+	        MailJava mj = new MailJava();
+	        //configuracoes de envio
+	        mj.setSmtpHostMail("200.198.4.36");
+	        mj.setSmtpPortMail("587");
+	        mj.setSmtpAuth("true");
+	        mj.setSmtpStarttls("true");
+	        mj.setUserMail("fabricio.teixeira");
+	        mj.setFromNameMail("Fabricio");
+	        mj.setPassMail("fabricioadm00!");
+	        mj.setCharsetMail("ISO-8859-1");
+	        mj.setSubjectMail("JavaMail");
+	        mj.setBodyMail(htmlMessage());
+	        mj.setTypeTextMail(MailJava.TYPE_TEXT_HTML);
+	 
+	        //sete quantos destinatarios desejar
+	        Map<String, String> map = new HashMap<String, String>();
+	        map.put("fabricio.teixeira@hemominas.mg.gov.br", "fabricio hemominas");
+	        //map.put("destinatario2@msn.com", "email msn");
+	        //map.put("destinatario3@ig.com.br", "email ig");
+	 
+	        mj.setToMailsUsers(map);
+	 
+	        //seta quatos anexos desejar
+	        List<String> files = new ArrayList<String>();
+	        files.add("C:/Fabricio/ISBT.pdf");
+	 
+	        mj.setFileMails(files);
+	 
+	        try {
+	            new MailJavaSender().senderMail(mj);
+	        } catch (UnsupportedEncodingException e) {
+	            e.printStackTrace();
+	        } catch (MessagingException e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	private static String textMessage() {
+		return "Leia o novo tutorial JavaMail do Programando com Java.n"
+				+ "Saiba como enviar emails com anexo, em formato texto e html.n"
+				+ "Envie seu email para mais de um destinatario.";
+	}
+
+	private static String htmlMessage() {
+		return "<html>n" + "t<head>n" + "tt<title>Email no formato HTML com Javamail!</title> n" + "t</head>n"
+				+ "t<body>n" + "tt<div style='background-color:orange; width:28%; height:100px;'>n" + "ttt<ul>n"
+				+ "tttt<li>Leia o novo tutorial JavaMail do Programando com Java.</li>n"
+				+ "tttt<li>Aprenda como enviar emails com anexos.</li>n"
+				+ "tttt<li>Aprenda a enviar emails em formato texto simples ou html.</li> n"
+				+ "tttt<li>Aprenda como enviar seu email para mais de um destinátario.</li>n" + "ttt</ul>n"
+				+ "ttt<p>Visite o blog n" + "tttt<a href='http://mballem.wordpress.com/'>Programando com Java</a>n"
+				+ "ttt</p>n" + "tt</div>tn" + "tt<div style='width:28%; height:50px;' align='center'>n"
+				+ "tttDownload do JavaMail<br/>n"
+				+ "ttt<a href='http://www.oracle.com/technetwork/java/javaee/index-138643.html'>n"
+				+ "tttt<img src='http://www.oracleimg.com/admin/images/ocom/hp/oralogo_small.gif'/>n" + "ttt</a> n"
+				+ "tt</div>ttn" + "t</body> n" + "</html>";
 	}
 }
