@@ -1,5 +1,7 @@
 package com.facade;
 
+import java.util.Calendar;
+
 import com.dao.UserDAO;
 import com.model.User;
 import com.util.ADAuthenticator;
@@ -23,6 +25,7 @@ public class UserFacade {
 		}else{
 			userBD.setName(userAD.getName());
 			userBD.setEmail(userAD.getEmail());
+			userBD.setUltimoAcesso(Calendar.getInstance());
 			userDAO.commit();
 		}
 		userDAO.closeTransaction();

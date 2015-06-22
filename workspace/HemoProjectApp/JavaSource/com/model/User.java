@@ -1,6 +1,7 @@
 package com.model;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "USERS")
@@ -33,6 +36,17 @@ public class User implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	private String email;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Calendar ultimoAcesso;
+	
+
+	public Calendar getUltimoAcesso() {
+		return ultimoAcesso;
+	}
+
+	public void setUltimoAcesso(Calendar ultimoAcesso) {
+		this.ultimoAcesso = ultimoAcesso;
+	}
 
 	public String getEmail() {
 		return email;

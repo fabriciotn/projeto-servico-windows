@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import org.hibernate.SessionFactory;
 
 import com.dao.PendenciaDAO;
+import com.email.PendenciaCadastrada;
 import com.model.Pendencia;
 
 public class PendenciaFacade implements Serializable {
