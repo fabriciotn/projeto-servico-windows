@@ -10,6 +10,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
+import com.email.PendenciaCadastrada;
 import com.facade.PendenciaFacade;
 import com.model.Pendencia;
 import com.model.User;
@@ -59,7 +60,11 @@ public class PendenciaMB extends AbstractMB implements Serializable {
 
 			getPendenciaFacade().createPendencia(pendencia);
 			closeDialog();
-			displayInfoMessageToUser("Cadastro realizado com sucesso!");
+			displayInfoMessageToUser("Pendencia " + pendencia.getId() + " gravada com sucesso!");
+			
+			//envia e-mail
+			PendenciaCadastrada.enviaEmail(pendencia);
+			
 			loadPendencias();
 			resetPendencia();
 		} catch (Exception e) {

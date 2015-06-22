@@ -11,10 +11,14 @@ import javax.faces.component.html.HtmlSelectOneMenu;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
+import com.email.PendenciaAlterada;
+import com.email.PendenciaFechada;
 import com.facade.IteracaoFacade;
 import com.facade.PendenciaFacade;
 import com.model.Iteracao;
 import com.model.Pendencia;
+import com.model.Prioridade;
+import com.model.Status;
 import com.model.User;
 
 @ViewScoped
@@ -97,8 +101,10 @@ public class IteracaoMB extends AbstractMB implements Serializable {
 
 	public String createIteracao() {
 		try {
+			Prioridade prioridadeAnterior;
+			Prioridade prioridadeAtual;
+			
 			User user = (User) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user");
-
 			
 			if(user == null)
 				throw new RuntimeException("Problemas com usuário");
@@ -111,12 +117,25 @@ public class IteracaoMB extends AbstractMB implements Serializable {
 			
 			PendenciaFacade pf = getPendenciaFacade();
 			pendencia = pf.findPendencia(iteracao.getPendencia().getId());
+			
+			//pega a prioridade atual da pendencia
+			prioridadeAnterior = pendencia.getPrioridade();
+			//pega a prioridade que será alterada
+			prioridadeAtual = iteracao.getPrioridade();
+			
 			pendencia.setStatus(iteracao.getStatus());
 			pendencia.setCategoria(iteracao.getCategoria());
 			pendencia.setPrioridade(iteracao.getPrioridade());
 			pf.updatePendencia(pendencia);
 
 			getIteracaoFacade().createIteracao(iteracao);
+			
+			//envia o e-mail
+			if(iteracao.getStatus() == Status.FECHADO)
+				PendenciaFechada.enviaEmail(iteracao);
+			else if(prioridadeAnterior == Prioridade.GRAVE || prioridadeAtual == Prioridade.GRAVE)
+				PendenciaAlterada.enviaEmail(iteracao);
+			
 			closeDialog();
 			displayInfoMessageToUser("Registrado com sucesso!");
 			loadIteracaos();
