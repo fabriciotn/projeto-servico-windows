@@ -1,9 +1,11 @@
 package com.email;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.model.Iteracao;
 import com.model.Prioridade;
+import com.model.User;
 
 public class PendenciaFechada {
 	public static void enviaEmail(Iteracao iteracao) {
@@ -51,6 +53,13 @@ public class PendenciaFechada {
 		//Envia para o usuário que cadastrou
 		if(iteracao.getPendencia().getUsuario().getEmail() != null)
 			addressList.add(iteracao.getPendencia().getUsuario().getEmail());
+		
+		// Envia para todos os responsáveis pelo setor
+		List<User> usuariosResponsaveisPeloSetor = new ArrayList<User>();
+		usuariosResponsaveisPeloSetor = iteracao.getPendencia().getSetor().getUsuarios();
+		for (User user : usuariosResponsaveisPeloSetor) {
+			addressList.add(user.getEmail());
+		}
 		
 		//Envia para a SOFIS se a prioridade for GRAVE
 		if(iteracao.getPendencia().getPrioridade() == Prioridade.GRAVE)

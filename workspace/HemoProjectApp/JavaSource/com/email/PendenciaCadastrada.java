@@ -1,9 +1,12 @@
 package com.email;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import com.model.Pendencia;
 import com.model.Prioridade;
+import com.model.User;
 
 public class PendenciaCadastrada {
 
@@ -50,6 +53,13 @@ public class PendenciaCadastrada {
 		//Envia para o usuário que cadastrou
 		if(pendencia.getUsuario().getEmail() != null)
 			addressList.add(pendencia.getUsuario().getEmail());
+		
+		//Envia para todos os responsáveis pelo setor
+		List<User> usuariosResponsaveisPeloSetor = new ArrayList<User>();
+		usuariosResponsaveisPeloSetor = pendencia.getSetor().getUsuarios();
+		for (User user : usuariosResponsaveisPeloSetor) {
+			addressList.add(user.getEmail());
+		}
 		
 		//Envia para a SOFIS se a prioridade for GRAVE
 		if(pendencia.getPrioridade() == Prioridade.GRAVE)
