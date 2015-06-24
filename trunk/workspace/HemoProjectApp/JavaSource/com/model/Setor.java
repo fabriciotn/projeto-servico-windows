@@ -1,16 +1,16 @@
 package com.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
 @Entity
 @SequenceGenerator(name="SEQ_SETOR", sequenceName="SEQ_SETOR")
@@ -22,6 +22,17 @@ public class Setor implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SEQ_SETOR")
 	private int id;
 	private String nome;
+	@ManyToMany
+    @JoinTable(joinColumns={@JoinColumn(name="setor_id")}, inverseJoinColumns={@JoinColumn(name="usuario_id")})
+    private List<User> usuarios;
+	
+	public List<User> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<User> usuarios) {
+		this.usuarios = usuarios;
+	}
 
 	public int getId() {
 		return id;
