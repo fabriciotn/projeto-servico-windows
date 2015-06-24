@@ -11,20 +11,15 @@ public class CadastraSetores {
 	public static void main(String[] args) {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("hemoproject");
 		EntityManager manager = factory.createEntityManager();
-		
+
 		manager.getTransaction().begin();
-		
-		//Adicionando 21 linhas no banco.. depois atualizei os nomes via banco mesmo
-		for(int i=0; i < 21; i++){
-			Setor setor = new Setor();
-			setor.setNome("");
-			manager.persist(setor);
-		}
-		
-		
-			
+
+		Setor setor = new Setor();
+		setor.setNome("GERÊNCIA DE C.Q.");
+		manager.persist(setor);
+
 		manager.getTransaction().commit();
-		
+
 		manager.close();
 		factory.close();
 	}

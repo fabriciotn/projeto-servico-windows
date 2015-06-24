@@ -1,20 +1,19 @@
 package com.testes;
 
-import java.io.File;
-import java.sql.Date;
+import com.facade.SetorFacade;
+import com.model.Setor;
+import com.model.User;
+
 
 public class ArquivosTeste {
 
 	public static void main(String[] args) {
-		String dir = "c:/"; 
+		SetorFacade facade = new SetorFacade();
+		Setor setor = new Setor();
+		setor = facade.findSetor(72);
 
-		File diretorio = new File(dir); 
-		File fList[] = diretorio.listFiles(); 
-
-		System.out.println("Numero de arquivos no diretorio : " + fList.length ); 
-
-		for ( int i = 0; i < fList.length; i++ ){ 
-		System.out.println(fList[i].getName() +" " + new Date(fList[i].lastModified())); 
-		} 
+		for (User usuario : setor.getUsuarios()) {
+			System.out.println(usuario.getEmail());
+		}
 	}
 }

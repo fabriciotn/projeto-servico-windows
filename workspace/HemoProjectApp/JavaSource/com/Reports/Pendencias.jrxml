@@ -9,6 +9,9 @@
 	<parameter name="SETOR" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
+	<parameter name="PRIORIDADE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
 		<![CDATA[SELECT
   p.id,
@@ -22,7 +25,7 @@ JOIN setor s
 ON
   p.setor_id=s.id
 WHERE STATUS <> 'FECHADO'
-AND p.prioridade = 'GRAVE'
+AND p.prioridade = $P{PRIORIDADE}
 ORDER BY
   p.id]]>
 	</queryString>
