@@ -61,10 +61,12 @@ public class PendenciaCadastrada {
 			addressList.add(user.getEmail());
 		}
 		
-		//Envia para a SOFIS se a prioridade for GRAVE
-		if(pendencia.getPrioridade() == Prioridade.GRAVE)
-			//MUDAR O ENDEREÇO PARA UM ENDERÇO DA SOFIS
-			addressList.add("fabriciotn@yahoo.com.br");
+		//Envia para a SOFIS, Fernando e Maildes se a prioridade for GRAVE
+		if(pendencia.getPrioridade() == Prioridade.GRAVE){
+			addressList.add("antonio.mendes@sofis.com.br");
+			addressList.add("fernando.basques@hemominas.mg.gov.br");
+			addressList.add("maildes.junqueira@hemominas.mg.gov.br");
+		}
 
 		
 		email.enviaEmail(assunto, textoDaMensagem, addressList);
