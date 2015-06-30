@@ -17,6 +17,27 @@ public class PendenciaCadastrada {
 		String textoDaMensagem;
 		ArrayList<String> addressList = new ArrayList<String>();
 		
+		String setor = "";
+		String categoria = "";
+		String prioridade = "";
+		String descricao = "";
+		String usuario = "";
+		
+		if(pendencia.getSetor() != null)
+			setor = pendencia.getSetor().getNome();
+			
+		if(pendencia.getCategoria() != null)
+			categoria = pendencia.getCategoria().getLabel();
+		
+		if(pendencia.getPrioridade() != null)
+			prioridade = pendencia.getPrioridade().getLabel();
+		
+		if(pendencia.getDescricao() != null)
+			descricao = pendencia.getDescricao();
+		
+		if(pendencia.getUsuario() != null)
+			usuario = pendencia.getUsuario().getName();
+		
 		textoDaMensagem = "<!DOCTYPE html>" +
 				"<html>" +
 				"<head>" +
@@ -33,14 +54,14 @@ public class PendenciaCadastrada {
 					"<img src=\"http://10.14.124.101:8080/HemoProjectApp/images/logoHemominasEmail.png\">" +
 					"<br>" +
 					"<h3> " + assunto + "</h3>" +
-					"<p>Olá, <br>Uma nova pendência foi cadastrada pelo usuário: <b>" + pendencia.getUsuario().getName() + "</b></p>" +
+					"<p>Olá, <br>Uma nova pendência foi cadastrada pelo usuário: <b>" + usuario + "</b></p>" +
 					"Seguem os dados da pendência:" +
 					"<ul>" +
 						"<li><b>ID:</b> " + pendencia.getId() + "</li>" +
-						"<li><b>Setor:</b> " + pendencia.getSetor().getNome() + "</li>" +
-						"<li><b>Categoria:</b> " + pendencia.getCategoria().getLabel() + "</li>" +
-						"<li><b>Prioridade:</b> " + pendencia.getPrioridade().getLabel() + "</li>" +
-						"<li><b>Descrição:</b> " + pendencia.getDescricao() + "</li>" +
+						"<li><b>Setor:</b> " + setor + "</li>" +
+						"<li><b>Categoria:</b> " + categoria + "</li>" +
+						"<li><b>Prioridade:</b> " + prioridade + "</li>" +
+						"<li><b>Descrição:</b> " + descricao + "</li>" +
 					"</ul>" +
 					"<br>" +
 					"<p>" +

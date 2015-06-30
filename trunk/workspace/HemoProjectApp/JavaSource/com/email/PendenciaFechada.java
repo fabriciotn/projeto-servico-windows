@@ -15,6 +15,27 @@ public class PendenciaFechada {
 		String textoDaMensagem;
 		ArrayList<String> addressList = new ArrayList<String>();
 		
+		String setor = "";
+		String categoria = "";
+		String prioridade = "";
+		String descricao = "";
+		String usuario = "";
+		
+		if(iteracao.getPendencia() != null)
+			setor = iteracao.getPendencia().getSetor().getNome();
+			
+		if(iteracao.getCategoria() != null)
+			categoria = iteracao.getCategoria().getLabel();
+		
+		if(iteracao.getPrioridade() != null)
+			prioridade = iteracao.getPrioridade().getLabel();
+		
+		if(iteracao.getDescricao() != null)
+			descricao = iteracao.getDescricao();
+		
+		if(iteracao.getUsuario() != null)
+			usuario = iteracao.getUsuario().getName();
+		
 		textoDaMensagem = "<!DOCTYPE html>" +
 				"<html>" +
 				"<head>" +
@@ -37,10 +58,10 @@ public class PendenciaFechada {
 					"Seguem os dados da pendência:" +
 					"<ul>" +
 						"<li><b>ID:</b> " + iteracao.getPendencia().getId() + "</li>" +
-						"<li><b>Setor:</b> " + iteracao.getPendencia().getSetor().getNome() + "</li>" +
-						"<li><b>Categoria:</b> " + iteracao.getCategoria().getLabel() + "</li>" +
-						"<li><b>Prioridade:</b> " + iteracao.getPrioridade().getLabel() + "</li>" +
-						"<li><b>Descrição:</b> " + iteracao.getDescricao() + "</li>" +
+						"<li><b>Setor:</b> " + setor + "</li>" +
+						"<li><b>Categoria:</b> " + categoria + "</li>" +
+						"<li><b>Prioridade:</b> " + prioridade + "</li>" +
+						"<li><b>Descrição:</b> " + descricao + "</li>" +
 					"</ul>" +
 					"<br>" +
 					"<p>" +

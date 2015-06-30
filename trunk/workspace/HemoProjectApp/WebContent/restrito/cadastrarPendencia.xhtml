@@ -20,7 +20,7 @@
 							<h:outputText value="Titulo:*" />
 							<p:inputText value="#{pendenciaMB.pendencia.titulo}"
 								required="true" requiredMessage="O campo Título é obrigatório!"
-								label="Título" size="48" />
+								label="Título" size="48" maxlength="255"/>
 
 							<h:outputText value="Setor:* " />
 							<p:selectOneMenu id="setor"
@@ -86,7 +86,7 @@
 
 							<h:outputText value="Item do edital: " />
 							<p:inputText value="#{pendenciaMB.pendencia.itemDoEdital}"
-								required="false" label="" />
+								required="false" label="" maxlength="255"/>
 
 							<h:outputText value="Descricao: *" />
 							<p:inputTextarea rows="10" cols="50"
