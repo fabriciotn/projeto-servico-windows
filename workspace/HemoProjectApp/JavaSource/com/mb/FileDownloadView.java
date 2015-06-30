@@ -28,6 +28,11 @@ public class FileDownloadView implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static final int DEFAULT_BUFFER_SIZE = 10240;
 	private TreeNode root;
+	
+	public FileDownloadView() {
+		AbreTelaDeIteracao abreTela = new AbreTelaDeIteracao();
+		abreTela.abreTela();
+	}
 
 	@PostConstruct
 	public void init() {
