@@ -16,8 +16,7 @@
 				<p:dataTable id="tbl" var="pendencia"
 					value="#{pendenciaMB.allPendencias}"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
-					paginator="true" rows="10" style="margin-bottom:20px"
-					filterEvent="enter">
+					paginator="true" rows="10" style="margin-bottom:20px" filterEvent="enter">
 
 					<f:facet name="{Exporters}">
 						<h:commandLink>
@@ -116,11 +115,16 @@
 						<f:facet name="header">
 							<h:outputText value="Editar" />
 						</f:facet>
-						<h:commandLink action="#{abreTelaDeIteracao.abreTela}">
-							<img src="../images/edit.png" width="25" />
-							<f:param name="id" value="#{pendencia.id}" />
-							<f:param name="titulo" value="#{pendencia.titulo}" />
-						</h:commandLink>
+
+
+						<p:lightBox iframe="true" id="lighbox3" width="800px" height="600px">
+							<h:outputLink value="cadastrarIteracao.xhtml"
+								title="Detalhes da pendência #{pendencia.id}">
+								<img src="../images/edit.png" width="25" />
+								<f:param name="id" value="#{pendencia.id}" />
+								<f:param name="titulo" value="#{pendencia.titulo}" />
+							</h:outputLink>
+						</p:lightBox>
 					</p:column>
 				</p:dataTable>
 			</h:form>

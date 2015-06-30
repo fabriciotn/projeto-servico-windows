@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
+import org.apache.poi.ss.usermodel.charts.LegendPosition;
 import org.primefaces.model.chart.Axis;
 import org.primefaces.model.chart.AxisType;
 import org.primefaces.model.chart.BarChartModel;
@@ -21,6 +22,7 @@ public class ChartView implements Serializable {
 
 	private BarChartModel animatedModel2;
 	private PieChartModel pieModel1;
+	private PieChartModel pieModel2;
 
 	@PostConstruct
 	public void init() {
@@ -32,8 +34,13 @@ public class ChartView implements Serializable {
         return pieModel1;
     }
 	
+	public PieChartModel getPieModel2() {
+        return pieModel2;
+    }
+	
 	private void createPieModels() {
         createPieModel1();
+        createPieModel2();
     }
 	
 	private void createPieModel1() {
@@ -53,6 +60,28 @@ public class ChartView implements Serializable {
         pieModel1.setTitle("Pendências por Status");
         pieModel1.setLegendPosition("w");
         pieModel1.setShowDataLabels(true);
+    }
+	
+	private void createPieModel2() {
+        pieModel2 = new PieChartModel();
+        
+        String sql = "SELECT p.prioridade, COUNT(*) as qtd FROM Pendencia p " +
+					 "	where p.prioridade is not null " +
+					 "	and p.status <> 'FECHADO'" +
+					 "	group by p.prioridade";
+
+		PendenciaFacade facade = new PendenciaFacade();
+		List<Object[]> lista = facade.buscaComQuery(sql);
+
+		BarChartModel model = new BarChartModel();
+		ChartSeries prioridade;
+		for (Object[] objects : lista) {				
+			pieModel2.set(objects[0].toString() + " - " + (Number) objects[1], (Number) objects[1]);
+		}
+         
+        pieModel2.setTitle("Pendências em aberto por prioridade");
+        pieModel2.setLegendPosition("w");
+        pieModel2.setShowDataLabels(true);
     }
 
 	public BarChartModel getAnimatedModel2() {
