@@ -84,9 +84,9 @@
 					<h:panelGrid columns="2" columnClasses="label, value"
 						style="text-align:left">
 
-						<h:outputText value="Categoria:* " />
+						<h:outputText value="Categoria: " />
 						<p:selectOneMenu id="categoria"
-							value="#{iteracaoMB.iteracao.categoria}" required="true"
+							value="#{iteracaoMB.iteracao.categoria}" required="false"
 							requiredMessage="O campo Categoria é obrigatório!">
 							<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
 								noSelectionOption="true" />
@@ -95,9 +95,9 @@
 								itemValue="#{categoria}" />
 						</p:selectOneMenu>
 
-						<h:outputText value="Status:* " />
+						<h:outputText value="Status: " />
 						<p:selectOneMenu id="status" value="#{iteracaoMB.iteracao.status}"
-							required="true" requiredMessage="O campo Status é obrigatório!">
+							required="false" requiredMessage="O campo Status é obrigatório!">
 							<f:selectItem itemLabel="---Selecione---" itemValue="#{null}"
 								noSelectionOption="true" />
 							<f:selectItems value="#{statusBean.statusList}" var="status"
@@ -114,10 +114,10 @@
 								itemValue="#{prioridade}" />
 						</p:selectOneMenu>
 
-						<h:outputText value="Descricao: *" />
+						<h:outputText value="Descricao: " />
 						<p:inputTextarea rows="5" cols="50"
 							value="#{iteracaoMB.iteracao.descricao}" queryDelay="750"
-							minQueryLength="4" required="true"
+							minQueryLength="4" required="false"
 							requiredMessage="O campo Descrição é obrigatório!" />
 
 						<h:outputText binding="#{iteracaoMB.pendenciaId}"

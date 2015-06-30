@@ -117,17 +117,23 @@ public class IteracaoMB extends AbstractMB implements Serializable {
 			
 			PendenciaFacade pf = getPendenciaFacade();
 			pendencia = pf.findPendencia(iteracao.getPendencia().getId());
-			
+
 			//pega a prioridade atual da pendencia
 			prioridadeAnterior = pendencia.getPrioridade();
 			//pega a prioridade que será alterada
 			prioridadeAtual = iteracao.getPrioridade();
 			
-			pendencia.setStatus(iteracao.getStatus());
-			pendencia.setCategoria(iteracao.getCategoria());
-			pendencia.setPrioridade(iteracao.getPrioridade());
+			if(iteracao.getStatus()!= null)
+				pendencia.setStatus(iteracao.getStatus());
+			
+			if(iteracao.getCategoria() != null)
+				pendencia.setCategoria(iteracao.getCategoria());
+			
+			if(iteracao.getPrioridade() != null)
+				pendencia.setPrioridade(iteracao.getPrioridade());
+			
 			pf.updatePendencia(pendencia);
-
+			
 			getIteracaoFacade().createIteracao(iteracao);
 			
 			//envia o e-mail
