@@ -1,5 +1,6 @@
 package com.mb;
 
+import java.io.IOException;
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
@@ -25,9 +26,10 @@ public class UserMB implements Serializable {
 		return user.isUser();
 	}
 
-	public String logOut() {
+	public void logOut() throws IOException {
 		getRequest().getSession().invalidate();
-		return "/restrito/index.xhtml";
+		FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+		//return "/restrito/index.xhtml";
 	}
 
 	private HttpServletRequest getRequest() {

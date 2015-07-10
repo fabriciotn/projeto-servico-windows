@@ -52,7 +52,7 @@ public class PendenciaAlterada {
 					"<img src=\"http://10.14.124.101:8080/HemoProjectApp/images/logoHemominasEmail.png\">" +
 					"<br>" +
 					"<h3> " + assunto + "</h3>" +
-					"<p>Olá, <br>A pendência número <b>" + iteracao.getPendencia().getId() + "</b> foi alterada por: <b> " + usuario + " </b>!<br>" +
+					"<p>Olá, <br>A pendência número <b>" + iteracao.getPendencia().getId() + "</b> foi alterada por: <b> " + usuario + "</b>!<br>" +
 						"Por favor verifique se está tudo de acordo!</p>" +
 					
 					"Seguem os dados da pendência:" +
@@ -86,7 +86,6 @@ public class PendenciaAlterada {
 		if(iteracao.getPendencia().getPrioridade() == Prioridade.GRAVE){
 			addressList.add("antonio.mendes@sofis.com.br");
 			addressList.add("fernando.basques@hemominas.mg.gov.br");
-			addressList.add("maildes.junqueira@hemominas.mg.gov.br");
 		}
 
 		

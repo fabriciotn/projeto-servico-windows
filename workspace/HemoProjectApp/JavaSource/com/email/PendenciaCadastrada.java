@@ -86,7 +86,6 @@ public class PendenciaCadastrada {
 		if(pendencia.getPrioridade() == Prioridade.GRAVE){
 			addressList.add("antonio.mendes@sofis.com.br");
 			addressList.add("fernando.basques@hemominas.mg.gov.br");
-			addressList.add("maildes.junqueira@hemominas.mg.gov.br");
 		}
 
 		

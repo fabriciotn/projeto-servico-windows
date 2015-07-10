@@ -9,7 +9,7 @@
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@10.14.124.88:1521:fha11" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@10.14.124.49:1521:fha1" />
 			<property name="javax.persistence.jdbc.user" value="hemoproject" />
 			<property name="javax.persistence.jdbc.password" value="hemoproject" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
