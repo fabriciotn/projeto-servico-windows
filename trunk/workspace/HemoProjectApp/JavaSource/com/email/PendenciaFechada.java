@@ -86,7 +86,6 @@ public class PendenciaFechada {
 		if(iteracao.getPendencia().getPrioridade() == Prioridade.GRAVE){
 			addressList.add("antonio.mendes@sofis.com.br");
 			addressList.add("fernando.basques@hemominas.mg.gov.br");
-			addressList.add("maildes.junqueira@hemominas.mg.gov.br");
 		}
 
 		
