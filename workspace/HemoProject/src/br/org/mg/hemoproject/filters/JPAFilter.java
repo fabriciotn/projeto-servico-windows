@@ -18,11 +18,11 @@ import br.org.mg.hemoproject.util.Constantes;
 @WebFilter(servletNames={"Faces Servlet"})
 public class JPAFilter implements Filter{
 
-	private EntityManagerFactory factory;
+	private EntityManagerFactory factory ;
 	
 	@Override
 	public void destroy() {
-		this.factory.close();
+		this.factory.close ();
 		
 	}
 
@@ -53,7 +53,7 @@ public class JPAFilter implements Filter{
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		this.factory = Persistence.createEntityManagerFactory(Constantes.BASE_DE_DADOS);
+		this . factory = Persistence . createEntityManagerFactory (Constantes.BASE_DE_DADOS);
 		
 	}
 

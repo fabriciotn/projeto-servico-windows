@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.jee.server:TemplateEModularizacao" serverId="GlassFish 4 at localhost [domain1]"/>
+  <module moduleId="org.eclipse.jst.jee.server:HemoProject" serverId="GlassFish 4 at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:movimentacoes-web" serverId="Tomcat v7.0 Server at localhost"/>
+</modules>

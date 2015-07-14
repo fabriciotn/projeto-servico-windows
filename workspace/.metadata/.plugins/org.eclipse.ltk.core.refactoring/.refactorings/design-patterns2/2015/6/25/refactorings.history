@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;mapa&apos; in &apos;Birdge_Adapter.Programa.main(...)&apos; to &apos;mapaGoogle&apos;&#x0D;&#x0A;- Original project: &apos;design-patterns2&apos;&#x0D;&#x0A;- Original element: &apos;Birdge_Adapter.Programa.main(String[]).mapa&apos;&#x0D;&#x0A;- Renamed element: &apos;mapa&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;mapa&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;Birdge_Adapter{Programa.java[Programa~main~\[QString;@mapa!100!128!105!108!QMapa;!0!false" name="mapaGoogle" references="true" stamp="1434416856990" version="1.0"/>
+</session>

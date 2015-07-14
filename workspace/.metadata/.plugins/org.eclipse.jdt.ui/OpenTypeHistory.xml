@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=XStream/xstream-1.4.4.jar&lt;com.thoughtworks.xstream.converters(SingleValueConverter.class[SingleValueConverter" modifiers="1537" timestamp="1366309932000"/>
+</typeInfoHistroy>

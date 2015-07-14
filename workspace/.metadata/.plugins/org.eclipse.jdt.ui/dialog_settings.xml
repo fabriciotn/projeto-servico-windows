@@ -2,9 +2,13 @@
 <section name="Workbench">
 	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="true" key="Replace"/>
+	<item value="true" key="Annotations"/>
 	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="true" key="Abstract"/>
+	<item value="true" key="Comments"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
 	<item value="false" key="InstanceOf"/>
+	<item value="true" key="Public"/>
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
 	<item value="filter_imports;" key="filters_last_used"/>
 	<item value="false" key="delegateUpdating"/>
@@ -82,6 +86,9 @@
 		<item value="false" key="SortOrdering"/>
 	</section>
 	<section name="JavaElementSearchActions">
+	</section>
+	<section name="WorkingSetModelAwareSelectionDialog">
+		<item value="true" key="ShowVisibleOnly"/>
 	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="false" key="renameSubpackages"/>
@@ -164,8 +171,17 @@
 		<item value="false" key="FinalModifier"/>
 		<item value="10" key="LimitValue"/>
 	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.PackageSelectionDialog">
+		<item value="441" key="x"/>
+		<item value="398" key="width"/>
+		<item value="89" key="y"/>
+		<item value="437" key="height"/>
+	</section>
 	<section name="AddUnimplementedConstructorsDialog">
 		<item value="false" key="OmitCallToSuper"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="7" key="index"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
@@ -173,6 +189,6 @@
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="3" key="pageIndex"/>
+		<item value="2" key="pageIndex"/>
 	</section>
 </section>
