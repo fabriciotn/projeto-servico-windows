@@ -1,0 +1,3 @@
+1434143464102	Rename package 'Interpreter'
+1434143842799	Rename type 'Impressora'
+1434143922179	Extract interface 'Visitor'
