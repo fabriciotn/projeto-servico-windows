@@ -4,7 +4,9 @@ public enum Categoria {
     CONFIGURACAO("Configuração"),
     DESENVOLVIMENTO("Desenvolvimento"),
     TREINAMENTO("Treinamento"),
-    FLUXO("Definição de Fluxo");
+    FLUXO("Definição de Fluxo"),
+    NAO_CATEGORIZADO("Não caracterizado"),
+    CONVERSAO("Conversão");
     
     private String label;
     
