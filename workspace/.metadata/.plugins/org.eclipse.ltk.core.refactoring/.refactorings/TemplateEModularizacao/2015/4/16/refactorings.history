@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move &apos;template.xhtml&apos; to &apos;templates&apos;" description="Move &apos;template.xhtml&apos; to &apos;templates&apos;" destination="WebContent/WEB-INF/templates" element1="WebContent/template.xhtml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1428848166468" updateReferences="true"/>
-</session>

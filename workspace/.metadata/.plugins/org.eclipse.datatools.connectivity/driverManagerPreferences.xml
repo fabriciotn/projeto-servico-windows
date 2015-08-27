@@ -1,9 +1,0 @@
-#DriverManager.Preferences
-#Thu Apr 09 22:39:53 BRT 2015
-overriddenByCSS=,TerminalPrefInvertColors,
-org.eclipse.datatools.enablement.ibm.db2.luw.other.driverTemplate=true
-org.eclipse.datatools.enablement.ibm.db2.luw.kerberosDriverTemplate=true
-org.eclipse.datatools.enablement.ibm.db2.luw.jdbc4.kerberosDriverTemplate=true
-org.eclipse.datatools.enablement.ibm.db2.luw.driverTemplate=true
-TerminalPrefInvertColors=true
-org.eclipse.datatools.enablement.ibm.db2.luw.jdbc4.driverTemplate=true

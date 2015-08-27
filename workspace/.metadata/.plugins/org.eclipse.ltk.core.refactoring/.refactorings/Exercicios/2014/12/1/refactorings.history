@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename compilation unit &apos;Thread.ProduzMensagem.java&apos; to &apos;ProduzMensagens.java&apos;&#x0D;&#x0A;- Original project: &apos;Exercicios&apos;&#x0D;&#x0A;- Original element: &apos;Thread.ProduzMensagem.java&apos;&#x0D;&#x0A;- Renamed element: &apos;Thread.ProduzMensagens.java&apos;" description="Rename compilation unit &apos;ProduzMensagem.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;Thread{ProduzMensagem.java" name="ProduzMensagens.java" references="false" stamp="1419885111151" version="1.0"/>
-</session>
